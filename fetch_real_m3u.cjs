@@ -26,102 +26,95 @@ function fetchUrl(url) {
 
 function decodeStreamUrl(html) {
     if (!html) return null;
-    
-    // Pattern 1: Comma-separated (var _af1=[...],_gb3=119,_va7=165)
     let match = html.match(/var\s+([a-zA-Z0-9_$]+)\s*=\s*\[([\d,]+)\]\s*,\s*([a-zA-Z0-9_$]+)\s*=\s*(\d+)\s*,\s*([a-zA-Z0-9_$]+)\s*=\s*(\d+)/);
-
-    // Pattern 2: Semicolon-separated (var _mt4=[...];_ad1=134;_ro0=198;)
     if (!match) {
         match = html.match(/var\s+([a-zA-Z0-9_$]+)\s*=\s*\[([\d,]+)\];\s*([a-zA-Z0-9_$]+)\s*=\s*(\d+);\s*([a-zA-Z0-9_$]+)\s*=\s*(\d+);/);
     }
-
     if (match) {
         const arr = match[2].split(',').map(Number);
         const arg1 = parseInt(match[4]);
         const arg2 = parseInt(match[6]);
-
         let decoded = "";
         for (let i = 0; i < arr.length; i++) {
             decoded += String.fromCharCode(((arr[i] ^ arg1) - arg2 + 256) % 256);
         }
-
         const m3u8Match = decoded.match(/https?:\/\/[^\s'"\\]+\.m3u8[^\s'"\\]*/);
-        if (m3u8Match) {
-            return m3u8Match[0];
-        }
+        if (m3u8Match) return m3u8Match[0];
     }
-
-    // Direct fallback if un-obfuscated m3u8 exists
     const directMatch = html.match(/https?:\/\/[^\s'"\\]+\.m3u8[^\s'"\\]*/);
     return directMatch ? directMatch[0] : null;
 }
 
 async function run() {
-    console.log("[*] Fetching channel directory from API...");
-    const rawChannels = await fetchUrl('https://api.vixnuvew.uk/api/channels');
-    let apiData;
+    console.log("[*] Starting extraction for Live Sports Events & TV Channels...");
+    let m3uLines = ['#EXTM3U\n'];
+    let totalStreamsCount = 0;
+
+    // 1. LIVE & UPCOMING SPORTS EVENTS
+    console.log("[*] Fetching Live & Upcoming Sports Events...");
+    const rawEvents = await fetchUrl('https://api.vixnuvew.uk/api/live-upcoming');
     try {
-        apiData = JSON.parse(rawChannels);
+        const eventsData = JSON.parse(rawEvents);
+        const events = eventsData.events || [];
+        console.log(`[+] Processing ${events.length} Sports Events...`);
+
+        for (const ev of events) {
+            const evName = ev.name || ev.url;
+            const evLogo = ev.logo || '';
+            const eventStreams = ev.streams || [];
+
+            for (let sIdx = 0; sIdx < eventStreams.length; sIdx++) {
+                const st = eventStreams[sIdx];
+                const stName = st.name ? `${evName} (${st.name})` : evName;
+                const embedUrl = st.url || `https://logic.icelanders.st/embed/${ev.url}`;
+
+                let streamUrl = embedUrl;
+                if (embedUrl.includes('icelanders.st/embed/')) {
+                    const html = await fetchUrl(embedUrl);
+                    streamUrl = decodeStreamUrl(html) || embedUrl;
+                }
+
+                totalStreamsCount++;
+                m3uLines.push(`#EXTINF:-1 tvg-name="${stName}" tvg-logo="${evLogo}" group-title="Live Sports Events",${stName}\n`);
+                m3uLines.push(`${streamUrl}\n`);
+            }
+        }
     } catch(e) {
-        console.error("[!] Failed to parse API channels.");
-        return;
+        console.error("[!] Failed to process live sports events:", e.message);
     }
 
-    const { channels, genres } = apiData;
-    console.log(`[+] Found ${channels.length} channels. Extracting direct .m3u8 stream links...`);
+    // 2. LIVE TV CHANNELS
+    console.log("[*] Fetching Live TV Channels...");
+    const rawChannels = await fetchUrl('https://api.vixnuvew.uk/api/channels');
+    try {
+        const apiData = JSON.parse(rawChannels);
+        const channels = apiData.channels || [];
+        const genres = apiData.genres || {};
+        console.log(`[+] Processing ${channels.length} TV Channels...`);
 
-    let m3uLines = ['#EXTM3U\n'];
-    let jsonResult = [];
-    let resolvedCount = 0;
+        for (let i = 0; i < channels.length; i++) {
+            const ch = channels[i];
+            const name = ch.name || ch.url;
+            const logo = ch.logo || '';
+            const genreName = genres[ch.genre] || 'Sports Channels';
+            
+            let embedUrl = (ch.streams && ch.streams[0] && (ch.streams[0].url || ch.streams[0])) || `https://logic.icelanders.st/embed/${ch.url}`;
+            const embedHtml = await fetchUrl(embedUrl);
+            const m3u8StreamUrl = decodeStreamUrl(embedHtml) || embedUrl;
 
-    for (let i = 0; i < channels.length; i++) {
-        const ch = channels[i];
-        const name = ch.name || ch.url;
-        const logo = ch.logo || '';
-        const genreName = genres[ch.genre] || 'Live TV';
-        
-        let embedUrl = null;
-        if (ch.streams && Array.isArray(ch.streams) && ch.streams.length > 0) {
-            embedUrl = ch.streams[0].url || ch.streams[0];
-        }
-        if (!embedUrl) {
-            embedUrl = `https://logic.icelanders.st/embed/${ch.url}`;
-        }
-
-        const embedHtml = await fetchUrl(embedUrl);
-        const m3u8StreamUrl = decodeStreamUrl(embedHtml);
-
-        if (m3u8StreamUrl) {
-            resolvedCount++;
-            console.log(`[${i+1}/${channels.length}] ${name} -> ${m3u8StreamUrl}`);
+            totalStreamsCount++;
             m3uLines.push(`#EXTINF:-1 tvg-name="${name}" tvg-logo="${logo}" group-title="${genreName}",${name}\n`);
             m3uLines.push(`${m3u8StreamUrl}\n`);
-            jsonResult.push({
-                name,
-                logo,
-                genre: genreName,
-                channel_id: ch.url,
-                stream_url: m3u8StreamUrl
-            });
-        } else {
-            console.log(`[${i+1}/${channels.length}] ${name} -> [Fallback Embed] ${embedUrl}`);
-            m3uLines.push(`#EXTINF:-1 tvg-name="${name}" tvg-logo="${logo}" group-title="${genreName}",${name}\n`);
-            m3uLines.push(`${embedUrl}\n`);
-            jsonResult.push({
-                name,
-                logo,
-                genre: genreName,
-                channel_id: ch.url,
-                stream_url: embedUrl
-            });
         }
+    } catch(e) {
+        console.error("[!] Failed to process channels:", e.message);
     }
 
-    fs.writeFileSync('playlist.m3u', m3uLines.join(''), 'utf-8');
-    fs.writeFileSync('channels.json', JSON.stringify(jsonResult, null, 2), 'utf-8');
+    const playlist = m3uLines.join('');
+    fs.writeFileSync('sports.m3u', playlist, 'utf-8');
+    fs.writeFileSync('playlist.m3u', playlist, 'utf-8');
 
-    console.log(`\n[✓] Successfully resolved ${resolvedCount}/${channels.length} direct .m3u8 streams!`);
-    console.log(`[✓] Output saved to 'playlist.m3u' and 'channels.json'.`);
+    console.log(`\n[✓] Successfully generated sports.m3u with ${totalStreamsCount} total stream items!`);
 }
 
 run();
