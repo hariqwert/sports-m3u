@@ -60,20 +60,22 @@ async function getOrUpdatePlaylist() {
         return cachedPlaylist;
     }
 
-    console.log(`[*] Cache expired. Fetching Live Sports Events + TV Channels...`);
+    console.log(`[*] Cache expired. Extracting Live Sports Streams from timstreams.st/streams & TV Channels...`);
     let m3uLines = ['#EXTM3U\n'];
     let totalStreamsCount = 0;
 
-    // 1. FETCH LIVE & UPCOMING SPORTS EVENTS / MATCHES
+    // 1. EXTRACT FROM TIMSTREAMS.ST/STREAMS (LIVE & UPCOMING SPORTS EVENTS)
     const rawEvents = await fetchUrl('https://api.vixnuvew.uk/api/live-upcoming');
     try {
         const eventsData = JSON.parse(rawEvents);
         const events = eventsData.events || [];
-        console.log(`[+] Found ${events.length} Live/Upcoming Sports Events.`);
+        const eventGenres = eventsData.genres || {};
+        console.log(`[+] Processing ${events.length} Live Sports Event Streams from /streams...`);
 
         for (const ev of events) {
             const evName = ev.name || ev.url;
             const evLogo = ev.logo || '';
+            const genreName = eventGenres[ev.genre] || ev.genre || 'Live Sports';
             const eventStreams = ev.streams || [];
 
             for (let sIdx = 0; sIdx < eventStreams.length; sIdx++) {
@@ -88,7 +90,7 @@ async function getOrUpdatePlaylist() {
                 }
 
                 totalStreamsCount++;
-                m3uLines.push(`#EXTINF:-1 tvg-name="${stName}" tvg-logo="${evLogo}" group-title="Live Sports Events",${stName}\n`);
+                m3uLines.push(`#EXTINF:-1 tvg-name="${stName}" tvg-logo="${evLogo}" group-title="${genreName}",${stName}\n`);
                 m3uLines.push(`${streamUrl}\n`);
             }
         }
@@ -96,19 +98,19 @@ async function getOrUpdatePlaylist() {
         console.error("[!] Error parsing live-upcoming events:", e.message);
     }
 
-    // 2. FETCH LIVE TV CHANNELS
+    // 2. EXTRACT LIVE TV CHANNELS
     const rawChannels = await fetchUrl('https://api.vixnuvew.uk/api/channels');
     try {
         const apiData = JSON.parse(rawChannels);
         const channels = apiData.channels || [];
-        const genres = apiData.genres || {};
-        console.log(`[+] Found ${channels.length} Live TV Channels.`);
+        const channelGenres = apiData.genres || {};
+        console.log(`[+] Processing ${channels.length} Live TV Channels...`);
 
         for (let i = 0; i < channels.length; i++) {
             const ch = channels[i];
             const name = ch.name || ch.url;
             const logo = ch.logo || '';
-            const genreName = genres[ch.genre] || 'Sports Channels';
+            const genreName = channelGenres[ch.genre] || 'Live TV';
             
             let embedUrl = (ch.streams && ch.streams[0] && (ch.streams[0].url || ch.streams[0])) || `https://logic.icelanders.st/embed/${ch.url}`;
             const embedHtml = await fetchUrl(embedUrl);
