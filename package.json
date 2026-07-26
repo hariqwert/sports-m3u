@@ -1,0 +1,11 @@
+{
+  "name": "m3u-sports-updater",
+  "version": "1.0.0",
+  "description": "Auto-refreshing sports.m3u playlist server",
+  "main": "server.cjs",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.cjs"
+  },
+  "dependencies": {}
+}

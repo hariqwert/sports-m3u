@@ -1,0 +1,1017 @@
+[
+  {
+    "name": "ABC",
+    "logo": "https://cdn.abcotvs.com/dip/images/11479454_011822-cc-abc-generic-thumb-img.jpg",
+    "genre": "Entertainment",
+    "channel_id": "abc",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/e3cce5022aa7b1bf6d83d969bf2fbd863a28b65c97b95de878eace3db4c094c4/1785068777/abc-usa.m3u8"
+  },
+  {
+    "name": "ACC Network",
+    "logo": "https://theacc.com/images/2018/11/30/ACCN_Launch.png",
+    "genre": "Sports",
+    "channel_id": "acc-network",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/65fc9a85aad98c3eb17bf6875440f26d3ba395de4688913f14f7e5c40c4c1e08/1785068777/accn-usa.m3u8"
+  },
+  {
+    "name": "AE",
+    "logo": "https://www.aetv.com/assets/images/aetv/generic-thumb.jpg",
+    "genre": "Entertainment",
+    "channel_id": "ae-network",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/52000e93791095a39effaf6b75e46a82993e702e2db3192f6875b103586eaa36/1785068778/ae-usa.m3u8"
+  },
+  {
+    "name": "AMC",
+    "logo": "https://tvseriesfinale.com/wp-content/uploads/2014/08/amc02.jpg",
+    "genre": "Entertainment",
+    "channel_id": "amc",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/d9ef3538937651b35793542e164532f6502b81880461b4649eb00ad4be8047ea/1785068779/amc-usa.m3u8"
+  },
+  {
+    "name": "American Heroes Channel",
+    "logo": "https://payload.cargocollective.com/1/10/342209/9724942/AHC_15a_3_1340_c.jpg",
+    "genre": "Entertainment",
+    "channel_id": "american-heroes-channel",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/f4eec55b5bf34e1d3f6aa3f0172b50fa177f473d9f973f42b1b1c46eb7c56516/1785068779/ahc-usa.m3u8"
+  },
+  {
+    "name": "Animal Planet",
+    "logo": "https://mir-s3-cdn-cf.behance.net/project_modules/disp/f9ee57107702215.5facf9f601507.jpg",
+    "genre": "Entertainment",
+    "channel_id": "animal-planet",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/283cf3d0fa2612817bd8eab28aaefadba342561bdf7c140de1b42df67cfce976/1785068779/animalplanet-usa.m3u8"
+  },
+  {
+    "name": "AXS TV",
+    "logo": "https://www.hcc.net/wp-content/uploads/2012/06/AXS_TV_BlueWhite.jpg",
+    "genre": "Entertainment",
+    "channel_id": "axs-tv",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/24cd135e76999bee00af0e1e1f72ef29d607367f4b8f5c31bd6860bfc8c7be15/1785068780/axs-usa.m3u8"
+  },
+  {
+    "name": "BBC America",
+    "logo": "https://www.newscaststudio.com/wp-content/uploads/2024/11/bbc-america-logo.jpg",
+    "genre": "Entertainment",
+    "channel_id": "bbc-america",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/c688834a79c7514816c5db1bdd81c49ac85fdcb9b4922d65a3d8b74be9741f92/1785068780/bbc-usa.m3u8"
+  },
+  {
+    "name": "BBC One London",
+    "logo": "https://ichef.bbci.co.uk/images/ic/1200x675/p0dkt7rv.jpg",
+    "genre": "Entertainment",
+    "channel_id": "bbc-one-london",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/0c7bf546f9be789b0cd2a33dfc4957a751c3586d9c03a8652e1463fd3d0459aa/1785068780/bbcone-uk.m3u8"
+  },
+  {
+    "name": "BBC Two",
+    "logo": "https://ichef.bbci.co.uk/images/ic/1200x675/p0bvs8dg.jpg",
+    "genre": "Entertainment",
+    "channel_id": "bbc-two",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/ae227c370c3d4a11d0ea43b7fb1f43a599fee7b79991abd07e3ba504b94c7542/1785068781/bbctwo-uk.m3u8"
+  },
+  {
+    "name": "beIN Sports",
+    "logo": "https://assets-us-01.kc-usercontent.com/31dbcbc6-da4c-0033-328a-d7621d0fa726/1318873e-8501-4f79-bb69-182d741cf9ad/beIN%20SPORTS%20Portada.jpg?ver=03-06-2025?w=3840&amp;amp;amp;amp;amp;amp;q=75",
+    "genre": "Sports",
+    "channel_id": "bein-sports",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/d4a62052038c2cce8ca370f04aa1f60a13f31308cc76349a87186d29c183d12e/1785068781/beinsports-usa.m3u8"
+  },
+  {
+    "name": "Bravo",
+    "logo": "https://www.bravotv.com/sites/bravo/files/2024/05/bravo-logo-2jpg.jpg",
+    "genre": "Entertainment",
+    "channel_id": "bravo",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/3b9404d0c186589d4ce13887fe3a951ee8b0afd693b058f25fda3c6a6813f5e8/1785068781/bravo-usa.m3u8"
+  },
+  {
+    "name": "Boomerang",
+    "logo": "https://cdn.broadbandtvnews.com/wp-content/uploads/2024/08/05120702/Boomerang.jpg",
+    "genre": "Cartoons",
+    "channel_id": "boomerang",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/756946799fde571cd641dba83ea9dd230e03bc262466a761026b806a5addd6b8/1785068782/boomerang-usa.m3u8"
+  },
+  {
+    "name": "CANAL+ Sport PL",
+    "logo": "https://cdn.jsdelivr.net/gh/willthequeencome/img-cdn/canansport.png",
+    "genre": "Sports",
+    "channel_id": "canal-sport-pl",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/99b5f51b125105f8d90d1ee3b3e983c2b67613a6f16bcd9d15500d9e9af818dd/1785068782/canalsport-pl.m3u8"
+  },
+  {
+    "name": "CANAL+ Sport 2 PL",
+    "logo": "https://cdn.jsdelivr.net/gh/willthequeencome/img-cdn/canansport.png",
+    "genre": "Sports",
+    "channel_id": "canal-sport-2-pl",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/4cd64a519b7ce1cd55d96caf5bacf53d651a742fd837b19830bc795ec5bad582/1785068782/canalsport2-pl.m3u8"
+  },
+  {
+    "name": "CANAL+ Sport 3 PL",
+    "logo": "https://cdn.jsdelivr.net/gh/willthequeencome/img-cdn/canansport.png",
+    "genre": "Sports",
+    "channel_id": "canal-sport-3-pl",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/0c75701604e6a2accb2f2dd85f804e8f15c244d3d6ed329cc80d05ef4a691ecf/1785068782/canalsport3-pl.m3u8"
+  },
+  {
+    "name": "CANAL+ Sport 4 PL",
+    "logo": "https://cdn.jsdelivr.net/gh/willthequeencome/img-cdn/canansport.png",
+    "genre": "Sports",
+    "channel_id": "canal-sport-4-pl",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/e3c8c15bafe4b5b9c9662eb5ba86c6b685092cd1a0dde92779bb15761c799e83/1785068783/canalsport4-pl.m3u8"
+  },
+  {
+    "name": "CANAL+ Sport 5 PL",
+    "logo": "https://cdn.jsdelivr.net/gh/willthequeencome/img-cdn/canansport.png",
+    "genre": "Sports",
+    "channel_id": "canal-sport-5-pl",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/1975e2f5b33f2bbd7f6b883d501797622d4f8da0608c110e19709950b1eaf206/1785068783/canalsport5-pl.m3u8"
+  },
+  {
+    "name": "Cartoon Network",
+    "logo": "https://1000logos.net/wp-content/uploads/2016/10/Cartoon-Network-logo.jpg",
+    "genre": "Cartoons",
+    "channel_id": "cartoon-network",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/09ba1f033e4944fe859100e7d2a064a6d5733d38ca91570683b7107f79c3df92/1785068784/cartoonnetwork-usa.m3u8"
+  },
+  {
+    "name": "CBeebies",
+    "logo": "https://static.files.bbci.co.uk/core/website/assets/static/childrens-web/images/metadata/cbeebies-poster-1024x576.8eb27aa32e.png",
+    "genre": "Cartoons",
+    "channel_id": "cbeebies",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/bb3222c1a1a94466054435f02081a28f8e148da4e0051421b4f05e4e176ba9e6/1785068784/cbeebies-uk.m3u8"
+  },
+  {
+    "name": "CBS",
+    "logo": "https://wwwimage-tve.cbsstatic.com/base/files/seo/cbs_seo_1200x627_1.jpg",
+    "genre": "Entertainment",
+    "channel_id": "cbs",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/473ce81d814f401fc9b1cd6eaa420e3714b325daafa9d17f21a6512be855f975/1785068784/cbs-usa.m3u8"
+  },
+  {
+    "name": "CBS Sports Network",
+    "logo": "https://www.paramountshop.com/cdn/shop/files/cbssportsnetwork-mobile-min.png",
+    "genre": "Sports",
+    "channel_id": "cbs-sports-network",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/ed98b79c16be1a3e90c0932ebcc535f51fea3857ba5b7d7aec1d62791f051e89/1785068784/cbssn-usa.m3u8"
+  },
+  {
+    "name": "CNBC",
+    "logo": "https://cdn.versantmedia.com/versantmedia/styles/newsroom/s3/2025-11/cnbc%281600x900%29.png",
+    "genre": "Entertainment",
+    "channel_id": "cnbc",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/8f605ed512406d35e8f76d7a0fdeaf2d790aa135bb8e08fb7f6cb635dec15d03/1785068785/cnbc-usa.m3u8"
+  },
+  {
+    "name": "Comedy Central",
+    "logo": "https://wwwimage-us.pplusstatic.com/base/files/seo/og-brand-comedy-central.jpg?format=webp",
+    "genre": "Entertainment",
+    "channel_id": "comedy-central",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/f892260a5bc46c63a0e7c0712bd86cdb4d428d0bb2cb7c57903c09fd70317329/1785068785/comedycentral-usa.m3u8"
+  },
+  {
+    "name": "CW",
+    "logo": "https://www.wavy.com/wp-content/uploads/sites/3/2024/08/cw-logo-white-on-blue-wavy-background.jpg?w=1280",
+    "genre": "Entertainment",
+    "channel_id": "cw",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/da12233e7058926e6728520888e25c8cdef9c9edcd3055bff26722eb4931e97d/1785068785/cw-usa.m3u8"
+  },
+  {
+    "name": "DAZN 1 Germany",
+    "logo": "https://image.discovery.indazn.com/ca/v2/ca/image?id=12dpnhddhmpm71228raanhyxs2_image-header_pDach_1723627450000&amp;amp;quality=70",
+    "genre": "Sports",
+    "channel_id": "dazn-1-germany",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/734370237a4562bc7de15524ffbc8feb93be6a0f368f6d5f0bcbfac4ef490f06/1785068787/dazn1-de.m3u8"
+  },
+  {
+    "name": "DAZN 2 Germany",
+    "logo": "https://image.discovery.indazn.com/ca/v2/ca/image?id=1ni1lpwjtnxmr1xklfoptrt2mz_image-header_pDach_1723628653000",
+    "genre": "Sports",
+    "channel_id": "dazn-2-germany",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/6e24dbdee6641f1b6b6917c571ab137e7064052cd33410dcce348a4605f6ba19/1785068788/dazn2-de.m3u8"
+  },
+  {
+    "name": "DAZN 1 Italia",
+    "logo": "https://image.discovery.indazn.com/ca/v2/ca/image?id=pterrit4f2xu1pa2r6x87y5e9_image-header_pIt_1724315365000&amp;amp;quality=70",
+    "genre": "Sports",
+    "channel_id": "dazn-1-italia",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/2f03d1674a132657222efafea1eac88441bd5cc32813bd95cc8b8e3cfc78c75d/1785068789/dazn1-it.m3u8"
+  },
+  {
+    "name": "DAZN 1 Spain",
+    "logo": "https://image.discovery.indazn.com/ca/v2/ca/image?id=hn9vkic8rbfi1ndrym8sw2qh7_image-header_pEs_1723035920000",
+    "genre": "Sports",
+    "channel_id": "dazn-1-spain",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/619160bcaf0cb35d7203abe3ce9ebb62ca7c794c70b02d89be52b811cb74b42b/1785068789/dazn1-es.m3u8"
+  },
+  {
+    "name": "DAZN 2 Spain",
+    "logo": "https://image.discovery.indazn.com/ca/v2/ca/image?id=2ouwtae8ad7l1fxviow9bowpk_image-header_pEs_1723118632000&amp;amp;quality=70",
+    "genre": "Sports",
+    "channel_id": "dazn-2-spain",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/90b204c63e095be132dbc207027f210223b868fb5e82e0d5004f378825fb0976/1785068789/dazn2-es.m3u8"
+  },
+  {
+    "name": "DAZN 1 USA",
+    "logo": "https://image.discovery.indazn.com/ca/v2/ca/image?id=1owzb99m9mnzy15hjxolpukwul_image-header_pUs_1771501796000&amp;amp;amp;amp;amp;amp;amp;amp;quality=70",
+    "genre": "Sports",
+    "channel_id": "dazn-1-usa",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/0954b7a0f889556c52607b6c21325048ae47d6f6ed91225da6adbe9c2651e13b/1785068790/dazn1-usa.m3u8"
+  },
+  {
+    "name": "DAZN F1",
+    "logo": "https://image.discovery.indazn.com/ca/v2/ca/image?id=14ln25pmjdv031ejxsmg8dczsu_image-header_pEs_1723117975000&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;quality=70",
+    "genre": "Sports",
+    "channel_id": "dazn-f1",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/850d3a1b40ce570da7e7cb74f9d70f6a3477d30ec145009f7a2e03e3597b058b/1785068790/daznf1-es.m3u8"
+  },
+  {
+    "name": "Discovery Channel",
+    "logo": "https://i.ibb.co/k2rbB1jc/e35d6be84084fed1d756c39242f13163.webp",
+    "genre": "Entertainment",
+    "channel_id": "discovery-channel",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/29cc32722f6c377a76753e571d2edcbec58d59a58f4fd21df88ceb90022a2e7a/1785068791/discovery-usa.m3u8"
+  },
+  {
+    "name": "Discovery Family",
+    "logo": "https://i.ibb.co/wFmT9Q5t/Discovery-Family-ID-Let-s-Go-Yellow.webp",
+    "genre": "Cartoons",
+    "channel_id": "discovery-family",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/49b49b2f559ebd93d022fb64b173ba3a4a103f80ee3371692fd9303359a760c1/1785068791/discoveryfamily-usa.m3u8"
+  },
+  {
+    "name": "Discovery Turbo",
+    "logo": "https://i.ibb.co/20MgSXjy/featured-Image-1767979538707.jpg",
+    "genre": "Entertainment",
+    "channel_id": "discovery-turbo",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/75a310062125c78253b59ff0edf85e57497b23bb7606e6e9e439f4b57e8985ab/1785068791/discoveryturbo-usa.m3u8"
+  },
+  {
+    "name": "Disney Channel",
+    "logo": "https://vignette4.wikia.nocookie.net/logopedia/images/9/93/Disney_Channel_Original_2014.png/revision/latest?cb=20140705213010",
+    "genre": "Cartoons",
+    "channel_id": "disney-channel",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/8fe1f02d520bd19ca9a78053752dadfd285243820f257aca6cbc04cbea96a723/1785068792/disneychannel-usa.m3u8"
+  },
+  {
+    "name": "Disney Junior",
+    "logo": "https://thewaltdisneycompany.com/app/uploads/2021/02/021221_Disney-Junior-10th-Anniversary-00.jpg",
+    "genre": "Cartoons",
+    "channel_id": "disney-junior",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/0eb777a27bc1dcdb8361597cd49cb04e84fe39e6cc8b0566828618b1796b181d/1785068792/disneyjunior-usa.m3u8"
+  },
+  {
+    "name": "Disney XD",
+    "logo": "https://www.laughingplace.com/uploads/2015/10/d128457e3b3ab8c050f306aa8e23666b9b05d3cc.jpg",
+    "genre": "Cartoons",
+    "channel_id": "disney-xd",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/fe7d94c9ae063710d9973075013fb21cd566895097a83bed96efcd3a4c159d76/1785068793/disneyxd-usa.m3u8"
+  },
+  {
+    "name": "Eleven Sports 1",
+    "logo": "https://cdn.jsdelivr.net/gh/willthequeencome/img-cdn/100659.png",
+    "genre": "Sports",
+    "channel_id": "eleven-sports-1",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/87e630dfb086259c8f5b7f36dd250a4cbb432bbe8f44b9f2f1a0f5283ae3c350/1785068793/elevensports1-pl.m3u8"
+  },
+  {
+    "name": "Eleven Sports 2",
+    "logo": "https://cdn.jsdelivr.net/gh/willthequeencome/img-cdn/100659.png",
+    "genre": "Sports",
+    "channel_id": "eleven-sports-2",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/581c7fc8ebefa24ba09e99462e25f3fb4270574fc6db34233b620b5f07b18a9a/1785068793/elevensports2-pl.m3u8"
+  },
+  {
+    "name": "Eleven Sports 3",
+    "logo": "https://cdn.jsdelivr.net/gh/willthequeencome/img-cdn/100659.png",
+    "genre": "Sports",
+    "channel_id": "eleven-sports-3",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/e9f8ac25db937ec5b8abdd46b64acc0d86e15cad20936168aaa7ebd854d48b3f/1785068794/elevensports3-pl.m3u8"
+  },
+  {
+    "name": "Eleven Sports 4",
+    "logo": "https://cdn.jsdelivr.net/gh/willthequeencome/img-cdn/100659.png",
+    "genre": "Sports",
+    "channel_id": "eleven-sports-4",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/a7ea4c09dcf7d80328d5bdbc67ac079fd9e882f8b752fab81cc1b09627bb448e/1785068794/elevensports4-pl.m3u8"
+  },
+  {
+    "name": "ESPN",
+    "logo": "https://a1.espncdn.com/combiner/i?img=%2Fi%2Fespn%2Fespn_logos%2Fespn_red.png",
+    "genre": "Sports",
+    "channel_id": "espn",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/419bf78b445b532d68d8b4768d7fdef2d0a12b0dcbb5a626c8e6ba9546ae5340/1785068794/espn-usa.m3u8"
+  },
+  {
+    "name": "ESPN Deportes",
+    "logo": "https://i.ibb.co/Y7zHmbbz/i.png",
+    "genre": "Sports",
+    "channel_id": "espn-deportes",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/ccd8a7c60506c8d81ebfa12232bb886b0cdc36894ae3add8ce2b7ff396f447da/1785068795/espndeportes-usa.m3u8"
+  },
+  {
+    "name": "ESPN2",
+    "logo": "https://discgolf.ultiworld.com/wp-content/uploads/2020/10/ESPN2.png",
+    "genre": "Sports",
+    "channel_id": "espn2",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/76a9cd70b217d37a3ff55cf0719f7b44de793d531d482f1a2a8d107e1d632c2d/1785068795/espn2-usa.m3u8"
+  },
+  {
+    "name": "ESPNEWS",
+    "logo": "https://i.ibb.co/5h4LGFHq/image.png",
+    "genre": "Sports",
+    "channel_id": "espnews",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/54ec107a6eb940b3e333f56393f520032279c0a99a27e9eaf9480384ca741ce7/1785068795/espnews-usa.m3u8"
+  },
+  {
+    "name": "ESPNU",
+    "logo": "https://i.ibb.co/Lh5jHVDm/ESPNU-logo-1-jpg.webp",
+    "genre": "Sports",
+    "channel_id": "espnu",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/c713adfffefc0b388152f8b829ae67d32e09ee4f4043f26ddd4e8b7b15246199/1785068796/espnu-usa.m3u8"
+  },
+  {
+    "name": "Food Network",
+    "logo": "https://i.ibb.co/5WcnZbYf/food-network-jpg.jpg",
+    "genre": "Entertainment",
+    "channel_id": "food-network",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/e28359ea87f38e5714451f7513ad22aec747a627218f7db3b99671f5c1feda02/1785068796/foodnetwork-usa.m3u8"
+  },
+  {
+    "name": "Fox",
+    "logo": "https://i.ibb.co/8JdwqP4/foxusa.png",
+    "genre": "Entertainment",
+    "channel_id": "fox",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/3bd12b317cb22b5aa00f8aa767745199ce4a82c019f29a80d2ad309381166529/1785068796/fox-usa.m3u8"
+  },
+  {
+    "name": "Fox Deportes",
+    "logo": "https://foxsports-wordpress-www-prsupports-prod.s3.amazonaws.com/uploads/sites/2/2016/12/LOGO-DEPORTES-1040x585.jpg",
+    "genre": "Entertainment",
+    "channel_id": "fox-deportes",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/0d0d9e8fce43e8f5f2084e88ff25b6ccf787d359f4c4b1eefa8d8e72cc759524/1785068797/foxdeportes-usa.m3u8"
+  },
+  {
+    "name": "Fox Sports 1",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/2015_Fox_Sports_1_logo.svg/1280px-2015_Fox_Sports_1_logo.svg.png",
+    "genre": "Sports",
+    "channel_id": "fox-sports-1",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/4ca2357d968384b7f632170f78935948a2a490baccd3fe78f3a0aa3e278dedc9/1785068797/fox-sports-1.m3u8"
+  },
+  {
+    "name": "Fox Sports 2",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/FS2_logo_2015.svg/1280px-FS2_logo_2015.svg.png",
+    "genre": "Sports",
+    "channel_id": "fox-sports-2",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/86b5d36dbffbf3bc447cff723ea56cd59fc3ab1e42a71aaea207cd7fe937d397/1785068798/fox-sports-2.m3u8"
+  },
+  {
+    "name": "Fox Sports 501 (Cricket)",
+    "logo": "https://i.ibb.co/Y4bTS1p7/image.webp",
+    "genre": "Sports",
+    "channel_id": "fox-sports-501-cricket",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/80bb27bd887206db3351a1d26ae55c0c4d09218d921b02eda05ed5773aaf2021/1785068799/fox-sports-501.m3u8"
+  },
+  {
+    "name": "Fox Sports 502 (League)",
+    "logo": "https://i.ibb.co/tppZhDrb/image.webp",
+    "genre": "Sports",
+    "channel_id": "fox-sports-502-league",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/f39e78f65b23e67def35a5f1765438d42ab2fbf08c759fd05f643635de02cd49/1785068799/fox-sports-502.m3u8"
+  },
+  {
+    "name": "Fox Sports 503",
+    "logo": "https://i.ibb.co/xS4MkGSL/image.webp",
+    "genre": "Sports",
+    "channel_id": "fox-sports-503",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/f3da4054252c365036a985b18296f22ffe69906298780c1e753f38750d1086be/1785068799/fox-sports-503.m3u8"
+  },
+  {
+    "name": "Fox Sports 504 (Footy)",
+    "logo": "https://i.ibb.co/SXvQLc0M/image.webp",
+    "genre": "Sports",
+    "channel_id": "fox-sports-504-footy",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/3b0b885598d67fa75817e68859eb872aaa66331e6c36cea384f93299e21de45c/1785068800/fox-sports-504.m3u8"
+  },
+  {
+    "name": "Fox Sports 505",
+    "logo": "https://i.ibb.co/prKZGNLt/image.webp",
+    "genre": "Sports",
+    "channel_id": "fox-sports-505",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/c965f61e3912199cf8005893b24659fe1342350fced457a48f74f82a2bc518ee/1785068800/fox-sports-505.m3u8"
+  },
+  {
+    "name": "Fox Sports 506",
+    "logo": "https://i.ibb.co/Swks4Lmj/image.webp",
+    "genre": "Sports",
+    "channel_id": "fox-sports-506",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/12ebee2c5b8b8015e32334d243fa51640754db628c3f6a0e3b84ab70c9236639/1785068805/fox-sports-506.m3u8"
+  },
+  {
+    "name": "Fox Sports 507",
+    "logo": "https://i.ibb.co/7d6VgDVL/image.webp",
+    "genre": "Sports",
+    "channel_id": "fox-sports-507",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/48273691da247cdf34cfc27eb5cd07dd9c1f48691f6aa006bd0e5e49c8f82462/1785068809/fox-sports-507.m3u8"
+  },
+  {
+    "name": "FX",
+    "logo": "https://static0.srcdn.com/wordpress/wp-content/uploads/2026/01/gold-fx-channel-logo-1.jpg",
+    "genre": "Entertainment",
+    "channel_id": "fx",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/5d96fd586a51cbb9d0108671ecc3cbc5f24bb2b38ebf62862f1b7d5ac0653183/1785068810/fx-usa.m3u8"
+  },
+  {
+    "name": "FXM",
+    "logo": "https://www.awn.com/sites/default/files/styles/original/public/image/featured/50716-buster-creates-brand-id-new-fxm-programming-block_0.jpg",
+    "genre": "Entertainment",
+    "channel_id": "fxm",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/a2b832612857d8257397e3306dd85ffce548b47fc7f47bfaa46beceb16f3b0bc/1785068810/fxm-usa.m3u8"
+  },
+  {
+    "name": "FXX",
+    "logo": "https://thestreamable.com/media/pages/channels/fxx/b6fc72ce3d-1756344305/fxx-banner-1536x864-crop.png",
+    "genre": "Entertainment",
+    "channel_id": "fxx",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/2de0b99440a081426874dd0e4de00e8f48793172b23660ca6a76bff1ce528013/1785068812/fxx-usa.m3u8"
+  },
+  {
+    "name": "Freeform",
+    "logo": "https://d2z00kf51ll94q.cloudfront.net//archive/2023/large/ADC102_BCD021B_0.jpg",
+    "genre": "Entertainment",
+    "channel_id": "freeform",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/38449d49b1fac1fe2c122257e0f289c6e9741ac69236c5d65b03d81de8fca9aa/1785068813/freeform-usa.m3u8"
+  },
+  {
+    "name": "GOLF Channel",
+    "logo": "https://corporate.comcast.com/media/img/1000w/2020/01/corporate_golf-channel-16x9-social.jpg",
+    "genre": "Sports",
+    "channel_id": "golf-channel",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/4d04691c738baf41736986251b94afdb7918e0cdf617314bc45913d37ad61fab/1785068814/golfchannel-usa.m3u8"
+  },
+  {
+    "name": "HBO",
+    "logo": "https://static.hbo.com/2021-11/hbo-static-1920.jpg",
+    "genre": "Entertainment",
+    "channel_id": "hbo",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/fd2ba88ea459b73b5de76040ee8556e731381dfa58c335e6c5a89e6d91f41790/1785068814/hbo-usa.m3u8"
+  },
+  {
+    "name": "HBO Comedy",
+    "logo": "https://www.tvinsider.com/wp-content/uploads/2022/03/hbo-comedy.png",
+    "genre": "Entertainment",
+    "channel_id": "hbo-comedy",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/bc6549f80adddce02accdb9d858d6d650b8405b23229146996d2e3404856745d/1785068815/hbocomedy-usa.m3u8"
+  },
+  {
+    "name": "HBO Drama",
+    "logo": "https://i.ibb.co/Qv2Mz3ZB/https-archive-images-prod-global-a201836-reutersmedia-net-2016-10-30-LYNXMPEC9-T08-O.avif",
+    "genre": "Entertainment",
+    "channel_id": "hbo-drama",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/f3d989047bb22fda01d2eafe2fbcfc04105b87a564c33f54ca4f1a0082f2de95/1785068815/hbodrama-usa.m3u8"
+  },
+  {
+    "name": "HBO Latino",
+    "logo": "https://i.ibb.co/TMzmbVYq/maxresdefault.jpg",
+    "genre": "Entertainment",
+    "channel_id": "hbo-latino",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/b05801354d56c77a5d02500609c63c09b8e1753ca5a6ba160828f8b0b003d8cd/1785068816/hbolatino-usa.m3u8"
+  },
+  {
+    "name": "HBO Movies",
+    "logo": "https://i.ibb.co/Qv2Mz3ZB/https-archive-images-prod-global-a201836-reutersmedia-net-2016-10-30-LYNXMPEC9-T08-O.avif",
+    "genre": "Entertainment",
+    "channel_id": "hbo-movies",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/95839b6c79d44c6c791eefc515a399afa32d3cb303d5848505b74690f09332a5/1785068816/hbomovies-usa.m3u8"
+  },
+  {
+    "name": "HGTV",
+    "logo": "https://i.ibb.co/gbtDnLhS/hgtv-jpg.jpg",
+    "genre": "Entertainment",
+    "channel_id": "hgtv",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/5631a37fef734c2b41e3d379b73297af26e18150eedf63fd46719c2b63786019/1785068817/hgtv-usa.m3u8"
+  },
+  {
+    "name": "MLB Network",
+    "logo": "https://img.mlbstatic.com/mlb-images/image/private/t_16x9/t_w2208/mlb/xtkynqe5wgtzaddnsus2.jpg",
+    "genre": "Sports",
+    "channel_id": "mlb-network",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/9a4708bc6a423e2d9c5393711a58589d091b1092e2ad6a332ff52a294050e594/1785068817/mlbnetwork-usa.m3u8"
+  },
+  {
+    "name": "MotoGP Channel",
+    "logo": "https://sportbikesincmag.com/wp-content/uploads/2024/11/New-MotoGP-Logo-sportbikesincmag.com-4.jpg",
+    "genre": "Sports",
+    "channel_id": "motogp-channel",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/57e8ed49176df2b9bf22919ecdffd4e8dedd37d21e20a20046f25678d50908b7/1785068817/motpgp-tv.m3u8"
+  },
+  {
+    "name": "MTV",
+    "logo": "https://static0.colliderimages.com/wordpress/wp-content/uploads/2025/12/mtv-logo-1.jpg",
+    "genre": "Entertainment",
+    "channel_id": "mtv",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/b4c13d3d6520e4c3a8aa74bb63e375dffd8acdaebf6c883d5295717f28941585/1785068817/mtv-usa.m3u8"
+  },
+  {
+    "name": "NBA TV",
+    "logo": "https://static.cdn.turner.com/styles/header_image_1500x500_cropped/s3/nba-tv-16x9-1.jpg?itok=6H8mrlyR",
+    "genre": "Sports",
+    "channel_id": "nba-tv",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/6cdf466b04d63e2da4af28b8e9f99173554e368404f6940b9a7aae8439184545/1785068818/nbatv-usa.m3u8"
+  },
+  {
+    "name": "NBC",
+    "logo": "https://cdn.mos.cms.futurecdn.net/zP42nmS7MRj2kvBqNEs8CE.jpg",
+    "genre": "Entertainment",
+    "channel_id": "nbc",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/d3a91b5b86a3a2790502d85a26aa68cac007313135c70a7346608049515134cf/1785068818/nbc-usa.m3u8"
+  },
+  {
+    "name": "NBC Sports Bay Area",
+    "logo": "https://cdn.mos.cms.futurecdn.net/d7jWexxhtezRZ6ryLHyKmd.jpeg",
+    "genre": "Sports",
+    "channel_id": "nbc-sports-bay-area",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/48ac614f03d197ccf0c225d5d694bb25a5f4a5fd9bdb285f5ee7f1a15ed62cc4/1785068819/nbc-sports-bayarea.m3u8"
+  },
+  {
+    "name": "NBC Sports Philadelphia",
+    "logo": "https://media.nbcsportsphiladelphia.com/2023/04/Philly-Landmark.png?resize=1200%2C675&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;quality=85&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;strip=all",
+    "genre": "Sports",
+    "channel_id": "nbc-sports-philadelphia",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/a9060230dec1e283e03c404948c22a4fc3fffd0cf6f6d070238904ea0003153f/1785068820/nbc-sports-philly.m3u8"
+  },
+  {
+    "name": "NFL Network",
+    "logo": "https://i.ibb.co/ZRsTndvV/tfki7njrm3y8jycbtkrx.jpg",
+    "genre": "Sports",
+    "channel_id": "nfl-network",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/3a86e77a797fac8c034aff7206a071c8806fb4c758f7a5f552c04234758157a7/1785068821/nflnetwork-usa.m3u8"
+  },
+  {
+    "name": "NHL Network",
+    "logo": "https://media.d3.nhle.com/image/private/t_ratio16_9-size50/prd/lhum6z3hyaga9ahnjow0.png",
+    "genre": "Sports",
+    "channel_id": "nhl-network",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/5c8e4019de54f2e7f1e26eb64098e4604183cdf4cc4e4f9862c2859830a84fcb/1785068821/nhlnetwork-usa.m3u8"
+  },
+  {
+    "name": "Nick Jr.",
+    "logo": "https://i.ibb.co/xS6CMxZD/nick-jr-logo-2023-4.jpg",
+    "genre": "Cartoons",
+    "channel_id": "nick-jr",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/bd4807381a23a1ee5596aac7fb04e2879f2ca28a6ba9ad48d3b009c4aa73a46d/1785068822/nickjr-usa.m3u8"
+  },
+  {
+    "name": "Nickelodeon",
+    "logo": "https://i.ibb.co/xSM8bDYh/roger-nickelodeon-graphic-design-format-webp-width-2880-8-Yj-L2u3-KSI20j-HDQ.webp",
+    "genre": "Cartoons",
+    "channel_id": "nickelodeon",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/ccd5d26aaff1eec76e04de6f73a7c8de5d36feca0df4d17c8c8db95d8a0d7f27/1785068823/nickelodeon-usa.m3u8"
+  },
+  {
+    "name": "Nicktoons",
+    "logo": "https://i.ibb.co/XfX32tyx/nicktoons-logo-2023-rebrand-2.png",
+    "genre": "Cartoons",
+    "channel_id": "nicktoons",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/f16ab9a0f68a88b4c558fd034d80c3d802c9a1a545020583c396b49c5622d6f3/1785068826/nicktoons-usa.m3u8"
+  },
+  {
+    "name": "Polsat Sport 1",
+    "logo": "https://staticeu.sweet.tv/images/cache/v2/channel_banner/COEd/3809-polsat-sport-1-hd.png",
+    "genre": "Sports",
+    "channel_id": "polsat-sport-1",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/d773dc9a2f893048ec44321abfcf533f20ce03c6fae4d5292920fe6445804810/1785068827/polsatsport1-pl.m3u8"
+  },
+  {
+    "name": "Polsat Sport 2",
+    "logo": "https://staticeu.sweet.tv/images/cache/v2/channel_banner/COId/3810-polsat-sport-2-hd.png",
+    "genre": "Sports",
+    "channel_id": "polsat-sport-2",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/2e31ad765989530b319eabf177cbd20d1a5679b5a074d0aca0861abca9eca96d/1785068827/polsatsport2-pl.m3u8"
+  },
+  {
+    "name": "Polsat Sport 3",
+    "logo": "https://staticeu.sweet.tv/images/cache/v2/channel_banner/COMd/3811-polsat-sport-3-hd.png",
+    "genre": "Sports",
+    "channel_id": "polsat-sport-3",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/10aeb14a467dd17b81db063fdad8d135b48a74d15a4dccff5988122368a42c9a/1785068829/polsatsport3-pl.m3u8"
+  },
+  {
+    "name": "Polsat Sport Fight",
+    "logo": "https://staticeu.sweet.tv/images/cache/v2/channel_banner/COUd/3813-polsat-sport-fight-hd.png",
+    "genre": "Sports",
+    "channel_id": "polsat-sport-fight",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/f90ed23bd254b7f6f567467c70de7f4b80635dbf31c115fbc9b3f5cfae2887bc/1785068829/polsatsportfight-pl.m3u8"
+  },
+  {
+    "name": "Premiere",
+    "logo": "https://s3.glbimg.com/v1/AUTH_36abb2af534644878388f516c38b89ac/prod/home-share-1b75cdaa.png",
+    "genre": "Sports",
+    "channel_id": "premiere",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/cfd4e318f8f9ea76e79ef1c55a3902b5f9f5abee0c29e77f3b19b0d4ac14c899/1785068830/premiere-br.m3u8"
+  },
+  {
+    "name": "RACER Network",
+    "logo": "https://cdn-cs-images.racer.com/v3/assets/blte77f57883ea46be1/bltb30b537c79808b35/680f2c517c8c98109d720e49/Racer_Network_1920x1080_Presser_V1.jpg",
+    "genre": "Sports",
+    "channel_id": "racer-network",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/7e31ca4d091c99f7d54030006fec9214e2072619c3c4327afa9f951ccc02ac02/1785068830/racernetwork-usa.m3u8"
+  },
+  {
+    "name": "Showtime",
+    "logo": "https://i.ibb.co/v7vcNY4/Showtime-Logo.webp",
+    "genre": "Entertainment",
+    "channel_id": "showtime",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/8e9f192d749d2a02f89ede905f7fe6ed9791ba630e667fec26fb603be5d78040/1785068832/showtime-usa.m3u8"
+  },
+  {
+    "name": "Showtime 2",
+    "logo": "https://i.ibb.co/8gCRbv0s/Showtime-2-svg.webp",
+    "genre": "Entertainment",
+    "channel_id": "showtime-2",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/49d26494db5527b55adcf3624bc5cd30edd689265628eda8b23b07e171aee32f/1785068832/showtime2-usa.m3u8"
+  },
+  {
+    "name": "Showtime Extreme",
+    "logo": "https://i.ibb.co/1t5fNwpQ/Showtime-Closing-2013.webp",
+    "genre": "Entertainment",
+    "channel_id": "showtime-extreme",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/3f4b6dbe525640cd43c170b5e8e4ff156828a4b16cc8a5ee41bd7a3c2f3d8b5d/1785068832/showtimeextreme-usa.m3u8"
+  },
+  {
+    "name": "Showtime Family Zone",
+    "logo": "https://i.ibb.co/1t5fNwpQ/Showtime-Closing-2013.webp",
+    "genre": "Entertainment",
+    "channel_id": "showtime-family-zone",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/0efff8832d5026d345cea38813c810160401f4880acc35a160d7fb4e91ea4069/1785068833/showtimefamilyzone-usa.m3u8"
+  },
+  {
+    "name": "Showtime Next",
+    "logo": "https://i.ibb.co/1t5fNwpQ/Showtime-Closing-2013.webp",
+    "genre": "Entertainment",
+    "channel_id": "showtime-next",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/e80e543db2a2a676bb7c9dd94a99d57f2ecd48af8753df5faaa47ae18db30be6/1785068833/showtimenext-usa.m3u8"
+  },
+  {
+    "name": "Showtime Women",
+    "logo": "https://i.ibb.co/1t5fNwpQ/Showtime-Closing-2013.webp",
+    "genre": "Entertainment",
+    "channel_id": "showtime-women",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/50dd45b44d97c5db41dd3dc2dd5b6e2c5ce21e4ac585b906c9e8fd1969d9a045/1785068834/showtimewomen-usa.m3u8"
+  },
+  {
+    "name": "Sky Sport 1 NZ",
+    "logo": "https://i.ibb.co/v4NvkZst/Untitled-design.png",
+    "genre": "Sports",
+    "channel_id": "sky-sport-1-nz",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/ae9d53cbdc6e6dafed09c0c7fab4642911046e6417b1a1954651cbd67cac2440/1785068835/skysport1-nz.m3u8"
+  },
+  {
+    "name": "Sky Sport 2 NZ",
+    "logo": "https://i.ibb.co/v4NvkZst/Untitled-design.png",
+    "genre": "Sports",
+    "channel_id": "sky-sport-2-nz",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/5e534666f1c14f5adec165a4954c3b1f88b7bb822ec3afde62f1c19ef609ab62/1785068835/skysport2-nz.m3u8"
+  },
+  {
+    "name": "Sky Sport 3 NZ",
+    "logo": "https://i.ibb.co/v4NvkZst/Untitled-design.png",
+    "genre": "Sports",
+    "channel_id": "sky-sport-3-nz",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/f67f6059310088db80fa19d04ba878495bdcc5d4f1a2eea28869316f76c9a1cc/1785068836/skysport3-nz.m3u8"
+  },
+  {
+    "name": "Sky Sport 4 NZ",
+    "logo": "https://i.ibb.co/v4NvkZst/Untitled-design.png",
+    "genre": "Sports",
+    "channel_id": "sky-sport-4-nz",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/803971e8aea1ca961a11d0115591b53ee30a7ab14426dfc116783c6e00c676f6/1785068836/skysport4-nz.m3u8"
+  },
+  {
+    "name": "Sky Sport 5 NZ",
+    "logo": "https://i.ibb.co/v4NvkZst/Untitled-design.png",
+    "genre": "Sports",
+    "channel_id": "sky-sport-5-nz",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/2d96f0e976eb4b331177f7b55fc0382c4ad6e2b82870898cdfe281270b4280eb/1785068836/skysport5-nz.m3u8"
+  },
+  {
+    "name": "Sky Sport 6 NZ",
+    "logo": "https://i.ibb.co/v4NvkZst/Untitled-design.png",
+    "genre": "Sports",
+    "channel_id": "sky-sport-6-nz",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/110c64abac1486b8300bbc138673931db03691dc009518540242c0c424afdc84/1785068837/skysport6-nz.m3u8"
+  },
+  {
+    "name": "Sky Sport 7 NZ",
+    "logo": "https://i.ibb.co/v4NvkZst/Untitled-design.png",
+    "genre": "Sports",
+    "channel_id": "sky-sport-7-nz",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/733b1f4310dd71009d4748b352c71c91b28ed811305e435c8a54d3b62689919c/1785068838/skysport7-nz.m3u8"
+  },
+  {
+    "name": "Sky Sport 8 NZ",
+    "logo": "https://i.ibb.co/v4NvkZst/Untitled-design.png",
+    "genre": "Sports",
+    "channel_id": "sky-sport-8-nz",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/2ef5be9ca9e16c4acd3e41daad609768a114a6a08a7e9ad9b2b5729089f9f693/1785068838/skysport8-nz.m3u8"
+  },
+  {
+    "name": "Sky Sport 9 NZ",
+    "logo": "https://i.ibb.co/v4NvkZst/Untitled-design.png",
+    "genre": "Sports",
+    "channel_id": "sky-sport-9-nz",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/9606446a268f3e1ab26b3af6d1a803f861bd0e8464c1ccadd59a2ba96a0d4e32/1785068839/skysport9-nz.m3u8"
+  },
+  {
+    "name": "Sky Sport Select NZ",
+    "logo": "https://i.ibb.co/v4NvkZst/Untitled-design.png",
+    "genre": "Sports",
+    "channel_id": "sky-sport-select-nz",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/c097579c50e8784c909d6bd1cd4f1326b3c67e4adf68da17c4d478af433a2a36/1785068840/skysportselect-nz.m3u8"
+  },
+  {
+    "name": "Sky Sports+",
+    "logo": "https://e0.365dm.com/24/07/2048x1152/skysports-ssplus-sky-sports-plus_6644064.jpg",
+    "genre": "Sports",
+    "channel_id": "sky-sports-plus",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/3f210b095cb3ef35eaa4d9a7e88d992f69f0fab47aafead2e9a50aa861046a53/1785068840/skysportsplus-uk.m3u8"
+  },
+  {
+    "name": "Sky Sports Action",
+    "logo": "https://cdn.jsdelivr.net/gh/willthequeencome/img-cdn/skysportsaction.png",
+    "genre": "Sports",
+    "channel_id": "sky-sports-action",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/f57851fc679283de56992778fda6054b32d210fdabaa490e4f5988a7e950e2b0/1785068841/skysportsaction-uk.m3u8"
+  },
+  {
+    "name": "Sky Sports Cricket",
+    "logo": "https://e0.365dm.com/17/07/2048x1152/skysports-sky-sports-cricket-podcast-sky-cricket-podcast_4004801.jpg",
+    "genre": "Sports",
+    "channel_id": "sky-sports-cricket",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/20a37e21b3d30926c57af08c2239a5332928e28c41c94b7f4e9ebf83a0663712/1785068843/skysportscricket-uk.m3u8"
+  },
+  {
+    "name": "Sky Sports F1",
+    "logo": "https://e0.365dm.com/21/03/1600x900/skysports-f1-2021-graphic_5299452.png",
+    "genre": "Sports",
+    "channel_id": "sky-sports-f1",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/9964a3da8ee81ca62e5c3e7a4e76b33956b690d61639a9e9e6947a589e392c1e/1785068844/skysportsf1-uk.m3u8"
+  },
+  {
+    "name": "Sky Sports Football",
+    "logo": "https://images.squarespace-cdn.com/content/v1/6380a5b12f7b6f632e16ce77/46d62da8-e650-4d2b-a5bc-48a5648edb8e/Beth_Mead.jpg",
+    "genre": "Sports",
+    "channel_id": "sky-sports-football",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/d3c220c6dd63d2c589f436bd7c3d6ba8322daa4c52babdb6e75f281a9833154a/1785068844/skysportsfootball-uk.m3u8"
+  },
+  {
+    "name": "Sky Sports Golf",
+    "logo": "https://e0.365dm.com/23/05/1600x900/skysports-golf-sky-sports-golf_6158933.jpg",
+    "genre": "Sports",
+    "channel_id": "sky-sports-golf",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/562cbda9b35eeaae9b3ebddb801f757dcc94b561fb1d36a2de268dd49a123cb6/1785068844/skysportsgolf-uk.m3u8"
+  },
+  {
+    "name": "Sky Sports Main Event",
+    "logo": "https://e0.365dm.com/17/07/1600x900/skysports-all-new-rebrand-f1-premier-league-golf-cricket_4001810.jpg",
+    "genre": "Sports",
+    "channel_id": "sky-sports-main-event",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/1f6adeab0ed89258d4618dbc2ed1ade2acc77af03409c3bdb66a8fd44e0bfab9/1785068845/skysportsmainevent-uk.m3u8"
+  },
+  {
+    "name": "Sky Sports Mix",
+    "logo": "https://cdn.jsdelivr.net/gh/willthequeencome/img-cdn/Sky_Sports_Mix_Generic_ID_2017.webp",
+    "genre": "Sports",
+    "channel_id": "sky-sports-mix",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/12cab348cc6627ac5590af932df652e3be33416619d7f1adcc0a5561c4d77543/1785068845/skysportsmix-uk.m3u8"
+  },
+  {
+    "name": "Sky Sports News",
+    "logo": "https://cdn.jsdelivr.net/gh/willthequeencome/img-cdn/image.jpg",
+    "genre": "Sports",
+    "channel_id": "sky-sports-news",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/de73a9162f720c225558549887f2b295ac9e84d885e306aeed1e28259e3c4c9e/1785068845/skysportsnews-uk.m3u8"
+  },
+  {
+    "name": "Sky Sports Premier League",
+    "logo": "https://e0.365dm.com/25/06/2048x1152/skysports-premier-league-fixtures_6937276.jpg",
+    "genre": "Sports",
+    "channel_id": "sky-sports-premier-league",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/92fd19445508ff91ddfe7dc7e340dfae088dff773e6e083dd54ef808d7b2cb00/1785068845/skysportspremierleague-uk.m3u8"
+  },
+  {
+    "name": "Sky Sports Racing",
+    "logo": "https://e0.365dm.com/23/07/2048x1152/skysports-racing-league-sky-sports-racing_6230990.jpg",
+    "genre": "Sports",
+    "channel_id": "sky-sports-racing",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/df9b59e198c83107bc4d24901247294951af32de4f57e709b40ead8a729a21b3/1785068846/skysportsracing-uk.m3u8"
+  },
+  {
+    "name": "Sky Sports Tennis",
+    "logo": "https://e0.365dm.com/24/01/2048x1152/skysports-sky-sports-tennis_6437709.jpg",
+    "genre": "Sports",
+    "channel_id": "sky-sports-tennis",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/3ae25d757bf6ee8c12a35977fea3c0a5a7aa9cd1e79613a7058f1d4a3e7ae9aa/1785068846/skysportstennis-uk.m3u8"
+  },
+  {
+    "name": "Sony Sports Network",
+    "logo": "https://cdn.jsdelivr.net/gh/willthequeencome/img-cdn/085457534.png",
+    "genre": "Sports",
+    "channel_id": "sony-sports-network",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/7c6e1b3b219db341a4a2e89e29f9e03e49725bad2af7df57a46b62b3c656ba3d/1785068846/sonysportsnetwork-in.m3u8"
+  },
+  {
+    "name": "Sony Sports Network 2",
+    "logo": "https://cdn.jsdelivr.net/gh/willthequeencome/img-cdn/085457534.png",
+    "genre": "Sports",
+    "channel_id": "sony-sports-network-2",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/81bb886f835af9ddfa4b9c0a045ff293efb7807160b66a326164053b5e82256a/1785068847/sonysportsnetwork2-in.m3u8"
+  },
+  {
+    "name": "Sony Sports Network 3",
+    "logo": "https://cdn.jsdelivr.net/gh/willthequeencome/img-cdn/085457534.png",
+    "genre": "Sports",
+    "channel_id": "sony-sports-network-3",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/4d25c2ddaf93d0503abe97f267dc40188132ddaaf1b8e0dd62a8d95d767ea52f/1785068847/sonysportsnetwork3-in.m3u8"
+  },
+  {
+    "name": "Sony Sports Network 4",
+    "logo": "https://cdn.jsdelivr.net/gh/willthequeencome/img-cdn/085457534.png",
+    "genre": "Sports",
+    "channel_id": "sony-sports-network-4",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/7fc384397150cbc87b38c85532ed0622a9200be63eabe3c5494142a2d5b9ba73/1785068847/sonysportsnetwork4-in.m3u8"
+  },
+  {
+    "name": "Sony Sports Network 5",
+    "logo": "https://cdn.jsdelivr.net/gh/willthequeencome/img-cdn/085457534.png",
+    "genre": "Sports",
+    "channel_id": "sony-sports-network-5",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/b84596563935813cfce1e6a873f614a53a7d50ec5a850f7a14dda2ad0b5ef818/1785068848/sonysportsnetwork5-in.m3u8"
+  },
+  {
+    "name": "STARZ",
+    "logo": "https://careers.starz.com/wp-content/uploads/2025/01/STARZ-LOGO-IMAGE.png",
+    "genre": "Entertainment",
+    "channel_id": "starz",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/f9da3ec3b1367b3977673a1a24a867fce42ac1b61ec9f7db5c2bc5c8aaba7a27/1785068848/starz-usa.m3u8"
+  },
+  {
+    "name": "STARZ Cinema",
+    "logo": "https://careers.starz.com/wp-content/uploads/2025/01/STARZ-LOGO-IMAGE.png",
+    "genre": "Entertainment",
+    "channel_id": "starz-cinema",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/9e6c03cbd5a1fa7e034d8ec7ad9fd5832753843636481f66d5ad977557532119/1785068848/starzcinema-usa.m3u8"
+  },
+  {
+    "name": "STARZ Comedy",
+    "logo": "https://careers.starz.com/wp-content/uploads/2025/01/STARZ-LOGO-IMAGE.png",
+    "genre": "Entertainment",
+    "channel_id": "starz-comedy",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/7e216ed0102afa7b2fcaa19cc59ce7a2a0e534eb1cc6e2ab0d691772b8b41c4f/1785068848/starzcomedy-usa.m3u8"
+  },
+  {
+    "name": "STARZ Kids and Family",
+    "logo": "https://careers.starz.com/wp-content/uploads/2025/01/STARZ-LOGO-IMAGE.png",
+    "genre": "Cartoons",
+    "channel_id": "starz-kids-and-family",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/2c45375a33883a7e5211630e32731f8fa2ab679fc8e31b5bcbad9d41fa5bf032/1785068849/starzkidsfamily-usa.m3u8"
+  },
+  {
+    "name": "SYFY",
+    "logo": "https://assets.goal.com/images/v3/blt1be56273baf0440d/syfy%20logo.jpg?auto=webp&amp;amp;amp;format=pjpg&amp;amp;amp;width=3840&amp;amp;amp;quality=60",
+    "genre": "Entertainment",
+    "channel_id": "syfy",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/48bd79af49d8af31bc126daf8d5366b065338a8e6836108569853ba936c61365/1785068849/syfy-usa.m3u8"
+  },
+  {
+    "name": "TBS",
+    "logo": "https://cdn.sanity.io/images/1pn9obcz/production/a6971fbe09c85f2deeb480fc494a39219d039135-1920x1080.jpg",
+    "genre": "Entertainment",
+    "channel_id": "tbs",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/741d12b3ab21905ef2f48ef8d564dd55d270dd73564b279b5d3d3de372f39458/1785068850/tbs-usa.m3u8"
+  },
+  {
+    "name": "Teenick",
+    "logo": "https://i.ibb.co/3yCJDVrW/Teen-Nick-2023.webp",
+    "genre": "Cartoons",
+    "channel_id": "teenick",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/cfc804872a690893698b1cbe149b9ec9305c745ca0d5435b5903fb347f53861f/1785068850/teenick-usa.m3u8"
+  },
+  {
+    "name": "Telemundo",
+    "logo": "https://media-cldnry.s-nbcnews.com/image/upload/newscms/2020_20/3352176/telemundo-social-default.png",
+    "genre": "Entertainment",
+    "channel_id": "telemundo",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/4c181d6edde867d01a9d6795006dba63014dae3e541489b96eb0f5a53106060b/1785068850/telemundo-usa.m3u8"
+  },
+  {
+    "name": "Tennis Channel",
+    "logo": "https://s10019.cdn.ncms.io/wp-content/uploads/2026/05/tenn2.jpg.jpeg",
+    "genre": "Sports",
+    "channel_id": "tennis-channel",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/3b881e36a23fb4c99a48ede45552f903ebb36a1eac9e4c1c06b2a10fdccb44ee/1785068851/tennischannel-usa.m3u8"
+  },
+  {
+    "name": "The Weather Channel",
+    "logo": "https://i.ibb.co/bRJqL6WK/LWRBPBUMCVFA3-G5-Q4-ZH3-XJYDNY.avif",
+    "genre": "News/Politics",
+    "channel_id": "the-weather-channel",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/6e7cfdc1381434f53d031542f7a388036de742f8d300ba03df57a25c4bb0c597/1785068851/twc-usa.m3u8"
+  },
+  {
+    "name": "TNT",
+    "logo": "https://i.ytimg.com/vi/F-AHKcxi3pY/maxresdefault.jpg",
+    "genre": "Entertainment",
+    "channel_id": "tnt",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/6997cafe0cd35db64e7581b4008032456591e9e0dd36330319401bfdea36e4ed/1785068852/tnt-usa.m3u8"
+  },
+  {
+    "name": "TNT Sports 1",
+    "logo": "https://cdn.mos.cms.futurecdn.net/y3oPitXYAwGJnyTHFYo5qB.jpeg",
+    "genre": "Sports",
+    "channel_id": "tnt-sports-1",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/0d1ee757c91b81d54d9442917671c809d62f32b98a3c7e4e2ff1c0c03dd6bb4b/1785068852/tntsports1-uk.m3u8"
+  },
+  {
+    "name": "TNT Sports 2",
+    "logo": "https://cdn.mos.cms.futurecdn.net/y3oPitXYAwGJnyTHFYo5qB.jpeg",
+    "genre": "Sports",
+    "channel_id": "tnt-sports-2",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/1be4b7937f103d8db848f0c5c44b7138e9c6d3900b1bdcdb8c704818c58f13ef/1785068853/tntsports2-uk.m3u8"
+  },
+  {
+    "name": "TNT Sports 3",
+    "logo": "https://cdn.mos.cms.futurecdn.net/y3oPitXYAwGJnyTHFYo5qB.jpeg",
+    "genre": "Sports",
+    "channel_id": "tnt-sports-3",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/bb68b0221ec0da52485fef8a4812fc6afa0238c570e9397996543b55516e4f23/1785068853/tntsports3-uk.m3u8"
+  },
+  {
+    "name": "TNT Sports 4",
+    "logo": "https://cdn.mos.cms.futurecdn.net/y3oPitXYAwGJnyTHFYo5qB.jpeg",
+    "genre": "Sports",
+    "channel_id": "tnt-sports-4",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/01c641bfe74120aeeaf10d0c20bef1e0bb35ab6c45914c5e0b35700971a7c191/1785068853/tntsports4-uk.m3u8"
+  },
+  {
+    "name": "TruTV",
+    "logo": "https://i.ibb.co/DfGcnjXY/Header-tru-TV.webp",
+    "genre": "Entertainment",
+    "channel_id": "trutv",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/17ec02257619752d73de625b148d5247bc40f192847d5a0fc674d5703c8371cc/1785068853/trutv-usa.m3u8"
+  },
+  {
+    "name": "TUDN",
+    "logo": "https://cdn.aptoide.com/imgs/e/e/6/ee65573e3ed2c5fcafa0191860afdf51_fgraphic.png",
+    "genre": "Sports",
+    "channel_id": "tudn",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/10229c09eb878ccf431d0c61875190681184798985f08afd2e939424b3c82b9f/1785068854/tudn-usa.m3u8"
+  },
+  {
+    "name": "TYC Sports Internacional",
+    "logo": "https://assets.goal.com/images/v3/blta396e76391fffdfa/TyC_Sports_logo.jpg",
+    "genre": "Sports",
+    "channel_id": "tyc-sports-internacional",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/20e71fbcc98c4bb9a86a74bbe5e888d16b04eb8958c432e36510b1cfa6ae3d97/1785068854/tycsports-usa.m3u8"
+  },
+  {
+    "name": "UFC Fight Pass 24/7",
+    "logo": "https://fightrecord.co.uk/wp-content/uploads/2020/12/ufc-fight-pass-lion-fight-muay-thai.jpg",
+    "genre": "Sports",
+    "channel_id": "ufc-fight-pass-24-7",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/c84bee3c60c86a01aa27d876b9f799f6cc151463286121e7aee88633242c616e/1785068854/ufc-fight-pass.m3u8"
+  },
+  {
+    "name": "USA Network",
+    "logo": "https://variety.com/wp-content/uploads/2013/10/usa-network-logo1.jpg",
+    "genre": "Entertainment",
+    "channel_id": "usa-network",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/18ec9141a64fab7ca040a262b68d34ad6cf99720907db8c5a914d8c2495f407f/1785068855/usanetwork-usa.m3u8"
+  },
+  {
+    "name": "WAPA America",
+    "logo": "https://m.media-amazon.com/images/I/81AEkpHaIPL._SL1920_.png",
+    "genre": "Entertainment",
+    "channel_id": "wapa-america",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/c91ae07d1bb70edcff0712a519eb301cd77a61aaea8e047feeb1c8af88e92584/1785068855/wapaamerica-usa.m3u8"
+  },
+  {
+    "name": "WAPA Deportes",
+    "logo": "https://i.ibb.co/pBzhsJ17/WAPA-Deportes.jpg",
+    "genre": "Entertainment",
+    "channel_id": "wapa-deportes",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/30a9b70166a599120cc7cb9ab79b97b44e26d2e7770570c2d91dd140aa2c1768/1785068855/wapadeportes-usa.m3u8"
+  },
+  {
+    "name": "Willow Cricket",
+    "logo": "https://mgpindia.com/wp-content/uploads/2021/10/willow-logo.jpg",
+    "genre": "Sports",
+    "channel_id": "willow-cricket",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/18bde9280491c703a4831274160712a06ef2f3a6973768f15cb6158e61871071/1785068855/willow-usa.m3u8"
+  },
+  {
+    "name": "Willow Cricket 2",
+    "logo": "https://d229kpbsb5jevy.cloudfront.net/tv/1920/1080/languages/WILLOW-2.jpg",
+    "genre": "Sports",
+    "channel_id": "willow-cricket-2",
+    "stream_url": "https://hiveatick.casadenoval.uk/main/secure/f5fbf2f64d81f6a413f72982a1638bd98b52c779f245eaf532d81927b3e7330c/1785068856/willow2-usa.m3u8"
+  }
+]

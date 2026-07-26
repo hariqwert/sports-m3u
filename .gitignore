@@ -1,0 +1,10 @@
+node_modules/
+*.log
+embed_abc.html
+bundle.js
+analyze.js
+check_ch.cjs
+test_*.cjs
+debug_*.cjs
+inspect_*.cjs
+sync_sports.cjs

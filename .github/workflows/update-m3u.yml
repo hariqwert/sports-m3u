@@ -1,0 +1,33 @@
+name: Auto Update Sports M3U Playlist
+
+on:
+  schedule:
+    # Runs every 45 minutes
+    - cron: '*/45 * * * *'
+  workflow_dispatch: # Allows manual trigger anytime
+
+jobs:
+  update-m3u:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Run M3U Extractor
+        run: node fetch_real_m3u.cjs
+
+      - name: Copy to sports.m3u
+        run: cp playlist.m3u sports.m3u
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add sports.m3u playlist.m3u channels.json
+          git commit -m "Auto-update sports.m3u playlist with fresh live streams" || exit 0
+          git push
