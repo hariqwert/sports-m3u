@@ -1,4 +1,4 @@
-# TimStreams Sports M3U Auto-Updater (Google AI Studio / Google Cloud Deployment)
+#  Sports M3U Auto-Updater (Google)
 
 An automated extractor and dynamic live server that fetches live channel stream links from `timstreams.st`, decodes obfuscated `.m3u8` video stream URLs, and maintains a continuously updated `#EXTM3U` playlist (`sports.m3u` / `playlist.m3u`) refreshed every **45 minutes**.
 
@@ -6,8 +6,8 @@ An automated extractor and dynamic live server that fetches live channel stream 
 
 ## 🚀 Features
 
-- **Automated Channel Discovery**: Queries backend channel directory API (`https://api.vixnuvew.uk/api/channels`).
-- **Dynamic XOR Script Decoder**: Decodes JavaScript array XOR obfuscation in embed pages (`https://logic.icelanders.st/embed/{channel}`) to extract true `.m3u8` stream URLs.
+- **Automated Channel Discovery**: Queries backend channel directory API `).
+- **Dynamic XOR Script Decoder**: Decodes JavaScript array XOR obfuscation in embed pages (`}`) to extract true `.m3u8` stream URLs.
 - **45-Minute Auto-Refresh**: Maintains an in-memory & file-based cache that automatically re-scans and updates all stream tokens every 45 minutes.
 - **Google Cloud / AI Studio Ready**: Includes `server.cjs` and `Dockerfile` configured to bind to `process.env.PORT || 8080`.
 
