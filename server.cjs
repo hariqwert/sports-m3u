@@ -23,10 +23,10 @@ function fetchUrl(url) {
             https.get(options, (res) => {
                 let data = '';
                 res.on('data', chunk => data += chunk);
-                res.on('end', () => resolve(data));
-            }).on('error', () => resolve(''));
+                res.on('end', () => resolve({ status: res.statusCode, data }));
+            }).on('error', () => resolve({ status: 500, data: '' }));
         } catch(e) {
-            resolve('');
+            resolve({ status: 500, data: '' });
         }
     });
 }
@@ -35,7 +35,7 @@ function decodeStreamUrl(html) {
     if (!html) return null;
     let match = html.match(/var\s+([a-zA-Z0-9_$]+)\s*=\s*\[([\d,]+)\]\s*,\s*([a-zA-Z0-9_$]+)\s*=\s*(\d+)\s*,\s*([a-zA-Z0-9_$]+)\s*=\s*(\d+)/);
     if (!match) {
-        match = html.match(/var\s+([a-zA-Z0-9_$]+)\s*=\s*\[([\d,]+)\];\s*([a-zA-Z0-9_$]+)\s*=\s*(\d+);\s*([a-zA-Z0-9_$]+)\s*=\s*(\d+);/);
+        match = html.match(/var\s+([a-zA-Z0-9_$]+)\s*=\s*\[([\d,]+)\];\s*([a-zA-Z0-9_$]+)\s*=\s*(\d+);\s*([a-zA-Z0-9_$]+);\s*(\d+);/);
     }
     if (match) {
         const arr = match[2].split(',').map(Number);
@@ -52,6 +52,19 @@ function decodeStreamUrl(html) {
     return directMatch ? directMatch[0] : null;
 }
 
+function getFallbackChannelCatalog() {
+    if (fs.existsSync('channels.json')) {
+        try {
+            const data = JSON.parse(fs.readFileSync('channels.json', 'utf-8'));
+            if (Array.isArray(data) && data.length > 0) {
+                console.log(`[+] Using local channels.json fallback catalog (${data.length} channels).`);
+                return data;
+            }
+        } catch(e) {}
+    }
+    return [];
+}
+
 async function getOrUpdatePlaylist() {
     const now = Date.now();
     if (cachedPlaylist && (now - lastFetchTime < CACHE_DURATION_MS)) {
@@ -60,68 +73,86 @@ async function getOrUpdatePlaylist() {
         return cachedPlaylist;
     }
 
-    console.log(`[*] Cache expired. Extracting Live Sports Streams from timstreams.st/streams & TV Channels...`);
+    console.log(`[*] Cache expired. Fetching streams...`);
     let m3uLines = ['#EXTM3U\n'];
     let totalStreamsCount = 0;
 
-    // 1. EXTRACT FROM TIMSTREAMS.ST/STREAMS (LIVE & UPCOMING SPORTS EVENTS)
-    const rawEvents = await fetchUrl('https://api.vixnuvew.uk/api/live-upcoming');
-    try {
-        const eventsData = JSON.parse(rawEvents);
-        const events = eventsData.events || [];
-        const eventGenres = eventsData.genres || {};
-        console.log(`[+] Processing ${events.length} Live Sports Event Streams from /streams...`);
+    // 1. LIVE & UPCOMING SPORTS EVENTS
+    const resEvents = await fetchUrl('https://api.vixnuvew.uk/api/live-upcoming');
+    if (resEvents.status === 200) {
+        try {
+            const eventsData = JSON.parse(resEvents.data);
+            const events = eventsData.events || [];
+            const eventGenres = eventsData.genres || {};
+            console.log(`[+] Processing ${events.length} Live Sports Event Streams...`);
 
-        for (const ev of events) {
-            const evName = ev.name || ev.url;
-            const evLogo = ev.logo || '';
-            const genreName = eventGenres[ev.genre] || ev.genre || 'Live Sports';
-            const eventStreams = ev.streams || [];
+            for (const ev of events) {
+                const evName = ev.name || ev.url;
+                const evLogo = ev.logo || '';
+                const genreName = eventGenres[ev.genre] || ev.genre || 'Live Sports';
+                const eventStreams = ev.streams || [];
 
-            for (let sIdx = 0; sIdx < eventStreams.length; sIdx++) {
-                const st = eventStreams[sIdx];
-                const stName = st.name ? `${evName} (${st.name})` : evName;
-                const embedUrl = st.url || `https://logic.icelanders.st/embed/${ev.url}`;
+                for (let sIdx = 0; sIdx < eventStreams.length; sIdx++) {
+                    const st = eventStreams[sIdx];
+                    const stName = st.name ? `${evName} (${st.name})` : evName;
+                    const embedUrl = st.url || `https://logic.icelanders.st/embed/${ev.url}`;
 
-                let streamUrl = embedUrl;
-                if (embedUrl.includes('icelanders.st/embed/')) {
-                    const html = await fetchUrl(embedUrl);
-                    streamUrl = decodeStreamUrl(html) || embedUrl;
+                    let streamUrl = embedUrl;
+                    if (embedUrl.includes('icelanders.st/embed/')) {
+                        const embedRes = await fetchUrl(embedUrl);
+                        streamUrl = decodeStreamUrl(embedRes.data) || embedUrl;
+                    }
+
+                    totalStreamsCount++;
+                    m3uLines.push(`#EXTINF:-1 tvg-name="${stName}" tvg-logo="${evLogo}" group-title="${genreName}",${stName}\n`);
+                    m3uLines.push(`${streamUrl}\n`);
                 }
-
-                totalStreamsCount++;
-                m3uLines.push(`#EXTINF:-1 tvg-name="${stName}" tvg-logo="${evLogo}" group-title="${genreName}",${stName}\n`);
-                m3uLines.push(`${streamUrl}\n`);
             }
-        }
-    } catch(e) {
-        console.error("[!] Error parsing live-upcoming events:", e.message);
+        } catch(e) {}
+    } else {
+        console.warn(`[!] API live-upcoming returned status ${resEvents.status} (Rate limited/KV Limit Exceeded).`);
     }
 
-    // 2. EXTRACT LIVE TV CHANNELS
-    const rawChannels = await fetchUrl('https://api.vixnuvew.uk/api/channels');
-    try {
-        const apiData = JSON.parse(rawChannels);
-        const channels = apiData.channels || [];
-        const channelGenres = apiData.genres || {};
-        console.log(`[+] Processing ${channels.length} Live TV Channels...`);
+    // 2. LIVE TV CHANNELS (WITH FALLBACK CATALOG PROTECTION)
+    let channels = [];
+    let genres = {};
 
-        for (let i = 0; i < channels.length; i++) {
-            const ch = channels[i];
-            const name = ch.name || ch.url;
-            const logo = ch.logo || '';
-            const genreName = channelGenres[ch.genre] || 'Live TV';
-            
-            let embedUrl = (ch.streams && ch.streams[0] && (ch.streams[0].url || ch.streams[0])) || `https://logic.icelanders.st/embed/${ch.url}`;
-            const embedHtml = await fetchUrl(embedUrl);
-            const m3u8StreamUrl = decodeStreamUrl(embedHtml) || embedUrl;
+    const resChannels = await fetchUrl('https://api.vixnuvew.uk/api/channels');
+    if (resChannels.status === 200) {
+        try {
+            const apiData = JSON.parse(resChannels.data);
+            channels = apiData.channels || [];
+            genres = apiData.genres || {};
+        } catch(e) {}
+    }
 
-            totalStreamsCount++;
-            m3uLines.push(`#EXTINF:-1 tvg-name="${name}" tvg-logo="${logo}" group-title="${genreName}",${name}\n`);
-            m3uLines.push(`${m3u8StreamUrl}\n`);
-        }
-    } catch(e) {
-        console.error("[!] Error parsing channels:", e.message);
+    // If API failed due to KV limit exceeded, use local channel catalog!
+    if (channels.length === 0) {
+        console.warn(`[!] Primary API failed. Falling back to local channels catalog...`);
+        const fallbackList = getFallbackChannelCatalog();
+        channels = fallbackList.map(item => ({
+            url: item.channel_id || item.url || item.name.toLowerCase().replace(/[^a-z0-9]/g, '-'),
+            name: item.name,
+            logo: item.logo,
+            genreName: item.genre || 'Sports Channels',
+            streams: [{ url: `https://logic.icelanders.st/embed/${item.channel_id || item.url || item.name.toLowerCase().replace(/[^a-z0-9]/g, '-')}` }]
+        }));
+    }
+
+    console.log(`[+] Resolving direct live stream URLs for ${channels.length} channels...`);
+    for (let i = 0; i < channels.length; i++) {
+        const ch = channels[i];
+        const name = ch.name || ch.url;
+        const logo = ch.logo || '';
+        const genreName = ch.genreName || genres[ch.genre] || 'Sports Channels';
+        
+        let embedUrl = (ch.streams && ch.streams[0] && (ch.streams[0].url || ch.streams[0])) || `https://logic.icelanders.st/embed/${ch.url}`;
+        const embedRes = await fetchUrl(embedUrl);
+        const m3u8StreamUrl = decodeStreamUrl(embedRes.data) || embedUrl;
+
+        totalStreamsCount++;
+        m3uLines.push(`#EXTINF:-1 tvg-name="${name}" tvg-logo="${logo}" group-title="${genreName}",${name}\n`);
+        m3uLines.push(`${m3u8StreamUrl}\n`);
     }
 
     cachedPlaylist = m3uLines.join('');
@@ -154,7 +185,7 @@ const server = http.createServer(async (req, res) => {
 });
 
 server.listen(PORT, () => {
-    console.log(`[✓] Server listening on port ${PORT}`);
+    console.log(`[✓] Resilient M3U Server running on port ${PORT}`);
     console.log(`[✓] Serving live auto-updating M3U at http://localhost:${PORT}/sports.m3u`);
     getOrUpdatePlaylist();
 });
