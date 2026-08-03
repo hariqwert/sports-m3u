@@ -35,7 +35,7 @@ function decodeStreamUrl(html) {
     if (!html) return null;
     let match = html.match(/var\s+([a-zA-Z0-9_$]+)\s*=\s*\[([\d,]+)\]\s*,\s*([a-zA-Z0-9_$]+)\s*=\s*(\d+)\s*,\s*([a-zA-Z0-9_$]+)\s*=\s*(\d+)/);
     if (!match) {
-        match = html.match(/var\s+([a-zA-Z0-9_$]+)\s*=\s*\[([\d,]+)\];\s*([a-zA-Z0-9_$]+)\s*=\s*(\d+);\s*([a-zA-Z0-9_$]+);\s*(\d+);/);
+        match = html.match(/var\s+([a-zA-Z0-9_$]+)\s*=\s*\[([\d,]+)\];\s*([a-zA-Z0-9_$]+)\s*=\s*(\d+);\s*([a-zA-Z0-9_$]+)\s*=\s*(\d+);/);
     }
     if (match) {
         const arr = match[2].split(',').map(Number);
@@ -52,14 +52,19 @@ function decodeStreamUrl(html) {
     return directMatch ? directMatch[0] : null;
 }
 
+async function getDirectChannelStream(channelId) {
+    const cleanId = channelId.replace(/.*\/embed\//, '').replace(/^\/+|\/+$/g, '');
+    const embedUrl = `https://logic.icelanders.st/embed/${cleanId}`;
+    const embedRes = await fetchUrl(embedUrl);
+    const m3u8Url = decodeStreamUrl(embedRes.data) || embedUrl;
+    return { channelId: cleanId, embedUrl, m3u8Url };
+}
+
 function getFallbackChannelCatalog() {
     if (fs.existsSync('channels.json')) {
         try {
             const data = JSON.parse(fs.readFileSync('channels.json', 'utf-8'));
-            if (Array.isArray(data) && data.length > 0) {
-                console.log(`[+] Using local channels.json fallback catalog (${data.length} channels).`);
-                return data;
-            }
+            if (Array.isArray(data) && data.length > 0) return data;
         } catch(e) {}
     }
     return [];
@@ -68,8 +73,7 @@ function getFallbackChannelCatalog() {
 async function getOrUpdatePlaylist() {
     const now = Date.now();
     if (cachedPlaylist && (now - lastFetchTime < CACHE_DURATION_MS)) {
-        const cacheAgeMin = Math.round((now - lastFetchTime) / 60000);
-        console.log(`[+] Serving cached sports.m3u (Age: ${cacheAgeMin} min)`);
+        console.log(`[+] Serving cached sports.m3u (Age: ${Math.round((now - lastFetchTime) / 60000)} min)`);
         return cachedPlaylist;
     }
 
@@ -84,7 +88,6 @@ async function getOrUpdatePlaylist() {
             const eventsData = JSON.parse(resEvents.data);
             const events = eventsData.events || [];
             const eventGenres = eventsData.genres || {};
-            console.log(`[+] Processing ${events.length} Live Sports Event Streams...`);
 
             for (const ev of events) {
                 const evName = ev.name || ev.url;
@@ -109,8 +112,6 @@ async function getOrUpdatePlaylist() {
                 }
             }
         } catch(e) {}
-    } else {
-        console.warn(`[!] API live-upcoming returned status ${resEvents.status} (Rate limited/KV Limit Exceeded).`);
     }
 
     // 2. LIVE TV CHANNELS (WITH FALLBACK CATALOG PROTECTION)
@@ -126,9 +127,8 @@ async function getOrUpdatePlaylist() {
         } catch(e) {}
     }
 
-    // If API failed due to KV limit exceeded, use local channel catalog!
     if (channels.length === 0) {
-        console.warn(`[!] Primary API failed. Falling back to local channels catalog...`);
+        console.warn(`[!] Primary API failed/rate-limited. Using fallback catalog...`);
         const fallbackList = getFallbackChannelCatalog();
         channels = fallbackList.map(item => ({
             url: item.channel_id || item.url || item.name.toLowerCase().replace(/[^a-z0-9]/g, '-'),
@@ -139,7 +139,6 @@ async function getOrUpdatePlaylist() {
         }));
     }
 
-    console.log(`[+] Resolving direct live stream URLs for ${channels.length} channels...`);
     for (let i = 0; i < channels.length; i++) {
         const ch = channels[i];
         const name = ch.name || ch.url;
@@ -163,13 +162,14 @@ async function getOrUpdatePlaylist() {
         fs.writeFileSync('playlist.m3u', cachedPlaylist, 'utf-8');
     } catch(e) {}
 
-    console.log(`[✓] Successfully updated sports.m3u playlist with ${totalStreamsCount} total stream items. Next auto-refresh in 45 minutes.`);
+    console.log(`[✓] Successfully updated sports.m3u playlist (${totalStreamsCount} streams).`);
     return cachedPlaylist;
 }
 
 const server = http.createServer(async (req, res) => {
     const url = req.url.split('?')[0];
 
+    // Endpoint 1: Complete M3U Playlist
     if (url === '/sports.m3u' || url === '/playlist.m3u' || url === '/') {
         const playlist = await getOrUpdatePlaylist();
         res.writeHead(200, {
@@ -178,7 +178,25 @@ const server = http.createServer(async (req, res) => {
             'Cache-Control': 'public, max-age=2700'
         });
         res.end(playlist);
-    } else {
+    } 
+    // Endpoint 2: Direct Single Channel Stream Extraction (e.g. /stream/boomerang-usa or /stream/fox-sports-506)
+    else if (url.startsWith('/stream/') || url.startsWith('/embed/')) {
+        const channelId = url.replace(/^\/(?:stream|embed)\//, '');
+        if (!channelId) {
+            res.writeHead(400);
+            return res.end('Missing channel ID parameter');
+        }
+        
+        console.log(`[+] Direct stream extraction request for: ${channelId}`);
+        const result = await getDirectChannelStream(channelId);
+        
+        res.writeHead(200, {
+            'Content-Type': 'application/json; charset=utf-8',
+            'Access-Control-Allow-Origin': '*'
+        });
+        res.end(JSON.stringify(result, null, 2));
+    } 
+    else {
         res.writeHead(404, { 'Content-Type': 'text/plain' });
         res.end('Not Found');
     }
@@ -186,6 +204,7 @@ const server = http.createServer(async (req, res) => {
 
 server.listen(PORT, () => {
     console.log(`[✓] Resilient M3U Server running on port ${PORT}`);
-    console.log(`[✓] Serving live auto-updating M3U at http://localhost:${PORT}/sports.m3u`);
+    console.log(`[✓] Full Playlist: http://localhost:${PORT}/sports.m3u`);
+    console.log(`[✓] Direct Channel Extractor: http://localhost:${PORT}/stream/:channelId`);
     getOrUpdatePlaylist();
 });
