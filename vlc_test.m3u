@@ -1,0 +1,17 @@
+#EXTM3U
+#EXTINF:-1 tvg-name="ABC USA (TimStreams)" group-title="TimStreams",ABC USA (TimStreams)
+#EXTVLCOPT:http-referrer=https://timstreams.st/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+https://hiveatick.casadenoval.uk/main/secure/cd68a601f905c455eb367ac1225ad5659ec1fc1434eb4f581e51e77c43621838/1785782466/abc-usa.m3u8
+#EXTINF:-1 tvg-name="ESPN USA (TimStreams)" group-title="TimStreams",ESPN USA (TimStreams)
+#EXTVLCOPT:http-referrer=https://timstreams.st/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+https://hiveatick.casadenoval.uk/main/secure/f2a541f22df7c09c967b52d1d465be41c84dd985c218a59f50654cc4df7ca211/1785782467/espn-usa.m3u8
+#EXTINF:-1 tvg-name="ABC USA (DaddyLive)" group-title="DaddyLive",ABC USA (DaddyLive)
+#EXTVLCOPT:http-referrer=https://hamis.romponalis.st/premiumtv/daddy3.php?id=51
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+https://xameleon.phantemlis.top/three/secure/9b6a4a379b5e3f133f4f77e6dfddee19/1785784267/premium51/index.m3u8
+#EXTINF:-1 tvg-name="Astro SuperSport 1 (DaddyLive)" group-title="DaddyLive",Astro SuperSport 1 (DaddyLive)
+#EXTVLCOPT:http-referrer=https://hamis.romponalis.st/premiumtv/daddy3.php?id=123
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
+https://xameleon.phantemlis.top/three/secure/fbba33b3e56260eb15d863263514948e/1785784268/premium123/index.m3u8
