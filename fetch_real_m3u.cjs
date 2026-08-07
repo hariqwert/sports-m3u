@@ -1,19 +1,24 @@
 const https = require('https');
+const http = require('http');
 const fs = require('fs');
 
-function fetchUrl(url) {
+function fetchPage(urlStr, extraHeaders = {}) {
     return new Promise((resolve) => {
         try {
-            const u = new URL(url);
+            const u = new URL(urlStr);
             const options = {
                 hostname: u.hostname,
+                port: u.port || (u.protocol === 'https:' ? 443 : 80),
                 path: u.pathname + u.search,
                 headers: {
                     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-                    'Referer': 'https://timstreams.st/'
+                    'Referer': 'https://timstreams.st/',
+                    'Accept': 'application/json, text/plain, */*',
+                    ...extraHeaders
                 }
             };
-            https.get(options, (res) => {
+            const client = u.protocol === 'https:' ? https : http;
+            client.get(options, (res) => {
                 let data = '';
                 res.on('data', chunk => data += chunk);
                 res.on('end', () => resolve({ status: res.statusCode, data }));
@@ -24,127 +29,97 @@ function fetchUrl(url) {
     });
 }
 
-function decodeStreamUrl(html) {
+function decodeXORStream(html) {
     if (!html) return null;
-    let match = html.match(/var\s+([a-zA-Z0-9_$]+)\s*=\s*\[([\d,]+)\]\s*,\s*([a-zA-Z0-9_$]+)\s*=\s*(\d+)\s*,\s*([a-zA-Z0-9_$]+)\s*=\s*(\d+)/);
-    if (!match) {
-        match = html.match(/var\s+([a-zA-Z0-9_$]+)\s*=\s*\[([\d,]+)\];\s*([a-zA-Z0-9_$]+)\s*=\s*(\d+);\s*([a-zA-Z0-9_$]+);\s*(\d+);/);
+
+    const regex1 = /var\s+([a-zA-Z0-9_$]+)\s*=\s*\[([\d,]+)\]\s*,\s*([a-zA-Z0-9_$]+)\s*=\s*(\d+)\s*,\s*([a-zA-Z0-9_$]+)\s*=\s*(\d+)/;
+    const regex2 = /var\s+([a-zA-Z0-9_$]+)\s*=\s*\[([\d,]+)\];\s*var\s+([a-zA-Z0-9_$]+)\s*=\s*(\d+);\s*var\s+([a-zA-Z0-9_$]+)\s*=\s*(\d+);/;
+
+    const match = html.match(regex1) || html.match(regex2);
+    if (!match) return null;
+
+    const arr = match[2].split(',').map(Number);
+    const arg1 = parseInt(match[4], 10);
+    const arg2 = parseInt(match[6], 10);
+
+    let decoded = '';
+    for (let i = 0; i < arr.length; i++) {
+        decoded += String.fromCharCode(((arr[i] ^ arg1) - arg2 + 256) % 256);
     }
-    if (match) {
-        const arr = match[2].split(',').map(Number);
-        const arg1 = parseInt(match[4]);
-        const arg2 = parseInt(match[6]);
-        let decoded = "";
-        for (let i = 0; i < arr.length; i++) {
-            decoded += String.fromCharCode(((arr[i] ^ arg1) - arg2 + 256) % 256);
-        }
-        const m3u8Match = decoded.match(/https?:\/\/[^\s'"\\]+\.m3u8[^\s'"\\]*/);
-        if (m3u8Match) return m3u8Match[0];
-    }
-    const directMatch = html.match(/https?:\/\/[^\s'"\\]+\.m3u8[^\s'"\\]*/);
-    return directMatch ? directMatch[0] : null;
+
+    const m3u8Match = decoded.match(/https?:\/\/[^\s"'<>]+\.m3u8[^\s"'<>]*/);
+    return m3u8Match ? m3u8Match[0] : null;
 }
 
-function getFallbackChannelCatalog() {
-    if (fs.existsSync('channels.json')) {
-        try {
-            const data = JSON.parse(fs.readFileSync('channels.json', 'utf-8'));
-            if (Array.isArray(data) && data.length > 0) {
-                console.log(`[+] Using local channels.json fallback catalog (${data.length} channels).`);
-                return data;
-            }
-        } catch(e) {}
-    }
-    return [];
-}
-
-async function run() {
-    console.log("[*] Running extraction with KV Rate-Limit Fallback protection...");
-    let m3uLines = ['#EXTM3U\n'];
-    let totalStreamsCount = 0;
-
-    // 1. LIVE & UPCOMING SPORTS EVENTS
-    const resEvents = await fetchUrl('https://api.vixnuvew.uk/api/live-upcoming');
-    if (resEvents.status === 200) {
-        try {
-            const eventsData = JSON.parse(resEvents.data);
-            const events = eventsData.events || [];
-            const eventGenres = eventsData.genres || {};
-            console.log(`[+] Processing ${events.length} Live Sports Event Streams...`);
-
-            for (const ev of events) {
-                const evName = ev.name || ev.url;
-                const evLogo = ev.logo || '';
-                const genreName = eventGenres[ev.genre] || ev.genre || 'Live Sports';
-                const eventStreams = ev.streams || [];
-
-                for (let sIdx = 0; sIdx < eventStreams.length; sIdx++) {
-                    const st = eventStreams[sIdx];
-                    const stName = st.name ? `${evName} (${st.name})` : evName;
-                    const embedUrl = st.url || `https://logic.icelanders.st/embed/${ev.url}`;
-
-                    let streamUrl = embedUrl;
-                    if (embedUrl.includes('icelanders.st/embed/')) {
-                        const embedRes = await fetchUrl(embedUrl);
-                        streamUrl = decodeStreamUrl(embedRes.data) || embedUrl;
-                    }
-
-                    totalStreamsCount++;
-                    m3uLines.push(`#EXTINF:-1 tvg-name="${stName}" tvg-logo="${evLogo}" group-title="${genreName}",${stName}\n`);
-                    m3uLines.push(`${streamUrl}\n`);
-                }
-            }
-        } catch(e) {}
+async function extractChannel(ch) {
+    let embedUrl = null;
+    if (ch.streams && ch.streams.length > 0 && ch.streams[0].url) {
+        embedUrl = ch.streams[0].url;
     } else {
-        console.warn(`[!] API live-upcoming rate-limited (${resEvents.status}). Skipping event feed until KV quota resets.`);
+        const chId = ch.url || ch.id || ch.name.toLowerCase().replace(/[^a-z0-9]/g, '-');
+        embedUrl = `https://hux-giants.shop/embed/${chId}`;
     }
 
-    // 2. LIVE TV CHANNELS (WITH FALLBACK CATALOG PROTECTION)
-    let channels = [];
-    let genres = {};
+    const pageRes = await fetchPage(embedUrl);
+    const m3u8Url = decodeXORStream(pageRes.data);
 
-    const resChannels = await fetchUrl('https://api.vixnuvew.uk/api/channels');
-    if (resChannels.status === 200) {
+    const idStr = ch.url || ch.id || ch.name.toLowerCase().replace(/[^a-z0-9]/g, '-');
+    const logoUrl = ch.logo || `https://flagcdn.com/20x15/${(ch.flag || 'us').toLowerCase()}.png`;
+
+    if (m3u8Url) {
+        return {
+            id: idStr,
+            name: ch.name,
+            logo: logoUrl,
+            m3u8Url: m3u8Url
+        };
+    }
+    return null;
+}
+
+async function extractTimStreamsPlaylist() {
+    console.log("[*] Fetching live channel list dynamically from timstreams.st/api/channels...");
+    
+    let channels = [];
+    const apiRes = await fetchPage('https://timstreams.st/api/channels');
+    
+    if (apiRes.status === 200 && apiRes.data) {
         try {
-            const apiData = JSON.parse(resChannels.data);
-            channels = apiData.channels || [];
-            genres = apiData.genres || {};
+            const parsed = JSON.parse(apiRes.data);
+            channels = parsed.channels || [];
+            console.log(`[+] Fetched ${channels.length} channels dynamically from timstreams.st API.`);
         } catch(e) {}
     }
 
     if (channels.length === 0) {
-        console.warn(`[!] Primary API failed/rate-limited. Using local channel catalog fallback...`);
-        const fallbackList = getFallbackChannelCatalog();
-        channels = fallbackList.map(item => ({
-            url: item.channel_id || item.url || item.name.toLowerCase().replace(/[^a-z0-9]/g, '-'),
-            name: item.name,
-            logo: item.logo,
-            genreName: item.genre || 'Sports Channels',
-            streams: [{ url: `https://logic.icelanders.st/embed/${item.channel_id || item.url || item.name.toLowerCase().replace(/[^a-z0-9]/g, '-')}` }]
-        }));
+        console.log("[!] API fallback to local channels.json...");
+        channels = JSON.parse(fs.readFileSync('channels.json', 'utf-8'));
     }
 
-    console.log(`[+] Resolving direct live stream URLs for ${channels.length} channels...`);
-    for (let i = 0; i < channels.length; i++) {
-        const ch = channels[i];
-        const name = ch.name || ch.url;
-        const logo = ch.logo || '';
-        const genreName = ch.genreName || genres[ch.genre] || 'Sports Channels';
-        
-        let embedUrl = (ch.streams && ch.streams[0] && (ch.streams[0].url || ch.streams[0])) || `https://logic.icelanders.st/embed/${ch.url}`;
-        const embedRes = await fetchUrl(embedUrl);
-        const m3u8StreamUrl = decodeStreamUrl(embedRes.data) || embedUrl;
+    console.log(`[*] Extracting streams for ${channels.length} channels in parallel batches...`);
 
-        totalStreamsCount++;
-        m3uLines.push(`#EXTINF:-1 tvg-name="${name}" tvg-logo="${logo}" group-title="${genreName}",${name}\n`);
-        m3uLines.push(`${m3u8StreamUrl}\n`);
+    const BATCH_SIZE = 25;
+    const results = [];
+
+    for (let i = 0; i < channels.length; i += BATCH_SIZE) {
+        const batch = channels.slice(i, i + BATCH_SIZE);
+        const batchResults = await Promise.all(batch.map(ch => extractChannel(ch)));
+        batchResults.forEach(r => { if (r) results.push(r); });
     }
 
-    const playlist = m3uLines.join('');
-    fs.writeFileSync('sports.m3u', playlist, 'utf-8');
-    fs.writeFileSync('playlist.m3u', playlist, 'utf-8');
+    let m3uLines = ['#EXTM3U\n'];
+    results.forEach(res => {
+        m3uLines.push(`#EXTINF:-1 tvg-id="${res.id}" tvg-name="${res.name}" tvg-logo="${res.logo}" group-title="TimStreams Sports",${res.name}\n`);
+        m3uLines.push(`#EXTVLCOPT:http-referrer=https://timstreams.st/\n`);
+        m3uLines.push(`#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36\n`);
+        m3uLines.push(`${res.m3u8Url}\n`);
+    });
 
-    console.log(`\n[✓] Successfully generated sports.m3u with ${totalStreamsCount} total stream items!`);
+    const playlistContent = m3uLines.join('');
+    fs.writeFileSync('playlist.m3u', playlistContent, 'utf-8');
+    fs.writeFileSync('sports.m3u', playlistContent, 'utf-8');
+
+    console.log(`[✓] Successfully generated sports.m3u & playlist.m3u with ${results.length} working streams!`);
 }
 
-run();
+extractTimStreamsPlaylist();
