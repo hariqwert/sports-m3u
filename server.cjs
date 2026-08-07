@@ -4,15 +4,12 @@ const urlModule = require('url');
 const fs = require('fs');
 
 const PORT = process.env.PORT || 8080;
-const CACHE_DURATION_MS = 45 * 60 * 1000; // 45 Minutes
+const CACHE_DURATION_MS = 30 * 60 * 1000; // 30 Minutes
 
 let cachedPlaylist = null;
 let lastFetchTime = 0;
 
-/**
- * Base HTTP/HTTPS request with spoofed TimStreams headers
- */
-function fetchUrl(urlStr, extraHeaders = {}) {
+function fetchPage(urlStr, referer) {
     return new Promise((resolve) => {
         try {
             const u = new URL(urlStr);
@@ -22,50 +19,32 @@ function fetchUrl(urlStr, extraHeaders = {}) {
                 path: u.pathname + u.search,
                 headers: {
                     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-                    'Referer': 'https://timstreams.st/',
-                    'Origin': 'https://timstreams.st',
-                    ...extraHeaders
+                    'Referer': referer || 'https://dlhd.st/'
                 }
             };
             const client = u.protocol === 'https:' ? https : http;
             client.get(options, (res) => {
                 let data = '';
                 res.on('data', chunk => data += chunk);
-                res.on('end', () => resolve({ status: res.statusCode, headers: res.headers, data }));
-            }).on('error', () => resolve({ status: 500, headers: {}, data: '' }));
+                res.on('end', () => resolve({ status: res.statusCode, data }));
+            }).on('error', () => resolve({ status: 500, data: '' }));
         } catch(e) {
-            resolve({ status: 500, headers: {}, data: '' });
+            resolve({ status: 500, data: '' });
         }
     });
 }
 
-/**
- * Decode obfuscated XOR JavaScript array from iframe player page
- */
-function decodeStreamUrl(html) {
+function decodeDaddyLiveBase64(html) {
     if (!html) return null;
-    let match = html.match(/var\s+([a-zA-Z0-9_$]+)\s*=\s*\[([\d,]+)\]\s*,\s*([a-zA-Z0-9_$]+)\s*=\s*(\d+)\s*,\s*([a-zA-Z0-9_$]+)\s*=\s*(\d+)/);
-    if (!match) {
-        match = html.match(/var\s+([a-zA-Z0-9_$]+)\s*=\s*\[([\d,]+)\];\s*([a-zA-Z0-9_$]+)\s*=\s*(\d+);\s*([a-zA-Z0-9_$]+)\s*=\s*(\d+);/);
-    }
+    const match = html.match(/source:\s*window\.atob\(["']([^"']+)["']\)/i);
     if (match) {
-        const arr = match[2].split(',').map(Number);
-        const arg1 = parseInt(match[4]);
-        const arg2 = parseInt(match[6]);
-        let decoded = "";
-        for (let i = 0; i < arr.length; i++) {
-            decoded += String.fromCharCode(((arr[i] ^ arg1) - arg2 + 256) % 256);
-        }
-        const m3u8Match = decoded.match(/https?:\/\/[^\s'"\\]+\.m3u8[^\s'"\\]*/);
-        if (m3u8Match) return m3u8Match[0];
+        try {
+            return Buffer.from(match[1], 'base64').toString('utf-8');
+        } catch(e) {}
     }
-    const directMatch = html.match(/https?:\/\/[^\s'"\\]+\.m3u8[^\s'"\\]*/);
-    return directMatch ? directMatch[0] : null;
+    return null;
 }
 
-/**
- * Token Encoder/Decoder for safe Proxy URLs
- */
 function encodeToken(str) {
     return Buffer.from(str).toString('base64url');
 }
@@ -78,159 +57,72 @@ function decodeToken(token) {
     }
 }
 
-/**
- * Resolve direct .m3u8 stream link + proxy fallback link for any channel ID
- */
 async function resolveChannelStream(channelId) {
-    const cleanId = channelId.replace(/.*\/embed\//, '').replace(/^\/+|\/+$/g, '');
-    const embedUrl = `https://logic.icelanders.st/embed/${cleanId}`;
-    const embedRes = await fetchUrl(embedUrl);
-    const m3u8Url = decodeStreamUrl(embedRes.data) || embedUrl;
-    const token = encodeToken(m3u8Url);
+    const cleanId = channelId.replace(/[^0-9]/g, '') || '51';
+    const streamPhpUrl = `https://dlhd.st/stream/stream-${cleanId}.php`;
+    const playerIframeUrl = `https://hamis.romponalis.st/premiumtv/daddy3.php?id=${cleanId}`;
     
+    const playerHtml = await fetchPage(playerIframeUrl, streamPhpUrl);
+    const m3u8Url = decodeDaddyLiveBase64(playerHtml.data);
+    const token = m3u8Url ? encodeToken(m3u8Url + '|' + playerIframeUrl) : null;
+
     return {
         success: !!m3u8Url,
         channelId: cleanId,
-        embedUrl: embedUrl,
-        directM3u8Url: m3u8Url,
-        backupProxyUrl: `/live.php?token=${token}`,
-        token: token
+        streamPhpUrl,
+        playerIframeUrl,
+        m3u8Url,
+        proxyUrl: token ? `/live.php?token=${token}` : null
     };
 }
 
-function getFallbackCatalog() {
-    if (fs.existsSync('channels.json')) {
-        try {
-            const data = JSON.parse(fs.readFileSync('channels.json', 'utf-8'));
-            if (Array.isArray(data) && data.length > 0) return data;
-        } catch(e) {}
-    }
-    return [];
-}
-
-/**
- * Generates playlist with dual endpoints (Direct + Backup Proxy links)
- */
 async function getOrUpdatePlaylist() {
     const now = Date.now();
     if (cachedPlaylist && (now - lastFetchTime < CACHE_DURATION_MS)) {
-        console.log(`[+] Serving cached sports.m3u (Age: ${Math.round((now - lastFetchTime) / 60000)} min)`);
         return cachedPlaylist;
     }
 
-    console.log(`[*] Cache expired. Resolving streams & building sports.m3u...`);
+    if (fs.existsSync('dlhd.m3u')) {
+        cachedPlaylist = fs.readFileSync('dlhd.m3u', 'utf-8');
+        lastFetchTime = Date.now();
+        return cachedPlaylist;
+    }
+
     let m3uLines = ['#EXTM3U\n'];
-    let totalCount = 0;
-
-    // 1. LIVE & UPCOMING SPORTS EVENTS
-    const resEvents = await fetchUrl('https://api.vixnuvew.uk/api/live-upcoming');
-    if (resEvents.status === 200) {
-        try {
-            const eventsData = JSON.parse(resEvents.data);
-            const events = eventsData.events || [];
-            const eventGenres = eventsData.genres || {};
-
-            for (const ev of events) {
-                const evName = ev.name || ev.url;
-                const evLogo = ev.logo || '';
-                const genreName = eventGenres[ev.genre] || ev.genre || 'Live Sports';
-                const eventStreams = ev.streams || [];
-
-                for (let sIdx = 0; sIdx < eventStreams.length; sIdx++) {
-                    const st = eventStreams[sIdx];
-                    const stName = st.name ? `${evName} (${st.name})` : evName;
-                    const embedUrl = st.url || `https://logic.icelanders.st/embed/${ev.url}`;
-
-                    let streamUrl = embedUrl;
-                    if (embedUrl.includes('icelanders.st/embed/')) {
-                        const embedRes = await fetchUrl(embedUrl);
-                        streamUrl = decodeStreamUrl(embedRes.data) || embedUrl;
-                    }
-
-                    totalCount++;
-                    const token = encodeToken(streamUrl);
-                    m3uLines.push(`#EXTINF:-1 tvg-name="${stName}" tvg-logo="${evLogo}" group-title="${genreName}" backup-url="/live.php?token=${token}",${stName}\n`);
-                    m3uLines.push(`${streamUrl}\n`);
-                }
-            }
-        } catch(e) {}
-    }
-
-    // 2. LIVE TV CHANNELS (WITH FALLBACK CATALOG PROTECTION)
-    let channels = [];
-    let genres = {};
-
-    const resChannels = await fetchUrl('https://api.vixnuvew.uk/api/channels');
-    if (resChannels.status === 200) {
-        try {
-            const apiData = JSON.parse(resChannels.data);
-            channels = apiData.channels || [];
-            genres = apiData.genres || {};
-        } catch(e) {}
-    }
-
-    if (channels.length === 0) {
-        console.warn(`[!] Primary API failed. Using local fallback catalog...`);
-        const fallbackList = getFallbackCatalog();
-        channels = fallbackList.map(item => ({
-            url: item.channel_id || item.url || item.name.toLowerCase().replace(/[^a-z0-9]/g, '-'),
-            name: item.name,
-            logo: item.logo,
-            genreName: item.genre || 'Sports Channels',
-            streams: [{ url: `https://logic.icelanders.st/embed/${item.channel_id || item.url || item.name.toLowerCase().replace(/[^a-z0-9]/g, '-')}` }]
-        }));
-    }
-
-    for (let i = 0; i < channels.length; i++) {
-        const ch = channels[i];
-        const name = ch.name || ch.url;
-        const logo = ch.logo || '';
-        const genreName = ch.genreName || genres[ch.genre] || 'Sports Channels';
-        
-        let embedUrl = (ch.streams && ch.streams[0] && (ch.streams[0].url || ch.streams[0])) || `https://logic.icelanders.st/embed/${ch.url}`;
-        const embedRes = await fetchUrl(embedUrl);
-        const m3u8StreamUrl = decodeStreamUrl(embedRes.data) || embedUrl;
-
-        totalCount++;
-        const token = encodeToken(m3u8StreamUrl);
-        m3uLines.push(`#EXTINF:-1 tvg-name="${name}" tvg-logo="${logo}" group-title="${genreName}" backup-url="/live.php?token=${token}",${name}\n`);
-        m3uLines.push(`${m3u8StreamUrl}\n`);
+    const sampleIds = ["51", "61", "62", "90", "91", "100", "116", "117", "118", "123", "124", "125", "126", "134", "145", "206", "267", "268", "283", "284", "293", "302", "303", "304", "305", "306", "309", "311", "313", "314", "315", "316", "335", "346", "352", "370", "374", "411", "423", "425", "429", "430", "432", "433", "436", "446", "524", "578", "600", "602", "646", "664", "699", "742", "745", "766", "767", "775", "791", "793", "885", "886", "887", "892", "900", "936", "1042", "1052"];
+    
+    for (const id of sampleIds) {
+        const res = await resolveChannelStream(id);
+        if (res.success) {
+            m3uLines.push(`#EXTINF:-1 tvg-id="${id}" tvg-name="Channel ${id}" group-title="Live Sports",Channel ${id}\n`);
+            m3uLines.push(`#EXTVLCOPT:http-referrer=${res.playerIframeUrl}\n`);
+            m3uLines.push(`${res.m3u8Url}\n`);
+        }
     }
 
     cachedPlaylist = m3uLines.join('');
     lastFetchTime = Date.now();
-    
-    try {
-        fs.writeFileSync('sports.m3u', cachedPlaylist, 'utf-8');
-        fs.writeFileSync('playlist.m3u', cachedPlaylist, 'utf-8');
-    } catch(e) {}
-
-    console.log(`[✓] Successfully updated sports.m3u playlist (${totalCount} streams).`);
     return cachedPlaylist;
 }
 
-/**
- * REVERSE PROXY BACKUP ENGINE (/live.php)
- * Spoofs Referer & Origin headers server-side to bypass 403 Forbidden & CORS restrictions
- */
 function handleProxyRequest(req, res) {
     const parsedUrl = urlModule.parse(req.url, true);
     const query = parsedUrl.query;
     
-    let rawTargetUrl = null;
-    if (query.token) {
-        rawTargetUrl = decodeToken(query.token);
-    } else if (query.url || query.wanda) {
-        rawTargetUrl = decodeToken(query.wanda || query.url) || query.wanda || query.url;
+    let decodedStr = null;
+    if (query.token) decodedStr = decodeToken(query.token);
+    
+    if (!decodedStr) {
+        res.writeHead(400, { 'Content-Type': 'application/json' });
+        return res.end(JSON.stringify({ error: 'Missing or invalid token' }));
     }
 
-    if (!rawTargetUrl) {
-        res.writeHead(400, { 'Content-Type': 'application/json' });
-        return res.end(JSON.stringify({ error: 'Missing or invalid stream token' }));
-    }
+    const parts = decodedStr.split('|');
+    const targetUrl = parts[0];
+    const referer = parts[1] || 'https://hamis.romponalis.st/';
 
     try {
-        const target = new URL(rawTargetUrl);
+        const target = new URL(targetUrl);
         const proxyOptions = {
             hostname: target.hostname,
             port: target.port || (target.protocol === 'https:' ? 443 : 80),
@@ -238,9 +130,8 @@ function handleProxyRequest(req, res) {
             method: req.method,
             headers: {
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-                'Referer': 'https://timstreams.st/',
-                'Origin': 'https://timstreams.st',
-                'Accept': '*/*'
+                'Referer': referer,
+                'Origin': new URL(referer).origin
             }
         };
 
@@ -256,7 +147,7 @@ function handleProxyRequest(req, res) {
 
         client.on('error', (err) => {
             res.writeHead(502, { 'Content-Type': 'application/json' });
-            res.end(JSON.stringify({ error: 'Proxy Gateway Error', message: err.message }));
+            res.end(JSON.stringify({ error: 'Proxy Error', message: err.message }));
         });
 
         req.pipe(client);
@@ -269,7 +160,6 @@ function handleProxyRequest(req, res) {
 const server = http.createServer(async (req, res) => {
     const url = req.url.split('?')[0];
 
-    // CORS Pre-flight Options
     if (req.method === 'OPTIONS') {
         res.writeHead(204, {
             'Access-Control-Allow-Origin': '*',
@@ -279,24 +169,16 @@ const server = http.createServer(async (req, res) => {
         return res.end();
     }
 
-    // 1. Full M3U Playlist Endpoint
     if (url === '/sports.m3u' || url === '/playlist.m3u' || url === '/') {
         const playlist = await getOrUpdatePlaylist();
         res.writeHead(200, {
             'Content-Type': 'application/x-mpegurl; charset=utf-8',
-            'Access-Control-Allow-Origin': '*',
-            'Cache-Control': 'public, max-age=2700'
+            'Access-Control-Allow-Origin': '*'
         });
         res.end(playlist);
     } 
-    // 2. Resolver API (/api/resolve_stream/:id or /stream/:id)
-    else if (url.startsWith('/stream/') || url.startsWith('/embed/') || url.startsWith('/api/resolve_stream/')) {
-        const channelId = url.replace(/^\/(?:stream|embed|api\/resolve_stream)\//, '');
-        if (!channelId) {
-            res.writeHead(400);
-            return res.end('Missing channel ID parameter');
-        }
-        
+    else if (url.startsWith('/api/resolve_stream/') || url.startsWith('/stream/')) {
+        const channelId = url.replace(/^\/(?:api\/resolve_stream|stream)\//, '');
         const result = await resolveChannelStream(channelId);
         res.writeHead(200, {
             'Content-Type': 'application/json; charset=utf-8',
@@ -304,7 +186,6 @@ const server = http.createServer(async (req, res) => {
         });
         res.end(JSON.stringify(result, null, 2));
     } 
-    // 3. Backup Reverse Proxy Endpoint (/live.php)
     else if (url === '/live.php' || url === '/proxy') {
         handleProxyRequest(req, res);
     } 
@@ -315,9 +196,8 @@ const server = http.createServer(async (req, res) => {
 });
 
 server.listen(PORT, () => {
-    console.log(`[✓] Server listening on port ${PORT}`);
-    console.log(`[✓] Playlist URL: http://localhost:${PORT}/sports.m3u`);
-    console.log(`[✓] Stream Resolver: http://localhost:${PORT}/api/resolve_stream/:channelId`);
-    console.log(`[✓] Backup Proxy: http://localhost:${PORT}/live.php?token=TOKEN`);
-    getOrUpdatePlaylist();
+    console.log(`[✓] Resilient M3U Server running on port ${PORT}`);
+    console.log(`[✓] M3U Playlist: http://localhost:${PORT}/sports.m3u`);
+    console.log(`[✓] Stream Resolver: http://localhost:${PORT}/api/resolve_stream/:id`);
+    console.log(`[✓] Reverse Proxy: http://localhost:${PORT}/live.php?token=TOKEN`);
 });
