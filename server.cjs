@@ -6,32 +6,6 @@ const fs = require('fs');
 
 const PORT = process.env.PORT || 8080;
 
-function fetchJson(urlStr) {
-    return new Promise((resolve) => {
-        try {
-            const u = new URL(urlStr);
-            const client = u.protocol === 'https:' ? https : http;
-            client.get({
-                hostname: u.hostname,
-                port: u.port || (u.protocol === 'https:' ? 443 : 80),
-                path: u.pathname + u.search,
-                headers: {
-                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-                    'Accept': 'application/json, text/plain, */*'
-                }
-            }, (res) => {
-                let data = '';
-                res.on('data', chunk => data += chunk);
-                res.on('end', () => {
-                    try { resolve({ status: res.statusCode, data: JSON.parse(data) }); } catch(e) { resolve({ status: res.statusCode, data: null }); }
-                });
-            }).on('error', () => resolve({ status: 500, data: null }));
-        } catch(e) {
-            resolve({ status: 500, data: null });
-        }
-    });
-}
-
 function fetchAniList(query, variables = {}) {
     return new Promise((resolve) => {
         const bodyStr = JSON.stringify({ query, variables });
@@ -97,7 +71,7 @@ const server = http.createServer(async (req, res) => {
         }
     }
 
-    // STAGE 3: Serve Transcoded HLS Stream Manifests (.m3u8) & TS Segment Files
+    // Serve Transcoded HLS Stream Manifests & TS Segment Files
     if (pathname.startsWith('/streams/')) {
         const relativePath = pathname.replace('/streams/', '');
         const filePath = path.join(__dirname, 'public', 'streams', relativePath);
@@ -184,7 +158,8 @@ const server = http.createServer(async (req, res) => {
             const episodeList = Array.from({ length: epCount }, (_, i) => ({
                 id: `${m.id}-ep-${i + 1}`,
                 number: i + 1,
-                title: `Episode ${i + 1}`
+                title: `Episode ${i + 1}`,
+                animeId: String(m.id)
             }));
 
             info = {
@@ -202,7 +177,8 @@ const server = http.createServer(async (req, res) => {
             const episodeList = Array.from({ length: match.episodeCount }, (_, i) => ({
                 id: `${match.id}-ep-${i + 1}`,
                 number: i + 1,
-                title: `Episode ${i + 1}`
+                title: `Episode ${i + 1}`,
+                animeId: match.id
             }));
 
             info = {
@@ -221,22 +197,28 @@ const server = http.createServer(async (req, res) => {
         return res.end(JSON.stringify({ success: true, info: info }));
     }
 
-    // STAGE 4: Multi-Server API Integration (Returns Server 1 FFmpeg Transcoded HLS + Server 2/3 Backup Streams)
+    // API 4: Real Anime Video Stream & iFrame Embed Provider Resolver
     if (pathname.startsWith('/api/watch/')) {
         const episodeId = pathname.replace('/api/watch/', '');
+        
+        // Extract anime ID and episode number
+        // e.g. "101922-ep-1" -> animeId = 101922, epNum = 1
+        const parts = episodeId.split('-ep-');
+        const animeId = parts[0] || '101922';
+        const epNum = parts[1] || '1';
+
         res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
         return res.end(JSON.stringify({
             success: true,
-            title: `Episode ${episodeId}`,
+            title: `Episode ${epNum}`,
             episodeId: episodeId,
+            animeId: animeId,
+            episodeNumber: epNum,
             servers: [
-                { name: "Server 1 (FFmpeg HLS Transcoder Engine)", url: "/streams/demon-slayer-ep1/master.m3u8", quality: "1080p Full HD" },
-                { name: "Server 2 (Sintel HLS Stream)", url: "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8", quality: "720p HD" },
-                { name: "Server 3 (Tears of Steel 4K)", url: "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8", quality: "4K Ultra HD" }
-            ],
-            sources: [
-                { url: "/streams/demon-slayer-ep1/master.m3u8", isM3U8: true, quality: "1080p Full HD" },
-                { url: "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8", isM3U8: true, quality: "720p HD" }
+                { name: "Server 1 (VidSrc Anime HD)", type: "iframe", url: `https://vidsrc.cc/v2/embed/anime/${animeId}/${epNum}/sub`, quality: "1080p Subbed" },
+                { name: "Server 2 (AutoEmbed Anime)", type: "iframe", url: `https://autoembed.cc/embed/anime/${animeId}/${epNum}`, quality: "1080p HD" },
+                { name: "Server 3 (SmashyStream Anime)", type: "iframe", url: `https://player.smashystream.com/anime?id=${animeId}&ep=${epNum}`, quality: "720p HD" },
+                { name: "Server 4 (FFmpeg HLS Local Stream)", type: "hls", url: "/streams/demon-slayer-ep1/master.m3u8", quality: "Local Transcode" }
             ]
         }));
     }
@@ -246,5 +228,5 @@ const server = http.createServer(async (req, res) => {
 });
 
 server.listen(PORT, () => {
-    console.log(`[✓] Complete Automated Anime Pipeline Server running on http://localhost:${PORT}`);
+    console.log(`[✓] Real Anime Stream Provider Server running on http://localhost:${PORT}`);
 });

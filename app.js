@@ -134,7 +134,7 @@ function renderSearchDropdown(results) {
 // Watch Anime & Episode Selector Logic
 async function watchAnime(animeId) {
     try {
-        console.log(`[*] Loading anime info for: ${animeId}...`);
+        console.log(`[*] Loading anime info for AniList ID: ${animeId}...`);
         const res = await fetch(`/api/anime/${encodeURIComponent(animeId)}`);
         const data = await res.json();
 
@@ -183,20 +183,19 @@ async function playEpisode(episodeId, epNum) {
     document.getElementById('nowPlayingTitle').innerText = `${animeTitle} — Episode ${epNum}`;
 
     try {
-        console.log(`[*] Resolving multi-server streams for episode: ${episodeId}...`);
+        console.log(`[*] Resolving real anime episode stream for: ${episodeId}...`);
         const res = await fetch(`/api/watch/${encodeURIComponent(episodeId)}`);
         const data = await res.json();
 
         if (data.success && data.servers && data.servers.length > 0) {
             currentServers = data.servers;
             renderServersGrid(currentServers);
-            initArtPlayer(currentServers[0].url);
-        } else {
-            initArtPlayer('/streams/demon-slayer-ep1/master.m3u8');
+            
+            // Load Server 1 by default
+            loadStreamServer(currentServers[0]);
         }
     } catch(e) {
         console.error("Failed to play episode:", e);
-        initArtPlayer('/streams/demon-slayer-ep1/master.m3u8');
     }
 }
 
@@ -210,21 +209,32 @@ function renderServersGrid(servers) {
         btn.className = `ep-btn ${idx === 0 ? 'active' : ''}`;
         btn.style.width = 'auto';
         btn.id = `srv-btn-${idx}`;
-        btn.innerText = srv.name;
-        btn.onclick = () => switchServer(srv.url, idx);
+        btn.innerText = `${srv.name} (${srv.quality})`;
+        btn.onclick = () => {
+            document.querySelectorAll('#serversGrid .ep-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            loadStreamServer(srv);
+        };
         grid.appendChild(btn);
     });
 }
 
-function switchServer(url, idx) {
-    document.querySelectorAll('#serversGrid .ep-btn').forEach(b => b.classList.remove('active'));
-    const activeBtn = document.getElementById(`srv-btn-${idx}`);
-    if (activeBtn) activeBtn.classList.add('active');
+function loadStreamServer(serverObj) {
+    const playerBox = document.getElementById('artplayer');
 
-    initArtPlayer(url);
+    if (artPlayer && typeof artPlayer.destroy === 'function') {
+        artPlayer.destroy();
+        artPlayer = null;
+    }
+
+    if (serverObj.type === 'iframe') {
+        playerBox.innerHTML = `<iframe src="${serverObj.url}" frameborder="0" allowfullscreen allow="autoplay; encrypted-media" style="width:100%; height:100%; border:none;"></iframe>`;
+    } else {
+        initArtPlayer(serverObj.url);
+    }
 }
 
-// Safely Initialize ArtPlayer (supports ArtPlayer, Artplayer, or HTML5 HLS fallback)
+// Safely Initialize ArtPlayer HLS Player
 function initArtPlayer(m3u8Url) {
     const playerBox = document.getElementById('artplayer');
 
