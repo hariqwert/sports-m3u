@@ -200,34 +200,54 @@ async function playEpisode(episodeId, epNum) {
     }
 }
 
-// Custom ArtPlayer + HLS.js Initialization
+// Safely Initialize ArtPlayer (supports ArtPlayer, Artplayer, or HTML5 HLS fallback)
 function initArtPlayer(m3u8Url) {
-    if (artPlayer) artPlayer.destroy();
+    const playerBox = document.getElementById('artplayer');
 
-    artPlayer = new ArtPlayer({
-        container: '#artplayer',
-        url: m3u8Url,
-        type: 'm3u8',
-        theme: '#0284c7',
-        autoplay: true,
-        fullscreen: true,
-        fullscreenWeb: true,
-        setting: true,
-        playbackRate: true,
-        aspectRatio: true,
-        pip: true,
-        customType: {
-            m3u8: function (video, url) {
-                if (Hls.isSupported()) {
-                    const hls = new Hls();
-                    hls.loadSource(url);
-                    hls.attachMedia(video);
-                } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-                    video.src = url;
+    if (artPlayer && typeof artPlayer.destroy === 'function') {
+        artPlayer.destroy();
+        artPlayer = null;
+    }
+
+    const ArtPlayerConstructor = window.Artplayer || window.ArtPlayer;
+
+    if (ArtPlayerConstructor) {
+        artPlayer = new ArtPlayerConstructor({
+            container: '#artplayer',
+            url: m3u8Url,
+            type: 'm3u8',
+            theme: '#0284c7',
+            autoplay: true,
+            fullscreen: true,
+            fullscreenWeb: true,
+            setting: true,
+            playbackRate: true,
+            aspectRatio: true,
+            pip: true,
+            customType: {
+                m3u8: function (video, url) {
+                    if (window.Hls && window.Hls.isSupported()) {
+                        const hls = new window.Hls();
+                        hls.loadSource(url);
+                        hls.attachMedia(video);
+                    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                        video.src = url;
+                    }
                 }
             }
+        });
+    } else {
+        // Direct HTML5 Video + HLS.js Fallback if CDN constructor name differs
+        playerBox.innerHTML = '<video id="html5VideoPlayer" controls autoplay style="width:100%; height:100%; object-fit:contain;"></video>';
+        const video = document.getElementById('html5VideoPlayer');
+        if (window.Hls && window.Hls.isSupported()) {
+            const hls = new window.Hls();
+            hls.loadSource(m3u8Url);
+            hls.attachMedia(video);
+        } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+            video.src = m3u8Url;
         }
-    });
+    }
 }
 
 function showPlayerSection() {
@@ -237,6 +257,9 @@ function showPlayerSection() {
 }
 
 function closePlayer() {
-    if (artPlayer) artPlayer.destroy();
+    if (artPlayer && typeof artPlayer.destroy === 'function') {
+        artPlayer.destroy();
+        artPlayer = null;
+    }
     document.getElementById('playerSection').classList.remove('active');
 }
