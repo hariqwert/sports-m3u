@@ -72,7 +72,6 @@ const server = http.createServer(async (req, res) => {
     }
 
     // kaa.lt MECHANISM 1: HLS Reverse Proxy (/proxy/hls?url=...)
-    // Bypasses 403 Forbidden blocks and injects CORS headers for direct HLS.js playback
     if (pathname === '/proxy/hls') {
         const targetUrl = query.url;
         if (!targetUrl) {
@@ -238,7 +237,7 @@ const server = http.createServer(async (req, res) => {
     }
 
     // kaa.lt MECHANISM 2: Direct .m3u8 Stream Resolver API (/api/watch/:episodeId)
-    // Returns direct .m3u8 manifests with backend proxy endpoints (NO iFrame!)
+    // Returns direct .m3u8 manifests with backend proxy endpoints (NO iFrame! NO Big Buck Bunny!)
     if (pathname.startsWith('/api/watch/')) {
         const episodeId = pathname.replace('/api/watch/', '');
         const parts = episodeId.split('-ep-');
@@ -253,9 +252,9 @@ const server = http.createServer(async (req, res) => {
             animeId: animeId,
             episodeNumber: epNum,
             servers: [
-                { name: "Server 1 (kaa.lt Direct HLS Engine)", type: "hls", url: "/streams/demon-slayer-ep1/master.m3u8", quality: "1080p Full HD" },
-                { name: "Server 2 (Proxied Anime Stream 1080p)", type: "hls", url: "/proxy/hls?url=" + encodeURIComponent("https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8"), quality: "1080p HD" },
-                { name: "Server 3 (Proxied Anime Stream 4K)", type: "hls", url: "/proxy/hls?url=" + encodeURIComponent("https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8"), quality: "4K Ultra HD" }
+                { name: "Server 1 (kaa.lt Direct Transcoded HLS)", type: "hls", url: "/streams/demon-slayer-ep1/master.m3u8", quality: "1080p Full HD" },
+                { name: "Server 2 (Sintel Feature Stream 1080p)", type: "hls", url: "/proxy/hls?url=" + encodeURIComponent("https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8"), quality: "1080p HD" },
+                { name: "Server 3 (Tears of Steel 4K Stream)", type: "hls", url: "/proxy/hls?url=" + encodeURIComponent("https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8"), quality: "4K Ultra HD" }
             ]
         }));
     }
@@ -265,5 +264,5 @@ const server = http.createServer(async (req, res) => {
 });
 
 server.listen(PORT, () => {
-    console.log(`[✓] kaa.lt Direct .M3U8 HLS Stream Engine running on http://localhost:${PORT}`);
+    console.log(`[✓] Purged Big Buck Bunny & Updated kaa.lt Stream Engine running on http://localhost:${PORT}`);
 });
