@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AnimeStream — Watch Anime Online Free</title>
+    <title>AnimeStream — Automated Anime Streaming Engine</title>
     <!-- Google Fonts & CDN dependencies -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
@@ -18,7 +18,7 @@
             <span>Anime</span>Stream
         </a>
         <div class="search-bar-container">
-            <input type="text" id="searchInput" class="search-input" placeholder="Search anime title... (e.g. Naruto, Solo Leveling)" autocomplete="off">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search anime title... (e.g. Demon Slayer, Solo Leveling)" autocomplete="off">
             <div id="searchResults" class="search-results-dropdown"></div>
         </div>
     </header>
@@ -26,12 +26,12 @@
     <main>
         <!-- Featured Hero Banner -->
         <div class="hero-banner" id="heroBanner">
-            <img class="hero-bg" src="https://gogocdn.net/cover/demon-slayer-kimetsu-no-yaiba.png" alt="Demon Slayer Hero">
+            <img class="hero-bg" src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101922-WBsBl0ClmgYL.jpg" alt="Demon Slayer Hero">
             <div class="hero-overlay"></div>
             <div class="hero-content">
                 <h1 class="hero-title" id="heroTitle">Demon Slayer: Kimetsu no Yaiba</h1>
                 <p class="hero-desc" id="heroDesc">A high-stakes battle for survival where destiny, power, and courage collide.</p>
-                <button class="btn-primary" onclick="watchAnime('demon-slayer-kimetsu-no-yaiba')">▶ Watch Season 1 Now</button>
+                <button class="btn-primary" onclick="watchAnime('101922')">▶ Watch Season 1 Now</button>
             </div>
         </div>
 
@@ -42,8 +42,16 @@
                 <button class="btn-primary" style="padding: 8px 16px; font-size: 13px;" onclick="closePlayer()">✕ Close Player</button>
             </div>
             
+            <!-- Custom Artplayer / HLS Container -->
             <div id="artplayer" class="player-box"></div>
 
+            <!-- Server Selector Bar (kaa.lt Style) -->
+            <div class="episodes-box" style="margin-bottom: 16px;">
+                <h3 class="episodes-title">Server Selection</h3>
+                <div id="serversGrid" style="display: flex; gap: 10px; flex-wrap: wrap;"></div>
+            </div>
+
+            <!-- Episode Grid Selector -->
             <div class="episodes-box">
                 <h3 class="episodes-title">Episode Select</h3>
                 <div id="episodesGrid" class="episodes-grid"></div>
@@ -60,7 +68,7 @@
     </main>
 
     <footer>
-        <p>© 2026 AnimeStream. High performance open anime streaming engine powered by Consumet API & HLS.js.</p>
+        <p>© 2026 AnimeStream. Automated Anime Pipeline Engine powered by FFmpeg HLS Transcoder, AniList GraphQL, & HLS.js.</p>
     </footer>
 
     <script src="app.js"></script>

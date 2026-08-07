@@ -1,6 +1,7 @@
 let artPlayer = null;
 let currentAnimeInfo = null;
 let currentEpisodeId = null;
+let currentServers = [];
 
 document.addEventListener('DOMContentLoaded', () => {
     loadTrendingAnime();
@@ -142,7 +143,6 @@ async function watchAnime(animeId) {
             showPlayerSection();
             renderEpisodesGrid(currentAnimeInfo.episodes || []);
             
-            // Play first episode by default
             if (currentAnimeInfo.episodes && currentAnimeInfo.episodes.length > 0) {
                 playEpisode(currentAnimeInfo.episodes[0].id, 1);
             }
@@ -175,7 +175,6 @@ function renderEpisodesGrid(episodes) {
 async function playEpisode(episodeId, epNum) {
     currentEpisodeId = episodeId;
 
-    // Highlight active episode button
     document.querySelectorAll('.ep-btn').forEach(btn => btn.classList.remove('active'));
     const activeBtn = document.getElementById(`ep-btn-${episodeId}`);
     if (activeBtn) activeBtn.classList.add('active');
@@ -184,20 +183,45 @@ async function playEpisode(episodeId, epNum) {
     document.getElementById('nowPlayingTitle').innerText = `${animeTitle} — Episode ${epNum}`;
 
     try {
-        console.log(`[*] Resolving video stream for episode: ${episodeId}...`);
+        console.log(`[*] Resolving multi-server streams for episode: ${episodeId}...`);
         const res = await fetch(`/api/watch/${encodeURIComponent(episodeId)}`);
         const data = await res.json();
 
-        let streamUrl = 'https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8';
-        if (data.success && data.sources && data.sources.length > 0) {
-            streamUrl = data.sources[0].url;
+        if (data.success && data.servers && data.servers.length > 0) {
+            currentServers = data.servers;
+            renderServersGrid(currentServers);
+            initArtPlayer(currentServers[0].url);
+        } else {
+            initArtPlayer('/streams/demon-slayer-ep1/master.m3u8');
         }
-
-        initArtPlayer(streamUrl);
     } catch(e) {
         console.error("Failed to play episode:", e);
-        initArtPlayer('https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8');
+        initArtPlayer('/streams/demon-slayer-ep1/master.m3u8');
     }
+}
+
+// Render kaa.lt Style Server Selection Bar
+function renderServersGrid(servers) {
+    const grid = document.getElementById('serversGrid');
+    grid.innerHTML = '';
+
+    servers.forEach((srv, idx) => {
+        const btn = document.createElement('button');
+        btn.className = `ep-btn ${idx === 0 ? 'active' : ''}`;
+        btn.style.width = 'auto';
+        btn.id = `srv-btn-${idx}`;
+        btn.innerText = srv.name;
+        btn.onclick = () => switchServer(srv.url, idx);
+        grid.appendChild(btn);
+    });
+}
+
+function switchServer(url, idx) {
+    document.querySelectorAll('#serversGrid .ep-btn').forEach(b => b.classList.remove('active'));
+    const activeBtn = document.getElementById(`srv-btn-${idx}`);
+    if (activeBtn) activeBtn.classList.add('active');
+
+    initArtPlayer(url);
 }
 
 // Safely Initialize ArtPlayer (supports ArtPlayer, Artplayer, or HTML5 HLS fallback)
@@ -237,7 +261,6 @@ function initArtPlayer(m3u8Url) {
             }
         });
     } else {
-        // Direct HTML5 Video + HLS.js Fallback if CDN constructor name differs
         playerBox.innerHTML = '<video id="html5VideoPlayer" controls autoplay style="width:100%; height:100%; object-fit:contain;"></video>';
         const video = document.getElementById('html5VideoPlayer');
         if (window.Hls && window.Hls.isSupported()) {
