@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Movie & Sports HLS M3U8 Stream Tester</title>
+    <!-- Modern Google Font & ArtPlayer + HLS.js CDN -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/artplayer/dist/artplayer.js"></script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+        body { background: #0f172a; color: #f8fafc; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding: 20px; }
+        .container { width: 100%; max-width: 960px; background: #1e293b; border-radius: 16px; padding: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+        h1 { font-size: 24px; font-weight: 700; color: #38bdf8; margin-bottom: 8px; text-align: center; }
+        p.subtitle { font-size: 14px; color: #94a3b8; text-align: center; margin-bottom: 20px; }
+        
+        .player-box { width: 100%; height: 520px; border-radius: 12px; overflow: hidden; background: #000; margin-bottom: 20px; border: 1px solid #334155; }
+        
+        .input-group { display: flex; gap: 10px; margin-bottom: 20px; }
+        input[type="text"] { flex: 1; padding: 14px 18px; border-radius: 8px; border: 1px solid #475569; background: #0f172a; color: #f8fafc; font-size: 14px; outline: none; transition: border-color 0.2s; }
+        input[type="text"]:focus { border-color: #38bdf8; }
+        button { padding: 14px 24px; border-radius: 8px; border: none; background: #0284c7; color: #fff; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+        button:hover { background: #0369a1; }
+        
+        .samples-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+        .sample-btn { background: #334155; color: #e2e8f0; padding: 10px 14px; border-radius: 6px; font-size: 13px; font-weight: 600; text-align: center; border: 1px solid #475569; cursor: pointer; transition: all 0.2s; }
+        .sample-btn:hover { background: #0284c7; border-color: #38bdf8; color: #fff; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🎬 Custom Movie & Sports HLS Stream Player</h1>
+    <p class="subtitle">Test any direct <code>.m3u8</code> video stream link in a sleek custom video player UI</p>
+
+    <!-- Custom Player Container -->
+    <div id="artplayer" class="player-box"></div>
+
+    <!-- Direct Stream Input Box -->
+    <div class="input-group">
+        <input type="text" id="streamUrlInput" value="https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" placeholder="Paste direct .m3u8 stream URL here...">
+        <button onclick="loadCustomStream()">Play Stream</button>
+    </div>
+
+    <!-- Quick Sample Streams -->
+    <p style="font-size: 13px; color: #94a3b8; margin-bottom: 10px; font-weight: 600;">Click Sample Streams to Test Instantly:</p>
+    <div class="samples-grid">
+        <div class="sample-btn" onclick="playSample('https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8')">🎬 Big Buck Bunny 1080p</div>
+        <div class="sample-btn" onclick="playSample('https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8')">🎬 Sintel 1080p Movie</div>
+        <div class="sample-btn" onclick="playSample('https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8')">🎬 Tears of Steel 4K</div>
+        <div class="sample-btn" onclick="playSample('https://raw.githubusercontent.com/hariqwert/sports-m3u/main/sports.m3u')">⚽ Live Sports M3U</div>
+    </div>
+</div>
+
+<script>
+    let art = null;
+
+    function initPlayer(url) {
+        if (art) art.destroy();
+
+        art = new ArtPlayer({
+            container: '#artplayer',
+            url: url,
+            type: 'm3u8',
+            theme: '#0284c7',
+            autoplay: true,
+            fullscreen: true,
+            fullscreenWeb: true,
+            setting: true,
+            playbackRate: true,
+            aspectRatio: true,
+            pip: true,
+            customType: {
+                m3u8: function (video, url) {
+                    if (Hls.isSupported()) {
+                        const hls = new Hls();
+                        hls.loadSource(url);
+                        hls.attachMedia(video);
+                    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                        video.src = url;
+                    }
+                }
+            }
+        });
+    }
+
+    function loadCustomStream() {
+        const url = document.getElementById('streamUrlInput').value.trim();
+        if (url) initPlayer(url);
+    }
+
+    function playSample(url) {
+        document.getElementById('streamUrlInput').value = url;
+        initPlayer(url);
+    }
+
+    // Initialize default stream on page load
+    initPlayer('https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8');
+</script>
+
+</body>
+</html>
