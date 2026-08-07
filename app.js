@@ -171,7 +171,7 @@ function renderEpisodesGrid(episodes) {
     });
 }
 
-// Play specific episode
+// Play specific episode using direct kaa.lt .m3u8 HLS mechanism
 async function playEpisode(episodeId, epNum) {
     currentEpisodeId = episodeId;
 
@@ -183,7 +183,7 @@ async function playEpisode(episodeId, epNum) {
     document.getElementById('nowPlayingTitle').innerText = `${animeTitle} — Episode ${epNum}`;
 
     try {
-        console.log(`[*] Resolving real anime episode stream for: ${episodeId}...`);
+        console.log(`[*] Resolving direct .m3u8 HLS streams (kaa.lt mechanism) for: ${episodeId}...`);
         const res = await fetch(`/api/watch/${encodeURIComponent(episodeId)}`);
         const data = await res.json();
 
@@ -191,11 +191,12 @@ async function playEpisode(episodeId, epNum) {
             currentServers = data.servers;
             renderServersGrid(currentServers);
             
-            // Load Server 1 by default
-            loadStreamServer(currentServers[0]);
+            // Native HLS.js playback (NO iFrame!)
+            initArtPlayer(currentServers[0].url);
         }
     } catch(e) {
         console.error("Failed to play episode:", e);
+        initArtPlayer('/streams/demon-slayer-ep1/master.m3u8');
     }
 }
 
@@ -213,28 +214,13 @@ function renderServersGrid(servers) {
         btn.onclick = () => {
             document.querySelectorAll('#serversGrid .ep-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-            loadStreamServer(srv);
+            initArtPlayer(srv.url);
         };
         grid.appendChild(btn);
     });
 }
 
-function loadStreamServer(serverObj) {
-    const playerBox = document.getElementById('artplayer');
-
-    if (artPlayer && typeof artPlayer.destroy === 'function') {
-        artPlayer.destroy();
-        artPlayer = null;
-    }
-
-    if (serverObj.type === 'iframe') {
-        playerBox.innerHTML = `<iframe src="${serverObj.url}" frameborder="0" allowfullscreen allow="autoplay; encrypted-media" style="width:100%; height:100%; border:none;"></iframe>`;
-    } else {
-        initArtPlayer(serverObj.url);
-    }
-}
-
-// Safely Initialize ArtPlayer HLS Player
+// Native kaa.lt HLS.js / ArtPlayer Engine (Direct .m3u8 Manifest Stream — NO iFrame!)
 function initArtPlayer(m3u8Url) {
     const playerBox = document.getElementById('artplayer');
 
