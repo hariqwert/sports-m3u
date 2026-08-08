@@ -16,6 +16,26 @@ function resetHome(e) {
     loadTrendingAnime();
 }
 
+// Custom Magnet / Stream URL Form Submission Handler
+function loadCustomMagnet(e) {
+    if (e) e.preventDefault();
+    const magnetInput = document.getElementById('customMagnetInput').value.trim();
+    if (!magnetInput) return;
+
+    showPlayerSection();
+
+    if (magnetInput.startsWith('http://') || magnetInput.startsWith('https://')) {
+        document.getElementById('nowPlayingTitle').innerText = 'Custom HLS Stream';
+        document.getElementById('nowPlayingSub').innerText = magnetInput;
+        initArtPlayer(magnetInput, 'm3u8');
+    } else {
+        document.getElementById('nowPlayingTitle').innerText = 'Custom P2P Magnet Stream';
+        document.getElementById('nowPlayingSub').innerText = 'WebTorrent Sequential Engine';
+        const p2pStreamUrl = `/stream/play?magnet=${encodeURIComponent(magnetInput)}`;
+        initArtPlayer(p2pStreamUrl, 'mp4');
+    }
+}
+
 // Fetch and render trending anime catalog via AniList GraphQL API
 async function loadTrendingAnime() {
     const query = `{ Page(perPage: 24) { media(type: ANIME, sort: POPULARITY_DESC) { id title { romaji english } coverImage { extraLarge } episodes seasonYear format status description } } }`;
@@ -194,11 +214,16 @@ function playEpisode(epNum) {
     const animeTitle = currentAnimeInfo ? (currentAnimeInfo.title.english || currentAnimeInfo.title.romaji) : 'Anime Stream';
     document.getElementById('nowPlayingTitle').innerText = `${animeTitle} — Episode ${epNum}`;
 
-    // Launch WebTorrent Sequential P2P Stream Endpoint
-    const magnetPreset = 'magnet:?xt=urn:btih:08ada5a7a6183aae1e09d831df6748d566095a10';
-    const p2pStreamUrl = `/stream/play?magnet=${encodeURIComponent(magnetPreset)}&ep=${epNum}`;
-    
-    initArtPlayer(p2pStreamUrl, 'mp4');
+    // Check if custom magnet input is provided, otherwise use current magnet
+    const customInput = document.getElementById('customMagnetInput').value.trim();
+    const magnetPreset = customInput || 'magnet:?xt=urn:btih:08ada5a7a6183aae1e09d831df6748d566095a10';
+
+    if (magnetPreset.startsWith('http://') || magnetPreset.startsWith('https://')) {
+        initArtPlayer(magnetPreset, 'm3u8');
+    } else {
+        const p2pStreamUrl = `/stream/play?magnet=${encodeURIComponent(magnetPreset)}&ep=${epNum}`;
+        initArtPlayer(p2pStreamUrl, 'mp4');
+    }
 }
 
 // Poll P2P telemetry stats from backend server
@@ -224,7 +249,7 @@ function updateTelemetryUI(stats) {
     document.getElementById('progressBarFill').style.width = `${prog}%`;
 }
 
-// Safely Initialize ArtPlayer (supports ArtPlayer, Artplayer, or HTML5 HLS fallback)
+// Safely Initialize ArtPlayer
 function initArtPlayer(videoUrl, type = 'mp4') {
     const playerBox = document.getElementById('artplayer');
 

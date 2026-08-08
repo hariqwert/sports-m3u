@@ -211,6 +211,53 @@ main {
     transform: translateY(-2px);
 }
 
+/* Custom Magnet Bar Styling */
+.custom-magnet-bar {
+    margin-bottom: 16px;
+    background: #0b1120;
+    padding: 12px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+}
+
+.custom-magnet-form {
+    display: flex;
+    gap: 10px;
+}
+
+.custom-magnet-input {
+    flex: 1;
+    background: #1e293b;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    padding: 10px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.custom-magnet-input:focus {
+    border-color: var(--cyan-glow);
+}
+
+.btn-load-magnet {
+    background: #0284c7;
+    color: #fff;
+    font-weight: 600;
+    font-size: 13px;
+    padding: 10px 18px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s;
+}
+
+.btn-load-magnet:hover {
+    background: #0369a1;
+}
+
 /* Section Title */
 .section-title {
     font-size: 22px;

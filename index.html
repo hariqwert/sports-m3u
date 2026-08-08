@@ -18,7 +18,7 @@
             <span>Anime</span>Torrent P2P
         </a>
         <div class="search-bar-container">
-            <input type="text" id="searchInput" class="search-input" placeholder="Search anime title... (e.g. Demon Slayer, Solo Leveling)" autocomplete="off">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search anime title... (e.g. Jujutsu Kaisen, Demon Slayer)" autocomplete="off">
             <div id="searchResults" class="search-results-dropdown"></div>
         </div>
     </header>
@@ -26,12 +26,12 @@
     <main>
         <!-- Featured Hero Banner -->
         <div class="hero-banner" id="heroBanner">
-            <img class="hero-bg" id="heroBg" src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101922-WBsBl0ClmgYL.jpg" alt="Demon Slayer Hero">
+            <img class="hero-bg" id="heroBg" src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101922-WBsBl0ClmgYL.jpg" alt="Anime Hero">
             <div class="hero-overlay"></div>
             <div class="hero-content">
-                <h1 class="hero-title" id="heroTitle">Demon Slayer: Kimetsu no Yaiba</h1>
-                <p class="hero-desc" id="heroDesc">A high-stakes battle for survival where destiny, power, and courage collide.</p>
-                <button class="btn-primary" onclick="watchAnime('101922')">▶ Watch Season 1 P2P Stream</button>
+                <h1 class="hero-title" id="heroTitle">JUJUTSU KAISEN</h1>
+                <p class="hero-desc" id="heroDesc">A high-stakes battle against curses where destiny, power, and courage collide.</p>
+                <button class="btn-primary" onclick="watchAnime('113415')">▶ Watch JUJUTSU KAISEN P2P Stream</button>
             </div>
         </div>
 
@@ -39,10 +39,18 @@
         <section id="playerSection" class="player-section">
             <div class="player-header">
                 <div>
-                    <h2 id="nowPlayingTitle" class="player-title">Demon Slayer — Episode 1</h2>
-                    <p id="nowPlayingSub" style="font-size:13px; color:var(--text-secondary);">Sequential P2P Stream Bridge</p>
+                    <h2 id="nowPlayingTitle" class="player-title">JUJUTSU KAISEN — Episode 1</h2>
+                    <p id="nowPlayingSub" style="font-size:13px; color:var(--text-secondary);">Sequential P2P Stream Engine</p>
                 </div>
                 <button class="btn-primary" style="padding: 8px 16px; font-size: 13px;" onclick="closePlayer()">✕ Close Player</button>
+            </div>
+
+            <!-- Custom Magnet / Stream URL Input Bar -->
+            <div class="custom-magnet-bar">
+                <form class="custom-magnet-form" onsubmit="loadCustomMagnet(event)">
+                    <input type="text" id="customMagnetInput" class="custom-magnet-input" placeholder="Paste custom Magnet URI (magnet:?xt=urn:btih:...) or stream URL (.m3u8 / .mp4)" autocomplete="off">
+                    <button type="submit" class="btn-load-magnet">⚡ Load Custom Stream</button>
+                </form>
             </div>
             
             <!-- Custom Artplayer / Video Box -->
