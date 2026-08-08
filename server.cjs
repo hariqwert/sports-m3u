@@ -1,49 +1,11 @@
 const http = require('http');
 const https = require('https');
-const urlModule = require('url');
-const path = require('path');
 const fs = require('fs');
 
 const PORT = process.env.PORT || 8080;
 
-function fetchAniList(query, variables = {}) {
-    return new Promise((resolve) => {
-        const bodyStr = JSON.stringify({ query, variables });
-        const req = https.request('https://graphql.anilist.co', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Content-Length': Buffer.byteLength(bodyStr),
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-            }
-        }, (res) => {
-            let data = '';
-            res.on('data', c => data += c);
-            res.on('end', () => {
-                try { resolve({ status: res.statusCode, data: JSON.parse(data) }); } catch(e) { resolve({ status: res.statusCode, data: null }); }
-            });
-        });
-        req.on('error', () => resolve({ status: 500, data: null }));
-        req.write(bodyStr);
-        req.end();
-    });
-}
-
-const FALLBACK_CATALOG = [
-    { id: "101922", title: "Demon Slayer: Kimetsu no Yaiba", image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101922-WBsBl0ClmgYL.jpg", releaseDate: "2019", subOrDub: "SUB/DUB", episodeCount: 26, description: "A high-stakes battle for survival where destiny, power, and courage collide." },
-    { id: "16498", title: "Attack on Titan", image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx16498-buvcRTBx4NSm.jpg", releaseDate: "2013", subOrDub: "SUB/DUB", episodeCount: 25, description: "Humans live inside cities surrounded by enormous walls due to the Titans." },
-    { id: "113415", title: "JUJUTSU KAISEN", image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx113415-LHBAeoZDIsnF.jpg", releaseDate: "2020", subOrDub: "SUB/DUB", episodeCount: 24, description: "A boy swallows a cursed talisman - the finger of a demon - and becomes cursed himself." },
-    { id: "1535", title: "Death Note", image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1535-kUgkcrfOrkUM.jpg", releaseDate: "2006", subOrDub: "SUB/DUB", episodeCount: 37, description: "An intelligent high school student goes on a secret crusade to eliminate criminals." },
-    { id: "21459", title: "My Hero Academia", image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21459-nYh85uj2Fuwr.jpg", releaseDate: "2016", subOrDub: "SUB/DUB", episodeCount: 13, description: "A superhero-loving boy without powers is determined to enroll in a prestigious hero academy." },
-    { id: "21", title: "One Piece", image: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx21-tNoLuB5aDM9E.jpg", releaseDate: "1999", subOrDub: "SUB/DUB", episodeCount: 1100, description: "Monkey D. Luffy explores the Grand Line to find the ultimate treasure known as One Piece." }
-];
-
-const server = http.createServer(async (req, res) => {
-    const parsedUrl = urlModule.parse(req.url, true);
-    const pathname = parsedUrl.pathname;
-    const query = parsedUrl.query;
-
-    // CORS Headers (kaa.lt Mechanism)
+const server = http.createServer((req, res) => {
+    // CORS Headers
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', '*');
@@ -53,210 +15,11 @@ const server = http.createServer(async (req, res) => {
         return res.end();
     }
 
-    // Static Web Pages
-    if (pathname === '/' || pathname === '/index.html') {
-        if (fs.existsSync('index.html')) {
-            res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
-            return res.end(fs.readFileSync('index.html', 'utf-8'));
+    if (req.url === '/' || req.url === '/sports.m3u' || req.url === '/playlist.m3u') {
+        if (fs.existsSync('sports.m3u')) {
+            res.writeHead(200, { 'Content-Type': 'application/x-mpegurl; charset=utf-8' });
+            return res.end(fs.readFileSync('sports.m3u', 'utf-8'));
         }
-    } else if (pathname === '/index.css') {
-        if (fs.existsSync('index.css')) {
-            res.writeHead(200, { 'Content-Type': 'text/css; charset=utf-8' });
-            return res.end(fs.readFileSync('index.css', 'utf-8'));
-        }
-    } else if (pathname === '/app.js') {
-        if (fs.existsSync('app.js')) {
-            res.writeHead(200, { 'Content-Type': 'application/javascript; charset=utf-8' });
-            return res.end(fs.readFileSync('app.js', 'utf-8'));
-        }
-    }
-
-    // kaa.lt MECHANISM 1: HLS Reverse Proxy (/proxy/hls?url=...)
-    if (pathname === '/proxy/hls') {
-        const targetUrl = query.url;
-        if (!targetUrl) {
-            res.writeHead(400, { 'Content-Type': 'text/plain' });
-            return res.end('Missing url query parameter');
-        }
-
-        try {
-            const u = new URL(targetUrl);
-            const client = u.protocol === 'https:' ? https : http;
-
-            client.get({
-                hostname: u.hostname,
-                port: u.port || (u.protocol === 'https:' ? 443 : 80),
-                path: u.pathname + u.search,
-                headers: {
-                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-                    'Referer': 'https://kaa.lt/',
-                    'Origin': 'https://kaa.lt'
-                }
-            }, (remoteRes) => {
-                const contentType = remoteRes.headers['content-type'] || (targetUrl.endsWith('.m3u8') ? 'application/x-mpegurl' : 'video/mp2t');
-                res.writeHead(remoteRes.statusCode, {
-                    'Content-Type': contentType,
-                    'Access-Control-Allow-Origin': '*'
-                });
-                remoteRes.pipe(res);
-            }).on('error', () => {
-                res.writeHead(500);
-                res.end('Proxy Error');
-            });
-            return;
-        } catch(e) {
-            res.writeHead(500);
-            return res.end('Invalid URL');
-        }
-    }
-
-    // Serve Transcoded HLS Stream Manifests & TS Segment Files
-    if (pathname.startsWith('/streams/')) {
-        const relativePath = pathname.replace('/streams/', '');
-        const filePath = path.join(__dirname, 'public', 'streams', relativePath);
-
-        if (fs.existsSync(filePath)) {
-            if (filePath.endsWith('.m3u8')) {
-                res.writeHead(200, { 'Content-Type': 'application/x-mpegurl; charset=utf-8' });
-            } else if (filePath.endsWith('.ts')) {
-                res.writeHead(200, { 'Content-Type': 'video/mp2t' });
-            } else {
-                res.writeHead(200, { 'Content-Type': 'application/octet-stream' });
-            }
-            return fs.createReadStream(filePath).pipe(res);
-        }
-    }
-
-    // API 1: Trending & Popular Anime
-    if (pathname === '/api/trending' || pathname === '/api/popular') {
-        const aniQuery = `{ Page(perPage: 24) { media(type: ANIME, sort: POPULARITY_DESC) { id title { romaji english } coverImage { extraLarge } episodes seasonYear format status description } } }`;
-        const aniRes = await fetchAniList(aniQuery);
-
-        if (aniRes && aniRes.data && aniRes.data.data && aniRes.data.data.Page) {
-            const list = aniRes.data.data.Page.media.map(a => ({
-                id: String(a.id),
-                title: a.title.english || a.title.romaji,
-                image: a.coverImage.extraLarge,
-                releaseDate: String(a.seasonYear || '2024'),
-                subOrDub: "SUB/DUB",
-                episodeCount: a.episodes || 24,
-                description: (a.description || '').replace(/<[^>]*>?/gm, '')
-            }));
-            res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
-            return res.end(JSON.stringify({ success: true, results: list }));
-        }
-
-        res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
-        return res.end(JSON.stringify({ success: true, results: FALLBACK_CATALOG }));
-    }
-
-    // API 2: Search Anime
-    if (pathname === '/api/search') {
-        const q = (query.q || '').trim();
-        if (!q) {
-            res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
-            return res.end(JSON.stringify({ success: true, results: [] }));
-        }
-
-        const aniSearchQuery = `query ($search: String) { Page(perPage: 12) { media(type: ANIME, search: $search) { id title { romaji english } coverImage { extraLarge } episodes seasonYear description } } }`;
-        const aniRes = await fetchAniList(aniSearchQuery, { search: q });
-
-        if (aniRes && aniRes.data && aniRes.data.data && aniRes.data.data.Page) {
-            const list = aniRes.data.data.Page.media.map(a => ({
-                id: String(a.id),
-                title: a.title.english || a.title.romaji,
-                image: a.coverImage.extraLarge,
-                releaseDate: String(a.seasonYear || '2024'),
-                subOrDub: "SUB/DUB",
-                episodeCount: a.episodes || 24,
-                description: (a.description || '').replace(/<[^>]*>?/gm, '')
-            }));
-            res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
-            return res.end(JSON.stringify({ success: true, results: list }));
-        }
-
-        const filtered = FALLBACK_CATALOG.filter(a => a.title.toLowerCase().includes(q.toLowerCase()));
-        res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
-        return res.end(JSON.stringify({ success: true, results: filtered }));
-    }
-
-    // API 3: Anime Info & Episodes
-    if (pathname.startsWith('/api/anime/')) {
-        const animeId = pathname.replace('/api/anime/', '');
-        const aniInfoQuery = `query ($id: Int) { Media(id: $id, type: ANIME) { id title { romaji english } coverImage { extraLarge } bannerImage episodes seasonYear status description format } }`;
-        
-        let idNum = parseInt(animeId, 10);
-        if (isNaN(idNum)) idNum = 101922;
-
-        const aniRes = await fetchAniList(aniInfoQuery, { id: idNum });
-
-        let info = null;
-        if (aniRes && aniRes.data && aniRes.data.data && aniRes.data.data.Media) {
-            const m = aniRes.data.data.Media;
-            const epCount = m.episodes || 24;
-            const episodeList = Array.from({ length: epCount }, (_, i) => ({
-                id: `${m.id}-ep-${i + 1}`,
-                number: i + 1,
-                title: `Episode ${i + 1}`,
-                animeId: String(m.id)
-            }));
-
-            info = {
-                id: String(m.id),
-                title: m.title.english || m.title.romaji,
-                image: m.coverImage.extraLarge,
-                banner: m.bannerImage || m.coverImage.extraLarge,
-                description: (m.description || '').replace(/<[^>]*>?/gm, ''),
-                type: m.format || 'TV Series',
-                status: m.status || 'Completed',
-                episodes: episodeList
-            };
-        } else {
-            const match = FALLBACK_CATALOG.find(a => a.id === animeId) || FALLBACK_CATALOG[0];
-            const episodeList = Array.from({ length: match.episodeCount }, (_, i) => ({
-                id: `${match.id}-ep-${i + 1}`,
-                number: i + 1,
-                title: `Episode ${i + 1}`,
-                animeId: match.id
-            }));
-
-            info = {
-                id: match.id,
-                title: match.title,
-                image: match.image,
-                banner: match.image,
-                description: match.description,
-                type: "TV Series",
-                status: "Completed",
-                episodes: episodeList
-            };
-        }
-
-        res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
-        return res.end(JSON.stringify({ success: true, info: info }));
-    }
-
-    // kaa.lt MECHANISM 2: Direct .m3u8 Stream Resolver API (/api/watch/:episodeId)
-    // Returns direct .m3u8 manifests with backend proxy endpoints (NO iFrame! NO Big Buck Bunny!)
-    if (pathname.startsWith('/api/watch/')) {
-        const episodeId = pathname.replace('/api/watch/', '');
-        const parts = episodeId.split('-ep-');
-        const animeId = parts[0] || '101922';
-        const epNum = parts[1] || '1';
-
-        res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
-        return res.end(JSON.stringify({
-            success: true,
-            title: `Episode ${epNum}`,
-            episodeId: episodeId,
-            animeId: animeId,
-            episodeNumber: epNum,
-            servers: [
-                { name: "Server 1 (kaa.lt Direct Transcoded HLS)", type: "hls", url: "/streams/demon-slayer-ep1/master.m3u8", quality: "1080p Full HD" },
-                { name: "Server 2 (Sintel Feature Stream 1080p)", type: "hls", url: "/proxy/hls?url=" + encodeURIComponent("https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8"), quality: "1080p HD" },
-                { name: "Server 3 (Tears of Steel 4K Stream)", type: "hls", url: "/proxy/hls?url=" + encodeURIComponent("https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8"), quality: "4K Ultra HD" }
-            ]
-        }));
     }
 
     res.writeHead(404, { 'Content-Type': 'text/plain' });
@@ -264,5 +27,5 @@ const server = http.createServer(async (req, res) => {
 });
 
 server.listen(PORT, () => {
-    console.log(`[✓] Purged Big Buck Bunny & Updated kaa.lt Stream Engine running on http://localhost:${PORT}`);
+    console.log(`[✓] IPTV Sports M3U Server running on http://localhost:${PORT}`);
 });
