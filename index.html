@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebTorrent P2P Sequential Video Player Engine</title>
+    <!-- Google Fonts & CDN dependencies -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/artplayer/dist/artplayer.js"></script>
+</head>
+<body>
+
+    <!-- Header Navbar -->
+    <header>
+        <div class="logo">
+            <span class="logo-accent">WebTorrent</span> P2P Sequential Player
+        </div>
+        <div style="font-size: 13px; color: var(--text-secondary);">Node.js Range HTTP Bridge</div>
+    </header>
+
+    <main>
+        <!-- Magnet Input Card -->
+        <section class="magnet-input-card">
+            <form class="magnet-form" onsubmit="loadMagnetStream(event)">
+                <input type="text" id="magnetInput" class="magnet-input" placeholder="Paste Magnet URI or Torrent InfoHash (e.g. magnet:?xt=urn:btih:...)" autocomplete="off">
+                <button type="submit" class="btn-stream">▶ Play Torrent Stream</button>
+            </form>
+            <div class="preset-pills">
+                <span class="preset-label">Preset Demos:</span>
+                <button class="pill-btn" onclick="usePreset('sintel')">Sintel 1080p Torrent</button>
+                <button class="pill-btn" onclick="usePreset('tears')">Tears of Steel 4K Torrent</button>
+            </div>
+        </section>
+
+        <!-- Video Player Card -->
+        <section class="player-card">
+            <h2 id="nowPlayingTitle" style="font-size: 18px; font-weight: 700;">Sintel 1080p Open Movie Stream</h2>
+            <div id="artplayer" class="artplayer-box"></div>
+
+            <!-- P2P Telemetry Dashboard -->
+            <div class="p2p-dashboard">
+                <div class="stat-box">
+                    <span class="stat-label">Active Swarm Peers</span>
+                    <span id="numPeers" class="stat-value">0 Seeders / Leechers</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Download Bandwidth</span>
+                    <span id="downloadSpeed" class="stat-value">0.00 MB/s</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Buffer Progress</span>
+                    <span id="progressText" class="stat-value">0%</span>
+                    <div class="progress-bar-bg">
+                        <div id="progressBarFill" class="progress-bar-fill"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 WebTorrent P2P Player. Powered by Node.js Sequential Streaming Engine, ArtPlayer.js, & HLS.js.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

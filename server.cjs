@@ -1,10 +1,40 @@
 const http = require('http');
 const https = require('https');
+const urlModule = require('url');
+const path = require('path');
 const fs = require('fs');
 
 const PORT = process.env.PORT || 8080;
 
+let torrentClient = null;
+
+async function initEngine() {
+    try {
+        const { default: WebTorrent } = await import('webtorrent');
+        torrentClient = new WebTorrent();
+        console.log('[✓] WebTorrent ESM Engine initialized successfully!');
+    } catch(e) {
+        console.warn('[!] WebTorrent ESM init warning:', e.message);
+    }
+}
+initEngine();
+
+// Active Torrent State Tracker
+let activeTorrentStats = {
+    name: 'Sintel 1080p Open Movie Torrent',
+    magnet: 'magnet:?xt=urn:btih:08ada5a7a6183aae1e09d831df6748d566095a10',
+    progress: 0,
+    downloadSpeed: 0,
+    numPeers: 0,
+    length: 0,
+    ready: false
+};
+
 const server = http.createServer((req, res) => {
+    const parsedUrl = urlModule.parse(req.url, true);
+    const pathname = parsedUrl.pathname;
+    const query = parsedUrl.query;
+
     // CORS Headers
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
@@ -15,11 +45,88 @@ const server = http.createServer((req, res) => {
         return res.end();
     }
 
-    if (req.url === '/' || req.url === '/sports.m3u' || req.url === '/playlist.m3u') {
-        if (fs.existsSync('sports.m3u')) {
-            res.writeHead(200, { 'Content-Type': 'application/x-mpegurl; charset=utf-8' });
-            return res.end(fs.readFileSync('sports.m3u', 'utf-8'));
+    // Serve Static Assets
+    if (pathname === '/' || pathname === '/index.html') {
+        if (fs.existsSync('index.html')) {
+            res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+            return res.end(fs.readFileSync('index.html', 'utf-8'));
         }
+    } else if (pathname === '/index.css') {
+        if (fs.existsSync('index.css')) {
+            res.writeHead(200, { 'Content-Type': 'text/css; charset=utf-8' });
+            return res.end(fs.readFileSync('index.css', 'utf-8'));
+        }
+    } else if (pathname === '/app.js') {
+        if (fs.existsSync('app.js')) {
+            res.writeHead(200, { 'Content-Type': 'application/javascript; charset=utf-8' });
+            return res.end(fs.readFileSync('app.js', 'utf-8'));
+        }
+    }
+
+    // API 1: Live Torrent Status Dashboard (/api/torrent/status)
+    if (pathname === '/api/torrent/status') {
+        res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+        return res.end(JSON.stringify({ success: true, stats: activeTorrentStats }));
+    }
+
+    // API 2: P2P Sequential Stream Endpoint (/stream/play?magnet=...)
+    if (pathname === '/stream/play') {
+        const magnet = query.magnet || activeTorrentStats.magnet;
+        
+        if (torrentClient && magnet) {
+            try {
+                let existing = torrentClient.get(magnet);
+                if (!existing) {
+                    existing = torrentClient.add(magnet, { deselect: true });
+                }
+
+                existing.on('download', () => {
+                    activeTorrentStats.name = existing.name || activeTorrentStats.name;
+                    activeTorrentStats.progress = Math.round(existing.progress * 100);
+                    activeTorrentStats.downloadSpeed = (existing.downloadSpeed / 1024 / 1024).toFixed(2);
+                    activeTorrentStats.numPeers = existing.numPeers;
+                    activeTorrentStats.length = existing.length;
+                    activeTorrentStats.ready = true;
+                });
+
+                existing.on('ready', () => {
+                    const file = existing.files.find(f => f.name.endsWith('.mp4') || f.name.endsWith('.mkv') || f.name.endsWith('.webm'));
+                    if (file) {
+                        file.select(); // Enable linear sequential piece downloading
+                        
+                        const range = req.headers.range;
+                        if (!range) {
+                            res.writeHead(200, {
+                                'Content-Length': file.length,
+                                'Content-Type': 'video/mp4'
+                            });
+                            return file.createReadStream().pipe(res);
+                        }
+
+                        const parts = range.replace(/bytes=/, "").split("-");
+                        const start = parseInt(parts[0], 10);
+                        const end = parts[1] ? parseInt(parts[1], 10) : file.length - 1;
+                        const chunksize = (end - start) + 1;
+
+                        res.writeHead(206, {
+                            'Content-Range': `bytes ${start}-${end}/${file.length}`,
+                            'Accept-Ranges': 'bytes',
+                            'Content-Length': chunksize,
+                            'Content-Type': 'video/mp4'
+                        });
+
+                        return file.createReadStream({ start, end }).pipe(res);
+                    }
+                });
+                return;
+            } catch(e) {
+                console.error("Torrent stream error:", e.message);
+            }
+        }
+
+        // Direct Stream Fallback
+        res.writeHead(302, { 'Location': 'https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8' });
+        return res.end();
     }
 
     res.writeHead(404, { 'Content-Type': 'text/plain' });
@@ -27,5 +134,5 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(PORT, () => {
-    console.log(`[✓] IPTV Sports M3U Server running on http://localhost:${PORT}`);
+    console.log(`[✓] WebTorrent P2P Sequential Player Server running on http://localhost:${PORT}`);
 });
