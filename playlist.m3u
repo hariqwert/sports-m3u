@@ -1,621 +1,381 @@
 #EXTM3U
-#EXTINF:-1 tvg-id="abc" tvg-name="ABC" tvg-logo="https://cdn.abcotvs.com/dip/images/11479454_011822-cc-abc-generic-thumb-img.jpg" group-title="TimStreams Sports",ABC
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/728289c49c8dee4e191e5d0be2747a9220c43310a6c4061969487bda3268a05a/1786207597/abc-usa.m3u8
-#EXTINF:-1 tvg-id="acc-network" tvg-name="ACC Network" tvg-logo="https://theacc.com/images/2018/11/30/ACCN_Launch.png" group-title="TimStreams Sports",ACC Network
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/a283573257fd1773682027297136a63d6b86d608e6dbf60c7322d70b0c744905/1786207597/accn-usa.m3u8
-#EXTINF:-1 tvg-id="ae-network" tvg-name="AE" tvg-logo="https://www.aetv.com/assets/images/aetv/generic-thumb.jpg" group-title="TimStreams Sports",AE
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/cd7687e7b94bf83ec611f7e21284b2eb223329d360d4a8a0891dd71f1680168d/1786207597/ae-usa.m3u8
-#EXTINF:-1 tvg-id="amc" tvg-name="AMC" tvg-logo="https://tvseriesfinale.com/wp-content/uploads/2014/08/amc02.jpg" group-title="TimStreams Sports",AMC
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/6168a3840af208ef9a6a323bf7b67366672148e40bb13aa1f7e892d40f327a98/1786207597/amc-usa.m3u8
-#EXTINF:-1 tvg-id="american-heroes-channel" tvg-name="American Heroes Channel" tvg-logo="https://payload.cargocollective.com/1/10/342209/9724942/AHC_15a_3_1340_c.jpg" group-title="TimStreams Sports",American Heroes Channel
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/d539f9b2568c2e01af89ecae3c489d049e54f2d8ce04add10b1aa0145b374b12/1786207597/ahc-usa.m3u8
-#EXTINF:-1 tvg-id="animal-planet" tvg-name="Animal Planet" tvg-logo="https://mir-s3-cdn-cf.behance.net/project_modules/disp/f9ee57107702215.5facf9f601507.jpg" group-title="TimStreams Sports",Animal Planet
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/81b28c5a6d3214c84e177d1c88148f8406d2b4bca995aa09d2e3b49dc4538ae9/1786207597/animalplanet-usa.m3u8
-#EXTINF:-1 tvg-id="axs-tv" tvg-name="AXS TV" tvg-logo="https://www.hcc.net/wp-content/uploads/2012/06/AXS_TV_BlueWhite.jpg" group-title="TimStreams Sports",AXS TV
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/ebb32b063c70c611a085e262ef23c2d2409a3884530c2ce74bc95e32b7b42807/1786207597/axs-usa.m3u8
-#EXTINF:-1 tvg-id="bbc-america" tvg-name="BBC America" tvg-logo="https://www.newscaststudio.com/wp-content/uploads/2024/11/bbc-america-logo.jpg" group-title="TimStreams Sports",BBC America
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/7f24cdb3f1711640b669cdaeb0c62623a68a3c82752d1ba46cb432aa4a62f9bf/1786207597/bbc-usa.m3u8
-#EXTINF:-1 tvg-id="bbc-one-london" tvg-name="BBC One London" tvg-logo="https://ichef.bbci.co.uk/images/ic/1200x675/p0dkt7rv.jpg" group-title="TimStreams Sports",BBC One London
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/6e7fdfeac09e55562a3260d9bebb0541b3a706f814da183d1f1018899bc2d65f/1786207597/bbcone-uk.m3u8
-#EXTINF:-1 tvg-id="bbc-two" tvg-name="BBC Two" tvg-logo="https://ichef.bbci.co.uk/images/ic/1200x675/p0bvs8dg.jpg" group-title="TimStreams Sports",BBC Two
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/0309aea292db43a575feafc08b568522cc50d2ba2551d2c8130e4d42037c227c/1786207597/bbctwo-uk.m3u8
-#EXTINF:-1 tvg-id="bein-sports" tvg-name="beIN Sports" tvg-logo="https://assets-us-01.kc-usercontent.com/31dbcbc6-da4c-0033-328a-d7621d0fa726/1318873e-8501-4f79-bb69-182d741cf9ad/beIN%20SPORTS%20Portada.jpg?ver=03-06-2025?w=3840&amp;amp;amp;amp;amp;amp;amp;amp;q=75" group-title="TimStreams Sports",beIN Sports
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/17d078812a87a7d2632da8721349ae804c7ef0466cbb91745acf3f2ebd3b6624/1786207597/beinsports-usa.m3u8
-#EXTINF:-1 tvg-id="bravo" tvg-name="Bravo" tvg-logo="https://www.bravotv.com/sites/bravo/files/2024/05/bravo-logo-2jpg.jpg" group-title="TimStreams Sports",Bravo
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/daf5effcd24598e8ece755d39ae66e7d458248a1e87efa1c1b69f957d3df2532/1786207597/bravo-usa.m3u8
-#EXTINF:-1 tvg-id="boomerang" tvg-name="Boomerang" tvg-logo="https://cdn.broadbandtvnews.com/wp-content/uploads/2024/08/05120702/Boomerang.jpg" group-title="TimStreams Sports",Boomerang
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/7bb7ce40871a59933281329062e012548dd97b991248b3ec7e56fc3b650f96e6/1786207597/boomerang-usa.m3u8
-#EXTINF:-1 tvg-id="canal-sport-pl" tvg-name="CANAL+ Sport PL" tvg-logo="https://cdn.jsdelivr.net/gh/willthequeencome/img-cdn/canansport.png" group-title="TimStreams Sports",CANAL+ Sport PL
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/2cdd1f800448ccb5594075e08432dd3f1e50ef7529d5e1b6876b0b1a47fa7e0d/1786207597/canalsport-pl.m3u8
-#EXTINF:-1 tvg-id="canal-sport-2-pl" tvg-name="CANAL+ Sport 2 PL" tvg-logo="https://cdn.jsdelivr.net/gh/willthequeencome/img-cdn/canansport.png" group-title="TimStreams Sports",CANAL+ Sport 2 PL
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/3f971249b7c920829b2dd0520a6ca971617c606dd7f3712604aadb681ac1871c/1786207597/canalsport2-pl.m3u8
-#EXTINF:-1 tvg-id="canal-sport-3-pl" tvg-name="CANAL+ Sport 3 PL" tvg-logo="https://cdn.jsdelivr.net/gh/willthequeencome/img-cdn/canansport.png" group-title="TimStreams Sports",CANAL+ Sport 3 PL
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/96194b0c37aa1787d56921be1ea59f911a71c1e75f304c9cc0cc47d94e076ce0/1786207597/canalsport3-pl.m3u8
-#EXTINF:-1 tvg-id="canal-sport-4-pl" tvg-name="CANAL+ Sport 4 PL" tvg-logo="https://cdn.jsdelivr.net/gh/willthequeencome/img-cdn/canansport.png" group-title="TimStreams Sports",CANAL+ Sport 4 PL
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/9ba5440ab35a969f5e83a8252a289259ccde27650b1102623e73eb3dc1fec07e/1786207597/canalsport4-pl.m3u8
-#EXTINF:-1 tvg-id="canal-sport-5-pl" tvg-name="CANAL+ Sport 5 PL" tvg-logo="https://cdn.jsdelivr.net/gh/willthequeencome/img-cdn/canansport.png" group-title="TimStreams Sports",CANAL+ Sport 5 PL
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/1159883abbc46fdf89dbbaab3da2ebfb58a94d7f874dcc258fedf0ef1ef28c16/1786207597/canalsport5-pl.m3u8
-#EXTINF:-1 tvg-id="cartoon-network" tvg-name="Cartoon Network" tvg-logo="https://1000logos.net/wp-content/uploads/2016/10/Cartoon-Network-logo.jpg" group-title="TimStreams Sports",Cartoon Network
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/89cb09393798a20487d9ac54018da254d70c13c4e645a9df6cf579cac323624e/1786207597/cartoonnetwork-usa.m3u8
-#EXTINF:-1 tvg-id="cbeebies" tvg-name="CBeebies" tvg-logo="https://static.files.bbci.co.uk/core/website/assets/static/childrens-web/images/metadata/cbeebies-poster-1024x576.8eb27aa32e.png" group-title="TimStreams Sports",CBeebies
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/b7959b059b407f319f670243edbcfc06b3f741bd6ed5e0f532978f0376dd8343/1786207597/cbeebies-uk.m3u8
-#EXTINF:-1 tvg-id="cbs" tvg-name="CBS" tvg-logo="https://wwwimage-tve.cbsstatic.com/base/files/seo/cbs_seo_1200x627_1.jpg" group-title="TimStreams Sports",CBS
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/802c84a84229545f62489d98f4a24a081aef2a1a074c0854a356ab0f0500b1ea/1786207597/cbs-usa.m3u8
-#EXTINF:-1 tvg-id="cbs-sports-network" tvg-name="CBS Sports Network" tvg-logo="https://www.paramountshop.com/cdn/shop/files/cbssportsnetwork-mobile-min.png" group-title="TimStreams Sports",CBS Sports Network
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/9626176ca3bb755b5a11ba645db2b75a12cf72102d3e6375c6164876b493fef0/1786207597/cbssn-usa.m3u8
-#EXTINF:-1 tvg-id="cnbc" tvg-name="CNBC" tvg-logo="https://cdn.versantmedia.com/versantmedia/styles/newsroom/s3/2025-11/cnbc%281600x900%29.png" group-title="TimStreams Sports",CNBC
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/dd1b5857cce18a79e7c7a516f3356dcac3e5f65afb8165b274ed7356963ce4fd/1786207597/cnbc-usa.m3u8
-#EXTINF:-1 tvg-id="comedy-central" tvg-name="Comedy Central" tvg-logo="https://wwwimage-us.pplusstatic.com/base/files/seo/og-brand-comedy-central.jpg?format=webp" group-title="TimStreams Sports",Comedy Central
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/45d614b58405da0f3b7ba0a719b44ede801579fc854ea31f79b06a38b44ef8f0/1786207597/comedycentral-usa.m3u8
-#EXTINF:-1 tvg-id="cw" tvg-name="CW" tvg-logo="https://www.wavy.com/wp-content/uploads/sites/3/2024/08/cw-logo-white-on-blue-wavy-background.jpg?w=1280" group-title="TimStreams Sports",CW
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/9c92ac13220ed47016588f2bc9005bfbaff9eca1fa11e79030c87637b5294df9/1786207597/cw-usa.m3u8
-#EXTINF:-1 tvg-id="dazn-1-germany" tvg-name="DAZN 1 Germany" tvg-logo="https://image.discovery.indazn.com/ca/v2/ca/image?id=12dpnhddhmpm71228raanhyxs2_image-header_pDach_1723627450000&amp;amp;amp;quality=70" group-title="TimStreams Sports",DAZN 1 Germany
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/77987221b454bc7112ad5920d01c8e78a9b4c798fed50b2cb33dd896a8f90856/1786207597/dazn1-de.m3u8
-#EXTINF:-1 tvg-id="dazn-2-germany" tvg-name="DAZN 2 Germany" tvg-logo="https://image.discovery.indazn.com/ca/v2/ca/image?id=1ni1lpwjtnxmr1xklfoptrt2mz_image-header_pDach_1723628653000" group-title="TimStreams Sports",DAZN 2 Germany
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/4da2db6738aa277cb3241344c3daa58aed0904c4531efe6500e7e610e4edfb7d/1786207597/dazn2-de.m3u8
-#EXTINF:-1 tvg-id="dazn-1-italia" tvg-name="DAZN 1 Italia" tvg-logo="https://image.discovery.indazn.com/ca/v2/ca/image?id=pterrit4f2xu1pa2r6x87y5e9_image-header_pIt_1724315365000&amp;amp;amp;quality=70" group-title="TimStreams Sports",DAZN 1 Italia
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/bcfaa974c7cbdf6fd70a141dcde16600230500b254b4f4edfb4fb2c7d8e34162/1786207597/dazn1-it.m3u8
-#EXTINF:-1 tvg-id="dazn-1-spain" tvg-name="DAZN 1 Spain" tvg-logo="https://image.discovery.indazn.com/ca/v2/ca/image?id=hn9vkic8rbfi1ndrym8sw2qh7_image-header_pEs_1723035920000" group-title="TimStreams Sports",DAZN 1 Spain
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/a336410ec537a291890a5d8cf4a6a3c2eb7f7f6ff5255101c3e8d0c77851a671/1786207597/dazn1-es.m3u8
-#EXTINF:-1 tvg-id="dazn-2-spain" tvg-name="DAZN 2 Spain" tvg-logo="https://image.discovery.indazn.com/ca/v2/ca/image?id=2ouwtae8ad7l1fxviow9bowpk_image-header_pEs_1723118632000&amp;amp;amp;quality=70" group-title="TimStreams Sports",DAZN 2 Spain
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/ccc55d4c0417f290684cb4ffe3ff8e9a2cdef324ef6b03cecd81d4ef59dc941e/1786207597/dazn2-es.m3u8
-#EXTINF:-1 tvg-id="dazn-1-portugal" tvg-name="DAZN 1 Portugal" tvg-logo="https://image.discovery.indazn.com/ca/v2/ca/image?id=1o4eamzb4env61ddc8wv4ra06l_image-header_pRow_1720521601000&amp;amp;quality=70" group-title="TimStreams Sports",DAZN 1 Portugal
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/576fb3219792e415c0a78f92e4309c21d359f44dee856541657ff96b10328779/1786207597/dazn1-pt.m3u8
-#EXTINF:-1 tvg-id="dazn-1-usa" tvg-name="DAZN 1 USA" tvg-logo="https://image.discovery.indazn.com/ca/v2/ca/image?id=1owzb99m9mnzy15hjxolpukwul_image-header_pUs_1771501796000&amp;amp;amp;amp;amp;amp;amp;amp;amp;quality=70" group-title="TimStreams Sports",DAZN 1 USA
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/30bee5ca420f845a7047c2981ba8242e27397555d695706d673f32b152ff051b/1786207597/dazn1-usa.m3u8
-#EXTINF:-1 tvg-id="dazn-f1" tvg-name="DAZN F1" tvg-logo="https://image.discovery.indazn.com/ca/v2/ca/image?id=14ln25pmjdv031ejxsmg8dczsu_image-header_pEs_1723117975000&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;quality=70" group-title="TimStreams Sports",DAZN F1
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/279ad3f41fe7a3d6c4a0c3fb4d5fcc45f9d450cd816eda67b046a930f2a34742/1786207597/daznf1-es.m3u8
-#EXTINF:-1 tvg-id="dazn-laliga" tvg-name="DAZN LaLiga" tvg-logo="https://image.discovery.indazn.com/ca/v2/ca/image?id=1weziux6zy5mb16pev002ax1yu_image-header_pEs_1723118324000" group-title="TimStreams Sports",DAZN LaLiga
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/e5b2f697b2a07a8bebcfd1ca000b562b77d6cb0361e18704b3efbf9871835a52/1786207597/daznlaliga-es.m3u8
-#EXTINF:-1 tvg-id="discovery-channel" tvg-name="Discovery Channel" tvg-logo="https://i.ibb.co/k2rbB1jc/e35d6be84084fed1d756c39242f13163.webp" group-title="TimStreams Sports",Discovery Channel
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/66d1b6b9891beb4c743fc3a88050a70c21f79b1d8579aacc6eccabf6b36b31ec/1786207597/discovery-usa.m3u8
-#EXTINF:-1 tvg-id="discovery-family" tvg-name="Discovery Family" tvg-logo="https://i.ibb.co/wFmT9Q5t/Discovery-Family-ID-Let-s-Go-Yellow.webp" group-title="TimStreams Sports",Discovery Family
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/b157c7dd04bca843b7b4c3e06e317056abbb04e2b563e7202ef4e708a0089022/1786207597/discoveryfamily-usa.m3u8
-#EXTINF:-1 tvg-id="discovery-turbo" tvg-name="Discovery Turbo" tvg-logo="https://i.ibb.co/20MgSXjy/featured-Image-1767979538707.jpg" group-title="TimStreams Sports",Discovery Turbo
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/394e0e39ff4045f318a4057d4218fa45b4658b2b82c4f42ef9ae900685f2d6fe/1786207597/discoveryturbo-usa.m3u8
-#EXTINF:-1 tvg-id="disney-channel" tvg-name="Disney Channel" tvg-logo="https://vignette4.wikia.nocookie.net/logopedia/images/9/93/Disney_Channel_Original_2014.png/revision/latest?cb=20140705213010" group-title="TimStreams Sports",Disney Channel
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/976a87c00f2b112c3f6c204c839a868e9da5ffe2f460ae797b1c21a7377b1fd7/1786207597/disneychannel-usa.m3u8
-#EXTINF:-1 tvg-id="disney-junior" tvg-name="Disney Junior" tvg-logo="https://thewaltdisneycompany.com/app/uploads/2021/02/021221_Disney-Junior-10th-Anniversary-00.jpg" group-title="TimStreams Sports",Disney Junior
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/97ecc0fa0f654e8c9291d3366e5079a6b393c597960575c2f019a2debb80a283/1786207597/disneyjunior-usa.m3u8
-#EXTINF:-1 tvg-id="disney-xd" tvg-name="Disney XD" tvg-logo="https://www.laughingplace.com/uploads/2015/10/d128457e3b3ab8c050f306aa8e23666b9b05d3cc.jpg" group-title="TimStreams Sports",Disney XD
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/9dd37ed94579bd31ba5bbb9b1f1c2f577abfcb2a7111b34729fe610ca30ed4f7/1786207597/disneyxd-usa.m3u8
-#EXTINF:-1 tvg-id="eleven-sports-1" tvg-name="Eleven Sports 1" tvg-logo="https://cdn.jsdelivr.net/gh/willthequeencome/img-cdn/100659.png" group-title="TimStreams Sports",Eleven Sports 1
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/6b2082e111e32d496e0b482455434cce972482117ba7f47ae2320b585aa3eaf5/1786207597/elevensports1-pl.m3u8
-#EXTINF:-1 tvg-id="eleven-sports-2" tvg-name="Eleven Sports 2" tvg-logo="https://cdn.jsdelivr.net/gh/willthequeencome/img-cdn/100659.png" group-title="TimStreams Sports",Eleven Sports 2
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/ccd72dbd6c465abc60f1c2daffbce52e1b6c7badcf0af6dc5cf74a5664f45534/1786207597/elevensports2-pl.m3u8
-#EXTINF:-1 tvg-id="eleven-sports-3" tvg-name="Eleven Sports 3" tvg-logo="https://cdn.jsdelivr.net/gh/willthequeencome/img-cdn/100659.png" group-title="TimStreams Sports",Eleven Sports 3
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/3f6974f6c8882e547e1c88d8178d08145da4399a943bf71e25e4864c75053da5/1786207597/elevensports3-pl.m3u8
-#EXTINF:-1 tvg-id="eleven-sports-4" tvg-name="Eleven Sports 4" tvg-logo="https://cdn.jsdelivr.net/gh/willthequeencome/img-cdn/100659.png" group-title="TimStreams Sports",Eleven Sports 4
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/f2b26eeba2277a2ae0c1877dfba6ba54d7e4cbc85945a088a643651ce485661d/1786207597/elevensports4-pl.m3u8
-#EXTINF:-1 tvg-id="espn" tvg-name="ESPN" tvg-logo="https://a1.espncdn.com/combiner/i?img=%2Fi%2Fespn%2Fespn_logos%2Fespn_red.png" group-title="TimStreams Sports",ESPN
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/7153ccebd7329b8e978ee7dde52b56c0598c5a7926f2ab56457543aa54199453/1786207597/espn-usa.m3u8
-#EXTINF:-1 tvg-id="espn-deportes" tvg-name="ESPN Deportes" tvg-logo="https://i.ibb.co/Y7zHmbbz/i.png" group-title="TimStreams Sports",ESPN Deportes
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/1bedd646a4d863f352dac85cfab1218f661b605b652c4271e689395de1c892f7/1786207597/espndeportes-usa.m3u8
-#EXTINF:-1 tvg-id="espn2" tvg-name="ESPN2" tvg-logo="https://discgolf.ultiworld.com/wp-content/uploads/2020/10/ESPN2.png" group-title="TimStreams Sports",ESPN2
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/06cf94b7869011d98583683bbc5b7100f1d6ab4e219a715b58ed3f253783a271/1786207597/espn2-usa.m3u8
-#EXTINF:-1 tvg-id="espnews" tvg-name="ESPNEWS" tvg-logo="https://i.ibb.co/5h4LGFHq/image.png" group-title="TimStreams Sports",ESPNEWS
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/a3adf7645d4898395aea3125b031b94a5d227198f31a7495f9280f4e4da992e9/1786207597/espnews-usa.m3u8
-#EXTINF:-1 tvg-id="espnu" tvg-name="ESPNU" tvg-logo="https://i.ibb.co/Lh5jHVDm/ESPNU-logo-1-jpg.webp" group-title="TimStreams Sports",ESPNU
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/e43515049f1f8ceb20718ddb5ac8f82100c16575cea312578d430ea0bb42edf1/1786207597/espnu-usa.m3u8
-#EXTINF:-1 tvg-id="food-network" tvg-name="Food Network" tvg-logo="https://i.ibb.co/5WcnZbYf/food-network-jpg.jpg" group-title="TimStreams Sports",Food Network
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/0c437f2d842f97c59bad455fb9c1df0b9e70ff2ffd742761d8e2a681c5e1afd2/1786207597/foodnetwork-usa.m3u8
-#EXTINF:-1 tvg-id="fox" tvg-name="Fox" tvg-logo="https://i.ibb.co/8JdwqP4/foxusa.png" group-title="TimStreams Sports",Fox
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/6e8ff9e3e3e378ac2989c99b1853d614f77d7c11b4996a11422f6773a8f1f6fc/1786207597/fox-usa.m3u8
-#EXTINF:-1 tvg-id="fox-deportes" tvg-name="Fox Deportes" tvg-logo="https://foxsports-wordpress-www-prsupports-prod.s3.amazonaws.com/uploads/sites/2/2016/12/LOGO-DEPORTES-1040x585.jpg" group-title="TimStreams Sports",Fox Deportes
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/fe8237fdaf6a24d3129435c9afdc15a5faa67a6a3711a010f00c11531caab7ac/1786207597/foxdeportes-usa.m3u8
 #EXTINF:-1 tvg-id="fox-sports-1" tvg-name="Fox Sports 1" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/2015_Fox_Sports_1_logo.svg/1280px-2015_Fox_Sports_1_logo.svg.png" group-title="TimStreams Sports",Fox Sports 1
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/e28a487d4f3550290f0fb01bf302324889c3247ae4398f70cf4564219c2597cd/1786207597/fox-sports-1.m3u8
+https://hiveatick.casadenoval.uk/main/secure/f9c262216a0cba84f62b90fc4f1d979e5d9a37dbcd8843421921e1efec1b9f80/1786210926/fox-sports-1.m3u8
 #EXTINF:-1 tvg-id="fox-sports-2" tvg-name="Fox Sports 2" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/FS2_logo_2015.svg/1280px-FS2_logo_2015.svg.png" group-title="TimStreams Sports",Fox Sports 2
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/fa1e8846651241260c8b3af0a3dfefd57f273412a8f58c57448684c836ae221c/1786207597/fox-sports-2.m3u8
-#EXTINF:-1 tvg-id="fox-sports-501-cricket" tvg-name="Fox Sports 501 (Cricket)" tvg-logo="https://i.ibb.co/Y4bTS1p7/image.webp" group-title="TimStreams Sports",Fox Sports 501 (Cricket)
+https://hiveatick.casadenoval.uk/main/secure/b7b56a4df407183d5e0bbcf446888fe6f8c9a78f02b5fab3232a99dc5ecee6a4/1786210926/fox-sports-2.m3u8
+#EXTINF:-1 tvg-id="fox-sports-501--cricket-" tvg-name="Fox Sports 501 (Cricket)" tvg-logo="https://i.ibb.co/Y4bTS1p7/image.webp" group-title="TimStreams Sports",Fox Sports 501 (Cricket)
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/8cb85e268cb60eb9c31ec3ed43844a196674f94f1a0c4e317d9d86b0184951f2/1786207597/fox-sports-501.m3u8
-#EXTINF:-1 tvg-id="fox-sports-502-league" tvg-name="Fox Sports 502 (League)" tvg-logo="https://i.ibb.co/tppZhDrb/image.webp" group-title="TimStreams Sports",Fox Sports 502 (League)
+https://hiveatick.casadenoval.uk/main/secure/0129027ba6189dd50f31590cb86ab08a66128bb3ae2b9306f76af3dff96543e9/1786210926/fox-sports-501--cricket-.m3u8
+#EXTINF:-1 tvg-id="fox-sports-502--league-" tvg-name="Fox Sports 502 (League)" tvg-logo="https://i.ibb.co/tppZhDrb/image.webp" group-title="TimStreams Sports",Fox Sports 502 (League)
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/1205f2e242e7dbd022cb3641948c13230cc342901cdabb300afd30d4867863e1/1786207597/fox-sports-502.m3u8
+https://hiveatick.casadenoval.uk/main/secure/2f338d0c969decd514b0a05f8c2d7ac63625a1c0e50deb73fccae18ac02c77a9/1786210926/fox-sports-502--league-.m3u8
 #EXTINF:-1 tvg-id="fox-sports-503" tvg-name="Fox Sports 503" tvg-logo="https://i.ibb.co/xS4MkGSL/image.webp" group-title="TimStreams Sports",Fox Sports 503
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/b52dc51c44c9f178f1529f1ec8156a11d4c8fca089814a9552d880f04158d554/1786207597/fox-sports-503.m3u8
-#EXTINF:-1 tvg-id="fox-sports-504-footy" tvg-name="Fox Sports 504 (Footy)" tvg-logo="https://i.ibb.co/SXvQLc0M/image.webp" group-title="TimStreams Sports",Fox Sports 504 (Footy)
+https://hiveatick.casadenoval.uk/main/secure/175293707580706b714e56d2b68e6fce7be4a8810ba553ad8bb4e411c1941c91/1786210926/fox-sports-503.m3u8
+#EXTINF:-1 tvg-id="fox-sports-504--footy-" tvg-name="Fox Sports 504 (Footy)" tvg-logo="https://i.ibb.co/SXvQLc0M/image.webp" group-title="TimStreams Sports",Fox Sports 504 (Footy)
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/306b05ddc250ec68f39e327b131e92b99186ba7b0a43971983fd0e17e812a375/1786207597/fox-sports-504.m3u8
+https://hiveatick.casadenoval.uk/main/secure/736dc069b32a8a543f78292bda533c0da6b2769cd1b6df08a4232d2f6eb940de/1786210926/fox-sports-504--footy-.m3u8
 #EXTINF:-1 tvg-id="fox-sports-505" tvg-name="Fox Sports 505" tvg-logo="https://i.ibb.co/prKZGNLt/image.webp" group-title="TimStreams Sports",Fox Sports 505
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/28906ce1ef4a93bb2c05772ca689ff77119896dc4e78c1cdbc3a755d7801d2cb/1786207597/fox-sports-505.m3u8
+https://hiveatick.casadenoval.uk/main/secure/92f142f7245b702572a7ea7429f0f23ea2cd99e39413fb87a98d3cce0fd4b65b/1786210926/fox-sports-505.m3u8
 #EXTINF:-1 tvg-id="fox-sports-506" tvg-name="Fox Sports 506" tvg-logo="https://i.ibb.co/Swks4Lmj/image.webp" group-title="TimStreams Sports",Fox Sports 506
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/ed851c4cf265aa5659f202f159efd2074289ee2136e5aa122883a52d9c8b4f92/1786207597/fox-sports-506.m3u8
+https://hiveatick.casadenoval.uk/main/secure/78bf046218630f3dd36e794b9ab4de50494a4180b9873ba90823c7eeb9407347/1786210926/fox-sports-506.m3u8
 #EXTINF:-1 tvg-id="fox-sports-507" tvg-name="Fox Sports 507" tvg-logo="https://i.ibb.co/7d6VgDVL/image.webp" group-title="TimStreams Sports",Fox Sports 507
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/270f9d97824b5ee8562ef41e91b0b188c6345d39e342f70a43ffd63ea1b997cf/1786207597/fox-sports-507.m3u8
+https://hiveatick.casadenoval.uk/main/secure/9e0042d51a7fa602f0800ac2facb3885945b024db1328bf119580acdbaa1c452/1786210926/fox-sports-507.m3u8
 #EXTINF:-1 tvg-id="fx" tvg-name="FX" tvg-logo="https://static0.srcdn.com/wordpress/wp-content/uploads/2026/01/gold-fx-channel-logo-1.jpg" group-title="TimStreams Sports",FX
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/baafe55260fbc622ceebcc94fb761566ef8761ee9e46b2a3e48d6356ead4f37b/1786207597/fx-usa.m3u8
+https://hiveatick.casadenoval.uk/main/secure/f37ef94772c0cb0b5909f31b43bb35856aef5f2f6bfac3934e153b3d72bbf64e/1786210926/fx.m3u8
 #EXTINF:-1 tvg-id="fxm" tvg-name="FXM" tvg-logo="https://www.awn.com/sites/default/files/styles/original/public/image/featured/50716-buster-creates-brand-id-new-fxm-programming-block_0.jpg" group-title="TimStreams Sports",FXM
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/a9f5d6a2bd2c23089a4a18b801a363280047dc6320d64b22a4cff27c88763107/1786207597/fxm-usa.m3u8
+https://hiveatick.casadenoval.uk/main/secure/97ffa7bd2e35fa1a6ac376f426cac91001e78e69c01b59b6b4c89243f2a9e839/1786210926/fxm.m3u8
 #EXTINF:-1 tvg-id="fxx" tvg-name="FXX" tvg-logo="https://thestreamable.com/media/pages/channels/fxx/b6fc72ce3d-1756344305/fxx-banner-1536x864-crop.png" group-title="TimStreams Sports",FXX
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/2fadad496614e5c98166ee5bf5acc88d62664be169ccd33413d8d9358bf587ec/1786207597/fxx-usa.m3u8
+https://hiveatick.casadenoval.uk/main/secure/1dec6b7526c1d3d0885b7e3eb12745d14a5b821d9d771a170abdbfeb25d2b9fe/1786210926/fxx.m3u8
 #EXTINF:-1 tvg-id="freeform" tvg-name="Freeform" tvg-logo="https://d2z00kf51ll94q.cloudfront.net//archive/2023/large/ADC102_BCD021B_0.jpg" group-title="TimStreams Sports",Freeform
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/20329709e53181c1c79f7035976badbd24dc854a3a7230bcf5a62b54250656b4/1786207597/freeform-usa.m3u8
-#EXTINF:-1 tvg-id="go3-sport-1" tvg-name="Go3 Sport 1" tvg-logo="https://cdn.jsdelivr.net/gh/willthequeencome/img-cdn/go3sport.png" group-title="TimStreams Sports",Go3 Sport 1
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/60fa7ff673057ed590901b2cf70578e1379b57c0c9c0df97ccd7a498ab7e1877/1786207597/go3sport1-lt.m3u8
-#EXTINF:-1 tvg-id="go3-sport-2" tvg-name="Go3 Sport 2" tvg-logo="https://cdn.jsdelivr.net/gh/willthequeencome/img-cdn/go3sport.png" group-title="TimStreams Sports",Go3 Sport 2
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/c644650ce0afd4295d9fc9f9416ca806372c932a7a87b6cb9344ae77bba6c746/1786207597/go3sport2-lt.m3u8
-#EXTINF:-1 tvg-id="go3-sport-3" tvg-name="Go3 Sport 3" tvg-logo="https://cdn.jsdelivr.net/gh/willthequeencome/img-cdn/go3sport.png" group-title="TimStreams Sports",Go3 Sport 3
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/c644650ce0afd4295d9fc9f9416ca806372c932a7a87b6cb9344ae77bba6c746/1786207597/go3sport2-lt.m3u8
+https://hiveatick.casadenoval.uk/main/secure/e7e596034958c0c64bccbf2250b04febc6d07a454a0880a845b5c5a6abe31a08/1786210926/freeform.m3u8
 #EXTINF:-1 tvg-id="golf-channel" tvg-name="GOLF Channel" tvg-logo="https://corporate.comcast.com/media/img/1000w/2020/01/corporate_golf-channel-16x9-social.jpg" group-title="TimStreams Sports",GOLF Channel
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/63eaf3c54aaf81049a987e1807cc17dcdf01aea18ebeefa94fcbca8070c081a9/1786207597/golfchannel-usa.m3u8
+https://hiveatick.casadenoval.uk/main/secure/87826637a9ee0aed5ff3a2fa590e1f12a59306a42565f068e307c60a50fe506f/1786210926/golf-channel.m3u8
 #EXTINF:-1 tvg-id="hbo" tvg-name="HBO" tvg-logo="https://static.hbo.com/2021-11/hbo-static-1920.jpg" group-title="TimStreams Sports",HBO
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/85243b3c36f5bb82f6abe13777bb120af668560183f18112ec7e6c87983a8a06/1786207597/hbo-usa.m3u8
+https://hiveatick.casadenoval.uk/main/secure/148401547bc58a8484aae0c1702a9d3ad37bbd8b54d610972f88254019d84460/1786210926/hbo.m3u8
 #EXTINF:-1 tvg-id="hbo-comedy" tvg-name="HBO Comedy" tvg-logo="https://www.tvinsider.com/wp-content/uploads/2022/03/hbo-comedy.png" group-title="TimStreams Sports",HBO Comedy
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/fdec154f836176bf58cc8d3cfad25b12eb767a80f94edbee13da751e86e4c916/1786207597/hbocomedy-usa.m3u8
+https://hiveatick.casadenoval.uk/main/secure/691255b83151e9f61d0c73296955a2d3935a2977a6474a679167284e8304e68c/1786210926/hbo-comedy.m3u8
 #EXTINF:-1 tvg-id="hbo-drama" tvg-name="HBO Drama" tvg-logo="https://i.ibb.co/Qv2Mz3ZB/https-archive-images-prod-global-a201836-reutersmedia-net-2016-10-30-LYNXMPEC9-T08-O.avif" group-title="TimStreams Sports",HBO Drama
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/2c36a33cd159f788481edff75cc84172736531151791bbf873668b0e01464940/1786207597/hbodrama-usa.m3u8
+https://hiveatick.casadenoval.uk/main/secure/2d02f315381103ffba6d8a054b31f60fa1dbdef38ee773cc536623a2f59c86a8/1786210926/hbo-drama.m3u8
 #EXTINF:-1 tvg-id="hbo-latino" tvg-name="HBO Latino" tvg-logo="https://i.ibb.co/TMzmbVYq/maxresdefault.jpg" group-title="TimStreams Sports",HBO Latino
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/da0c94ee2b0c00bb83870c0522ba74e9a4b2e32086407ab973a00cc25ae0990d/1786207597/hbolatino-usa.m3u8
+https://hiveatick.casadenoval.uk/main/secure/21fa487129fb258d42e32f0a17d166182db4ca52737914fee26338cf75cda42a/1786210926/hbo-latino.m3u8
 #EXTINF:-1 tvg-id="hbo-movies" tvg-name="HBO Movies" tvg-logo="https://i.ibb.co/Qv2Mz3ZB/https-archive-images-prod-global-a201836-reutersmedia-net-2016-10-30-LYNXMPEC9-T08-O.avif" group-title="TimStreams Sports",HBO Movies
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/297eaca5b3f0d40407c857a0076b6d96592ac6907a95b9fb4d8f75d9f28ac817/1786207597/hbomovies-usa.m3u8
+https://hiveatick.casadenoval.uk/main/secure/2e03f209c6a3126206864b4fd2316233f978a136ed6831e5e0e210336d6d6288/1786210927/hbo-movies.m3u8
 #EXTINF:-1 tvg-id="hgtv" tvg-name="HGTV" tvg-logo="https://i.ibb.co/gbtDnLhS/hgtv-jpg.jpg" group-title="TimStreams Sports",HGTV
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/3034bad1ffbfe6f87e30216a294ac28451141b992a0b7b60fafad794d02293ac/1786207597/hgtv-usa.m3u8
+https://hiveatick.casadenoval.uk/main/secure/5858a1998788c0525a70dfc841ec2126878ac470b55ead642d7c51e6ea7ec2df/1786210927/hgtv.m3u8
 #EXTINF:-1 tvg-id="mlb-network" tvg-name="MLB Network" tvg-logo="https://img.mlbstatic.com/mlb-images/image/private/t_16x9/t_w2208/mlb/xtkynqe5wgtzaddnsus2.jpg" group-title="TimStreams Sports",MLB Network
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/3a1dec624c727d7263f686a20f954c5ac51db50598e006106a0852f75880859f/1786207597/mlbnetwork-usa.m3u8
+https://hiveatick.casadenoval.uk/main/secure/ebf8f5c1a3f6146697c548f81fb9eeee8da954c3bd0d129bcd630577fccc5be5/1786210926/mlb-network.m3u8
 #EXTINF:-1 tvg-id="motogp-channel" tvg-name="MotoGP Channel" tvg-logo="https://sportbikesincmag.com/wp-content/uploads/2024/11/New-MotoGP-Logo-sportbikesincmag.com-4.jpg" group-title="TimStreams Sports",MotoGP Channel
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/3c641897a3c2229fd9db9289c752e6d47da801a767a243ad3602b9edd1868040/1786207597/motpgp-tv.m3u8
+https://hiveatick.casadenoval.uk/main/secure/7ebd2fc3d672f78ce9fee9742c01ef3847d01c5889c45c0963e82c6c5cafed42/1786210927/motogp-channel.m3u8
 #EXTINF:-1 tvg-id="mtv" tvg-name="MTV" tvg-logo="https://static0.colliderimages.com/wordpress/wp-content/uploads/2025/12/mtv-logo-1.jpg" group-title="TimStreams Sports",MTV
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/1dea3eff61889150a1fff043eca2ee095a124f97ae8a5cdb088a21bc756e0eaa/1786207597/mtv-usa.m3u8
+https://hiveatick.casadenoval.uk/main/secure/68571d327649cb7ad9b29715d718168b361ad912f8090ae1e42762e98a6c8596/1786210926/mtv.m3u8
 #EXTINF:-1 tvg-id="nba-tv" tvg-name="NBA TV" tvg-logo="https://static.cdn.turner.com/styles/header_image_1500x500_cropped/s3/nba-tv-16x9-1.jpg?itok=6H8mrlyR" group-title="TimStreams Sports",NBA TV
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/832cda197f14573b9a9e6ddcc36ea6cc4073b5d6c33c11dd35839cf08e8b2d2e/1786207597/nbatv-usa.m3u8
+https://hiveatick.casadenoval.uk/main/secure/5183d1b8025fe47ff3d956e39e30f5f04a4fedd587e53246bffb7b2f1e53d6f8/1786210926/nba-tv.m3u8
 #EXTINF:-1 tvg-id="nbc" tvg-name="NBC" tvg-logo="https://cdn.mos.cms.futurecdn.net/zP42nmS7MRj2kvBqNEs8CE.jpg" group-title="TimStreams Sports",NBC
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/5c8295781e79914352627136a052208fb365bcad3eb0b8ac9c3c8aa7049050ef/1786207597/nbc-usa.m3u8
+https://hiveatick.casadenoval.uk/main/secure/25f5e01cbb13453c30270783cf89c467b544adc037fe35a4ce0327bd557dee23/1786210926/nbc.m3u8
 #EXTINF:-1 tvg-id="nbc-sports-bay-area" tvg-name="NBC Sports Bay Area" tvg-logo="https://cdn.mos.cms.futurecdn.net/d7jWexxhtezRZ6ryLHyKmd.jpeg" group-title="TimStreams Sports",NBC Sports Bay Area
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/7dd0b28bc25f3246176a0691a53672bb7d3fe66e9a96f07e4c21fca07f295842/1786207597/nbc-sports-bayarea.m3u8
-#EXTINF:-1 tvg-id="nbc-sports-philadelphia" tvg-name="NBC Sports Philadelphia" tvg-logo="https://media.nbcsportsphiladelphia.com/2023/04/Philly-Landmark.png?resize=1200%2C675&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;quality=85&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;strip=all" group-title="TimStreams Sports",NBC Sports Philadelphia
+https://hiveatick.casadenoval.uk/main/secure/190e59f9ed9e1ec0f42b8c8592266cf818bbb2508f1021502195f25ffa2ca1cc/1786210927/nbc-sports-bay-area.m3u8
+#EXTINF:-1 tvg-id="nbc-sports-philadelphia" tvg-name="NBC Sports Philadelphia" tvg-logo="https://media.nbcsportsphiladelphia.com/2023/04/Philly-Landmark.png?resize=1200%2C675&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;quality=85&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;strip=all" group-title="TimStreams Sports",NBC Sports Philadelphia
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/823c6082c0bc875d71092bd625e7f2f3b26a098db6869b5c5f77f31e52e2ec32/1786207597/nbc-sports-philly.m3u8
+https://hiveatick.casadenoval.uk/main/secure/cbf7762432e28f62b12ea9b574328f5d5419e17b922d7657455d97a62e4a0601/1786210927/nbc-sports-philadelphia.m3u8
 #EXTINF:-1 tvg-id="nfl-network" tvg-name="NFL Network" tvg-logo="https://i.ibb.co/ZRsTndvV/tfki7njrm3y8jycbtkrx.jpg" group-title="TimStreams Sports",NFL Network
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/ccbbabe167972f0ea88a6411421d6c07f9f58d472eea2022342347e645abad8d/1786207597/nflnetwork-usa.m3u8
+https://hiveatick.casadenoval.uk/main/secure/8385ee1e18c426e338d2e06a83607cf7ade7895c21e72233071b1674525f6eff/1786210927/nfl-network.m3u8
 #EXTINF:-1 tvg-id="nhl-network" tvg-name="NHL Network" tvg-logo="https://media.d3.nhle.com/image/private/t_ratio16_9-size50/prd/lhum6z3hyaga9ahnjow0.png" group-title="TimStreams Sports",NHL Network
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/c3fb5bb1af805a48f0f29e079d25047eec21e42d41c1d1a9ee5172353cb4047e/1786207597/nhlnetwork-usa.m3u8
-#EXTINF:-1 tvg-id="nick-jr" tvg-name="Nick Jr." tvg-logo="https://i.ibb.co/xS6CMxZD/nick-jr-logo-2023-4.jpg" group-title="TimStreams Sports",Nick Jr.
+https://hiveatick.casadenoval.uk/main/secure/5f92504e053ec5c1daaa1b0a280eef2168af627934176e3815d6defd55d2131d/1786210927/nhl-network.m3u8
+#EXTINF:-1 tvg-id="nick-jr-" tvg-name="Nick Jr." tvg-logo="https://i.ibb.co/xS6CMxZD/nick-jr-logo-2023-4.jpg" group-title="TimStreams Sports",Nick Jr.
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/31f3e4ca300484663088fde9e4612b485c74da91cbcb429d2e20f2b40093213b/1786207597/nickjr-usa.m3u8
+https://hiveatick.casadenoval.uk/main/secure/5435338e2a023a83fdce370915501c58f81d7f4509403579b7823a107f98e835/1786210927/nick-jr-.m3u8
 #EXTINF:-1 tvg-id="nickelodeon" tvg-name="Nickelodeon" tvg-logo="https://i.ibb.co/xSM8bDYh/roger-nickelodeon-graphic-design-format-webp-width-2880-8-Yj-L2u3-KSI20j-HDQ.webp" group-title="TimStreams Sports",Nickelodeon
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/6782884905cccaf7925ae1f780c7e66c90ae191b71c9d168645439175729558e/1786207597/nickelodeon-usa.m3u8
+https://hiveatick.casadenoval.uk/main/secure/899d2320c340649c915fbf377cefdc81aa549d2087dbdf27bec6837ba3dc0490/1786210927/nickelodeon.m3u8
 #EXTINF:-1 tvg-id="nicktoons" tvg-name="Nicktoons" tvg-logo="https://i.ibb.co/XfX32tyx/nicktoons-logo-2023-rebrand-2.png" group-title="TimStreams Sports",Nicktoons
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/0eaedc756951eca1169f9ad99890aa39dcbdabebd2f7f6a0037a45dac2213cfc/1786207597/nicktoons-usa.m3u8
+https://hiveatick.casadenoval.uk/main/secure/f1bfeec459b6f2c9fdaa2bc2be8dd5a98b082a94c409fa3fde500f86b58a144f/1786210927/nicktoons.m3u8
 #EXTINF:-1 tvg-id="polsat-sport-1" tvg-name="Polsat Sport 1" tvg-logo="https://staticeu.sweet.tv/images/cache/v2/channel_banner/COEd/3809-polsat-sport-1-hd.png" group-title="TimStreams Sports",Polsat Sport 1
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/7743294aedea83988b57099bd3c02d5dc529c6639eff419de8c6bb86ca3d3caf/1786207597/polsatsport1-pl.m3u8
+https://hiveatick.casadenoval.uk/main/secure/06710e0767fceabb912f1af6db04f8368f388e491eb0542d3c2a020a7aef40ad/1786210927/polsat-sport-1.m3u8
 #EXTINF:-1 tvg-id="polsat-sport-2" tvg-name="Polsat Sport 2" tvg-logo="https://staticeu.sweet.tv/images/cache/v2/channel_banner/COId/3810-polsat-sport-2-hd.png" group-title="TimStreams Sports",Polsat Sport 2
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/4f12a2862af2df45da2ee0fc93a3c527bde1580de8b8ece54b8c22d39c6feec6/1786207597/polsatsport2-pl.m3u8
+https://hiveatick.casadenoval.uk/main/secure/b0c081b186be0851a51c2fbda2d175be6296083c4356ffd34f0f662fd1b8fb36/1786210927/polsat-sport-2.m3u8
 #EXTINF:-1 tvg-id="polsat-sport-3" tvg-name="Polsat Sport 3" tvg-logo="https://staticeu.sweet.tv/images/cache/v2/channel_banner/COMd/3811-polsat-sport-3-hd.png" group-title="TimStreams Sports",Polsat Sport 3
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/fd6c27ae470019d52bbe932ac842c584b261709eaaf8558af7fa57d6fb3ebc18/1786207597/polsatsport3-pl.m3u8
+https://hiveatick.casadenoval.uk/main/secure/96d76cdd5ef2034441a5c159acadf0e1cffb990e5f7c031449fe747a05494a41/1786210927/polsat-sport-3.m3u8
 #EXTINF:-1 tvg-id="polsat-sport-fight" tvg-name="Polsat Sport Fight" tvg-logo="https://staticeu.sweet.tv/images/cache/v2/channel_banner/COUd/3813-polsat-sport-fight-hd.png" group-title="TimStreams Sports",Polsat Sport Fight
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/747474fd1a3c304a7fa4d15bc22e76949470f3827621469813134151c3538a86/1786207597/polsatsportfight-pl.m3u8
+https://hiveatick.casadenoval.uk/main/secure/b7ba3e939faf1a4b93f6bbd9c8d523d980ef403df98ac93934f5c0d72215764f/1786210927/polsat-sport-fight.m3u8
 #EXTINF:-1 tvg-id="premiere" tvg-name="Premiere" tvg-logo="https://s3.glbimg.com/v1/AUTH_36abb2af534644878388f516c38b89ac/prod/home-share-1b75cdaa.png" group-title="TimStreams Sports",Premiere
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/0a3d7983d0ae07b88a8498e2d25d780221f74326887704782c10dd41b966eeb2/1786207597/premiere-br.m3u8
+https://hiveatick.casadenoval.uk/main/secure/b456e40d5ad8ff9d3ff383263d820f0d10beb55c56371cafaeca1d3f854ad189/1786210927/premiere.m3u8
 #EXTINF:-1 tvg-id="racer-network" tvg-name="RACER Network" tvg-logo="https://cdn-cs-images.racer.com/v3/assets/blte77f57883ea46be1/bltb30b537c79808b35/680f2c517c8c98109d720e49/Racer_Network_1920x1080_Presser_V1.jpg" group-title="TimStreams Sports",RACER Network
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/9fac62eea84a02540e18e6716578ea301bfdca64858befeae80ec1d28d6abaa5/1786207597/racernetwork-usa.m3u8
+https://hiveatick.casadenoval.uk/main/secure/ca4f5ebaf3c1a33651f300e85505001a6766b188331fc9080fad909b2e8ce852/1786210927/racer-network.m3u8
 #EXTINF:-1 tvg-id="showtime" tvg-name="Showtime" tvg-logo="https://i.ibb.co/v7vcNY4/Showtime-Logo.webp" group-title="TimStreams Sports",Showtime
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/ed0c93f587a4b56095d34fafd1759c1e18fc7795e459a79fd95f60f83cb541e4/1786207597/showtime-usa.m3u8
+https://hiveatick.casadenoval.uk/main/secure/8b5b608c0e7c1e28d9172782ffcf2805ee9ba8cdb2152881422d54eba26975f3/1786210927/showtime.m3u8
 #EXTINF:-1 tvg-id="showtime-2" tvg-name="Showtime 2" tvg-logo="https://i.ibb.co/8gCRbv0s/Showtime-2-svg.webp" group-title="TimStreams Sports",Showtime 2
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/9a9f650490005636f721126af4f75040608efe24217698946ab2023fdee92417/1786207597/showtime2-usa.m3u8
+https://hiveatick.casadenoval.uk/main/secure/fe5370e3ce8692f217f8063f5f5fcd6439cd17e90e4cb774fd21cc44a971e027/1786210927/showtime-2.m3u8
 #EXTINF:-1 tvg-id="showtime-extreme" tvg-name="Showtime Extreme" tvg-logo="https://i.ibb.co/1t5fNwpQ/Showtime-Closing-2013.webp" group-title="TimStreams Sports",Showtime Extreme
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/61c597762bb58300ac0cb68029a77a99b0303f2f1f252868ff19ccc3235c2e97/1786207597/showtimeextreme-usa.m3u8
+https://hiveatick.casadenoval.uk/main/secure/1c0725b8b25351ab5167574cd3c63683d1f20a66f519b98faaff5c7b5990e728/1786210927/showtime-extreme.m3u8
 #EXTINF:-1 tvg-id="showtime-family-zone" tvg-name="Showtime Family Zone" tvg-logo="https://i.ibb.co/1t5fNwpQ/Showtime-Closing-2013.webp" group-title="TimStreams Sports",Showtime Family Zone
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/d9d5a2ee35272e5b1ab1bfa7dbbf5bec0266864c80bb2a44f6d54764620ad183/1786207597/showtimefamilyzone-usa.m3u8
+https://hiveatick.casadenoval.uk/main/secure/5cdde60cef3c436190cc1f77c86c08332dcb464f30de5d6c165b47376ee14e6d/1786210927/showtime-family-zone.m3u8
 #EXTINF:-1 tvg-id="showtime-next" tvg-name="Showtime Next" tvg-logo="https://i.ibb.co/1t5fNwpQ/Showtime-Closing-2013.webp" group-title="TimStreams Sports",Showtime Next
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/53a0ce45163bbad36ecf1b5a1d07c2b6f589af572991b4ca12fdce1d8b3cefe0/1786207597/showtimenext-usa.m3u8
+https://hiveatick.casadenoval.uk/main/secure/896ac13ee6145854bbb10c6ff1eea10642c73ae553e1c52fdbf7685b9024b6d6/1786210927/showtime-next.m3u8
 #EXTINF:-1 tvg-id="showtime-women" tvg-name="Showtime Women" tvg-logo="https://i.ibb.co/1t5fNwpQ/Showtime-Closing-2013.webp" group-title="TimStreams Sports",Showtime Women
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/916779d96f1b67f690fda6ad8351c2fd2fe119bfb2d817167372177ecc37a283/1786207597/showtimewomen-usa.m3u8
+https://hiveatick.casadenoval.uk/main/secure/8de1ce5a13604a9d70cd66c6bda9764117e8030f9f33ab9cfe51022c9b6f180d/1786210927/showtime-women.m3u8
 #EXTINF:-1 tvg-id="sky-sport-1-nz" tvg-name="Sky Sport 1 NZ" tvg-logo="https://i.ibb.co/v4NvkZst/Untitled-design.png" group-title="TimStreams Sports",Sky Sport 1 NZ
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/85382dad8f32bf0a8e07b1ced18d83420b3bb539f53eb5f1e5f7aba844d9bb20/1786207597/skysport1-nz.m3u8
+https://hiveatick.casadenoval.uk/main/secure/79748a710f88b5d5476bca25b22b9bf896244b92fbb53bc1ec43ce6b014a1760/1786210927/sky-sport-1-nz.m3u8
 #EXTINF:-1 tvg-id="sky-sport-2-nz" tvg-name="Sky Sport 2 NZ" tvg-logo="https://i.ibb.co/v4NvkZst/Untitled-design.png" group-title="TimStreams Sports",Sky Sport 2 NZ
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/3174bd4139a5662bf522c883f9150b4bfc4d645996d28b61c46d6aaf31f79e2b/1786207597/skysport2-nz.m3u8
+https://hiveatick.casadenoval.uk/main/secure/c0f5c935e27701755a61f1d181ef9ae0b658168dab581d81f64329e0e90032ca/1786210927/sky-sport-2-nz.m3u8
 #EXTINF:-1 tvg-id="sky-sport-3-nz" tvg-name="Sky Sport 3 NZ" tvg-logo="https://i.ibb.co/v4NvkZst/Untitled-design.png" group-title="TimStreams Sports",Sky Sport 3 NZ
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/a35c7a9df3f20c2c4045e169b446d74f971e67fe20289c53763c945ef31be9b6/1786207597/skysport3-nz.m3u8
+https://hiveatick.casadenoval.uk/main/secure/55ba2cd2228b1ef33bb49377459d03b89f5e6604e94f7240b55ca217aba84ee7/1786210927/sky-sport-3-nz.m3u8
 #EXTINF:-1 tvg-id="sky-sport-4-nz" tvg-name="Sky Sport 4 NZ" tvg-logo="https://i.ibb.co/v4NvkZst/Untitled-design.png" group-title="TimStreams Sports",Sky Sport 4 NZ
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/0460bed9c11a015824985b39c4250c5c8880c44cea09fed852d9af0da8ea2c0a/1786207597/skysport4-nz.m3u8
+https://hiveatick.casadenoval.uk/main/secure/7b5e2b669026384a5f75d5d20b43259252e0539b4137b03b850324d97a7a6470/1786210927/sky-sport-4-nz.m3u8
 #EXTINF:-1 tvg-id="sky-sport-5-nz" tvg-name="Sky Sport 5 NZ" tvg-logo="https://i.ibb.co/v4NvkZst/Untitled-design.png" group-title="TimStreams Sports",Sky Sport 5 NZ
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/dd73ac4d11e9a72420aa4bb417d5a2bb1f61623932dba972f1f96e0ac2afaaae/1786207597/skysport5-nz.m3u8
+https://hiveatick.casadenoval.uk/main/secure/75e731ff7b1cf2b8cbce8932229c778b9b46aae42559541f7c4aa1fcca4c8325/1786210927/sky-sport-5-nz.m3u8
 #EXTINF:-1 tvg-id="sky-sport-6-nz" tvg-name="Sky Sport 6 NZ" tvg-logo="https://i.ibb.co/v4NvkZst/Untitled-design.png" group-title="TimStreams Sports",Sky Sport 6 NZ
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/294a658d4c3b1696d45eaab68b999d7b8af86394c6417191c085bbea50298dc0/1786207597/skysport6-nz.m3u8
+https://hiveatick.casadenoval.uk/main/secure/eb94faa64c475534c2875402f0d116ce58f11c536ddf4caf3a9b9779febbb098/1786210927/sky-sport-6-nz.m3u8
 #EXTINF:-1 tvg-id="sky-sport-7-nz" tvg-name="Sky Sport 7 NZ" tvg-logo="https://i.ibb.co/v4NvkZst/Untitled-design.png" group-title="TimStreams Sports",Sky Sport 7 NZ
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/66447b5d8f6d5f6bed8de221e36901e1d0363e0e4708eb6b417df6848fac527e/1786207597/skysport7-nz.m3u8
+https://hiveatick.casadenoval.uk/main/secure/8364ea5d8bfa53b258ebce17698d73b45e1d1ba5af6faeb93ec3535293670cec/1786210927/sky-sport-7-nz.m3u8
 #EXTINF:-1 tvg-id="sky-sport-8-nz" tvg-name="Sky Sport 8 NZ" tvg-logo="https://i.ibb.co/v4NvkZst/Untitled-design.png" group-title="TimStreams Sports",Sky Sport 8 NZ
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/00a71c7e9076f21d0005d11bc349ec716f7a8fa17cd973edfc7b2077eb83c80e/1786207597/skysport8-nz.m3u8
+https://hiveatick.casadenoval.uk/main/secure/81f6548f1bfcc4112735941627bfbd34804364ac9a3edde2331280adac467f2f/1786210927/sky-sport-8-nz.m3u8
 #EXTINF:-1 tvg-id="sky-sport-9-nz" tvg-name="Sky Sport 9 NZ" tvg-logo="https://i.ibb.co/v4NvkZst/Untitled-design.png" group-title="TimStreams Sports",Sky Sport 9 NZ
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/1a0c4160b898f1f7aac031649164800b756ed7002e58502b77d57bf8e5b8e106/1786207597/skysport9-nz.m3u8
+https://hiveatick.casadenoval.uk/main/secure/04b13b3df32048f675352d4e934465de89f33fccf87d49a910ed9527ca651fd3/1786210927/sky-sport-9-nz.m3u8
 #EXTINF:-1 tvg-id="sky-sport-select-nz" tvg-name="Sky Sport Select NZ" tvg-logo="https://i.ibb.co/v4NvkZst/Untitled-design.png" group-title="TimStreams Sports",Sky Sport Select NZ
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/953c6abb13deffd8290f7fcf838c5dfcea9398bdd6605b6c54fad1bc6c6a1705/1786207597/skysportselect-nz.m3u8
-#EXTINF:-1 tvg-id="sky-sports-plus" tvg-name="Sky Sports+" tvg-logo="https://e0.365dm.com/24/07/2048x1152/skysports-ssplus-sky-sports-plus_6644064.jpg" group-title="TimStreams Sports",Sky Sports+
+https://hiveatick.casadenoval.uk/main/secure/df02678bccb2eb41ccee39d0d9f8565b3272dcffbeab964a759332e38ce5f3ec/1786210927/sky-sport-select-nz.m3u8
+#EXTINF:-1 tvg-id="sky-sports-" tvg-name="Sky Sports+" tvg-logo="https://e0.365dm.com/24/07/2048x1152/skysports-ssplus-sky-sports-plus_6644064.jpg" group-title="TimStreams Sports",Sky Sports+
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/c04b94bd376c2384d635fa8bae3dc31ffbfb22e7ade7fc13389e6a61a9137271/1786207597/skysportsplus-uk.m3u8
+https://hiveatick.casadenoval.uk/main/secure/1cad6dce3af7ae219aa540c4798e1f3d999b2696b99ca1da9430dd53ed386d83/1786210927/sky-sports-.m3u8
 #EXTINF:-1 tvg-id="sky-sports-action" tvg-name="Sky Sports Action" tvg-logo="https://cdn.jsdelivr.net/gh/willthequeencome/img-cdn/skysportsaction.png" group-title="TimStreams Sports",Sky Sports Action
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/24dfbc146b315b0361744474f6ef11a3606043e73dbe615d7c70f4dc5148a234/1786207597/skysportsaction-uk.m3u8
+https://hiveatick.casadenoval.uk/main/secure/0754a8f1a95d613cf34907986c4d5fd12417239c4e2c0c68d1c06894a8b9e0bf/1786210927/sky-sports-action.m3u8
 #EXTINF:-1 tvg-id="sky-sports-cricket" tvg-name="Sky Sports Cricket" tvg-logo="https://e0.365dm.com/17/07/2048x1152/skysports-sky-sports-cricket-podcast-sky-cricket-podcast_4004801.jpg" group-title="TimStreams Sports",Sky Sports Cricket
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/fb1c19ffd51cc3ffee90a5eb6243495320c98ada287c7f5f786999efd7ad175f/1786207597/skysportscricket-uk.m3u8
+https://hiveatick.casadenoval.uk/main/secure/c35bcebb9e47a0c0a7fe24a899cc89d491d28b18d227ccf6cda0ddf02e840d32/1786210927/sky-sports-cricket.m3u8
 #EXTINF:-1 tvg-id="sky-sports-f1" tvg-name="Sky Sports F1" tvg-logo="https://e0.365dm.com/21/03/1600x900/skysports-f1-2021-graphic_5299452.png" group-title="TimStreams Sports",Sky Sports F1
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/d9444dd40bbf39a06df596351fc9e46e58f3b3ec7dc1da9398478e8c45341f1b/1786207597/skysportsf1-uk.m3u8
+https://hiveatick.casadenoval.uk/main/secure/7759ec40a0ccb081b7c0e86ee141e65e28de0e52a02aaf0bc5ef2fa5a3268fad/1786210927/sky-sports-f1.m3u8
 #EXTINF:-1 tvg-id="sky-sports-football" tvg-name="Sky Sports Football" tvg-logo="https://images.squarespace-cdn.com/content/v1/6380a5b12f7b6f632e16ce77/46d62da8-e650-4d2b-a5bc-48a5648edb8e/Beth_Mead.jpg" group-title="TimStreams Sports",Sky Sports Football
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/110fc043a65b97e1d753c8980afcf1e9e84639a6afa6889877607b06776b4446/1786207597/skysportsfootball-uk.m3u8
+https://hiveatick.casadenoval.uk/main/secure/d516af9f9324b9b991835329d8b2c0ced8d0e019136d31b879eb488a7b0f0245/1786210927/sky-sports-football.m3u8
 #EXTINF:-1 tvg-id="sky-sports-golf" tvg-name="Sky Sports Golf" tvg-logo="https://e0.365dm.com/23/05/1600x900/skysports-golf-sky-sports-golf_6158933.jpg" group-title="TimStreams Sports",Sky Sports Golf
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/59b632a1d6c5b7221cdf531e0bf34c318f712ae73ca5d0e2d408095a8e3f24a0/1786207597/skysportsgolf-uk.m3u8
+https://hiveatick.casadenoval.uk/main/secure/525e3dc76e5f7f7b829bf575e656918dacf98aa29d7a2d4083c36f08fd0d339d/1786210927/sky-sports-golf.m3u8
 #EXTINF:-1 tvg-id="sky-sports-main-event" tvg-name="Sky Sports Main Event" tvg-logo="https://e0.365dm.com/17/07/1600x900/skysports-all-new-rebrand-f1-premier-league-golf-cricket_4001810.jpg" group-title="TimStreams Sports",Sky Sports Main Event
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/ff462ac325960db57b240ba8cb83a268ffd132dd08886cf682ca414df0c1e806/1786207597/skysportsmainevent-uk.m3u8
+https://hiveatick.casadenoval.uk/main/secure/669fdeae75295cf1d82c016e1adfbde13e00e67f3eb0490e190de7c8095f0045/1786210927/sky-sports-main-event.m3u8
 #EXTINF:-1 tvg-id="sky-sports-mix" tvg-name="Sky Sports Mix" tvg-logo="https://cdn.jsdelivr.net/gh/willthequeencome/img-cdn/Sky_Sports_Mix_Generic_ID_2017.webp" group-title="TimStreams Sports",Sky Sports Mix
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/2222ec61eff6b55294faff00515016bc6d9add9e4d026deb25a498413ee48ab0/1786207597/skysportsmix-uk.m3u8
+https://hiveatick.casadenoval.uk/main/secure/4a003b2e76ae6b5dbdd9b15c58c1eb5f70901d57c2e2b26b943604b113dc1363/1786210927/sky-sports-mix.m3u8
 #EXTINF:-1 tvg-id="sky-sports-news" tvg-name="Sky Sports News" tvg-logo="https://cdn.jsdelivr.net/gh/willthequeencome/img-cdn/image.jpg" group-title="TimStreams Sports",Sky Sports News
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/c8fb8f5afb3f369044e608fcacc3d35d840a1c5fadf19a3ccfa87c25e7fd0867/1786207597/skysportsnews-uk.m3u8
+https://hiveatick.casadenoval.uk/main/secure/4c590b965396f10e4ebad5885df76aef4719d42f8744ee80783722e6d21aa41c/1786210927/sky-sports-news.m3u8
 #EXTINF:-1 tvg-id="sky-sports-premier-league" tvg-name="Sky Sports Premier League" tvg-logo="https://e0.365dm.com/25/06/2048x1152/skysports-premier-league-fixtures_6937276.jpg" group-title="TimStreams Sports",Sky Sports Premier League
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/64d138d61a719a0b81bdc09b98714e56abe1d405c7b6cebc0c75ec3bc86b753c/1786207597/skysportspremierleague-uk.m3u8
+https://hiveatick.casadenoval.uk/main/secure/2b368b3352555244d5c9927c0557ef1847b17f7721017dcec87a83d813108f11/1786210927/sky-sports-premier-league.m3u8
 #EXTINF:-1 tvg-id="sky-sports-racing" tvg-name="Sky Sports Racing" tvg-logo="https://e0.365dm.com/23/07/2048x1152/skysports-racing-league-sky-sports-racing_6230990.jpg" group-title="TimStreams Sports",Sky Sports Racing
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/a01d55d04b474c3d86867ccbfb5607bf0d5289f0e33b2206ec1d664ad68da2cf/1786207597/skysportsracing-uk.m3u8
+https://hiveatick.casadenoval.uk/main/secure/71055837f73c9f884a7723e56a9ffe5137940dc37595f274531127a8a78f20dc/1786210927/sky-sports-racing.m3u8
 #EXTINF:-1 tvg-id="sky-sports-tennis" tvg-name="Sky Sports Tennis" tvg-logo="https://e0.365dm.com/24/01/2048x1152/skysports-sky-sports-tennis_6437709.jpg" group-title="TimStreams Sports",Sky Sports Tennis
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/b5842e22607b4f751e7cce8722f34359e11455ccafd731183a167979ed356d99/1786207597/skysportstennis-uk.m3u8
+https://hiveatick.casadenoval.uk/main/secure/2edcadace9874f149aa691d311a0a2625e8479b536cc0ef4b1e4e81280de75bd/1786210927/sky-sports-tennis.m3u8
 #EXTINF:-1 tvg-id="sony-sports-network" tvg-name="Sony Sports Network" tvg-logo="https://cdn.jsdelivr.net/gh/willthequeencome/img-cdn/085457534.png" group-title="TimStreams Sports",Sony Sports Network
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/a400658af4ece998ad2458f2652b45b831e6dec52690fd53772d2f3c8be48679/1786207597/sonysportsnetwork-in.m3u8
+https://hiveatick.casadenoval.uk/main/secure/e0478ac2e86aa4e99b06806e6dbd6eea89f598eec182da0022379093d40d79f3/1786210927/sony-sports-network.m3u8
 #EXTINF:-1 tvg-id="sony-sports-network-2" tvg-name="Sony Sports Network 2" tvg-logo="https://cdn.jsdelivr.net/gh/willthequeencome/img-cdn/085457534.png" group-title="TimStreams Sports",Sony Sports Network 2
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/de26337628261878c3c54f296a8e4943590a49f2c3b30e3ee705e8e57922201f/1786207597/sonysportsnetwork2-in.m3u8
+https://hiveatick.casadenoval.uk/main/secure/1215ea20c144866554c81c53bdbc5bc397d0891392eac6d628b7e73f12d13def/1786210927/sony-sports-network-2.m3u8
 #EXTINF:-1 tvg-id="sony-sports-network-3" tvg-name="Sony Sports Network 3" tvg-logo="https://cdn.jsdelivr.net/gh/willthequeencome/img-cdn/085457534.png" group-title="TimStreams Sports",Sony Sports Network 3
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/0f2deec17ead1ee504247aa5fc3da0b44f746a9fe136313e9f220cc9227e9dde/1786207598/sonysportsnetwork3-in.m3u8
+https://hiveatick.casadenoval.uk/main/secure/f8d26e1a2a90bab10f574bdab86df1da01279d37b6653883cde01f14b7b8abab/1786210927/sony-sports-network-3.m3u8
 #EXTINF:-1 tvg-id="sony-sports-network-4" tvg-name="Sony Sports Network 4" tvg-logo="https://cdn.jsdelivr.net/gh/willthequeencome/img-cdn/085457534.png" group-title="TimStreams Sports",Sony Sports Network 4
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/7ff22cee0bd26ff8d3d340e98208db3a131e76baf3a45e6779355e84e268d0b7/1786207598/sonysportsnetwork4-in.m3u8
+https://hiveatick.casadenoval.uk/main/secure/cbacca8bf9e99a156feec0c01961df47fb3ba972c1332a664f41a02894b2ceef/1786210927/sony-sports-network-4.m3u8
 #EXTINF:-1 tvg-id="sony-sports-network-5" tvg-name="Sony Sports Network 5" tvg-logo="https://cdn.jsdelivr.net/gh/willthequeencome/img-cdn/085457534.png" group-title="TimStreams Sports",Sony Sports Network 5
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/cc07dc6b5c9a7c47a3145b207f0a1666d85ebc836a7134153a0ba52af4131123/1786207598/sonysportsnetwork5-in.m3u8
-#EXTINF:-1 tvg-id="sport-tv1" tvg-name="Sport TV1" tvg-logo="https://cdn.jsdelivr.net/gh/willthequeencome/img-cdn/sportv-pt.png" group-title="TimStreams Sports",Sport TV1
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/dd25cd1c6a928647836b24ab6eb0814205dfc82a104699ed879b83a3633a05e1/1786207598/sporttv1-pt.m3u8
-#EXTINF:-1 tvg-id="sport-tv2" tvg-name="Sport TV2" tvg-logo="https://cdn.jsdelivr.net/gh/willthequeencome/img-cdn/sportv-pt.png" group-title="TimStreams Sports",Sport TV2
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/fd8c4a36f31b193b5167309c686de88fa131041f78578bed05a4f191fcf42687/1786207598/sporttv2-pt.m3u8
-#EXTINF:-1 tvg-id="sport-tv3" tvg-name="Sport TV3" tvg-logo="https://cdn.jsdelivr.net/gh/willthequeencome/img-cdn/sportv-pt.png" group-title="TimStreams Sports",Sport TV3
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/538e50f04810319826c9bee213019e3099da6b8e25b4ff5722372de442542c71/1786207598/sporttv3-pt.m3u8
-#EXTINF:-1 tvg-id="sport-tv4" tvg-name="Sport TV4" tvg-logo="https://cdn.jsdelivr.net/gh/willthequeencome/img-cdn/sportv-pt.png" group-title="TimStreams Sports",Sport TV4
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/d475f2d1ec3ff2ab1cf9d39f05c7537526f368bddaa3a09bcbe66ac89bde22bb/1786207598/sporttv4-pt.m3u8
-#EXTINF:-1 tvg-id="sport-tv5" tvg-name="Sport TV5" tvg-logo="https://cdn.jsdelivr.net/gh/willthequeencome/img-cdn/sportv-pt.png" group-title="TimStreams Sports",Sport TV5
-#EXTVLCOPT:http-referrer=https://timstreams.st/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/8b89fc2f94ff24dddb042d69ab816d74ec40e6150198d9739a3796e0cfede6cf/1786207598/sporttv5-pt.m3u8
+https://hiveatick.casadenoval.uk/main/secure/f07ef55548e89bceeee31488c027a30d48efe050bb10877ad599f7c7931a564b/1786210927/sony-sports-network-5.m3u8
 #EXTINF:-1 tvg-id="starz" tvg-name="STARZ" tvg-logo="https://careers.starz.com/wp-content/uploads/2025/01/STARZ-LOGO-IMAGE.png" group-title="TimStreams Sports",STARZ
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/649755c3050176c3bcd8801be0df1b3d858dad94c21343d983b73163a0203208/1786207598/starz-usa.m3u8
+https://hiveatick.casadenoval.uk/main/secure/fe1b7e9452e94c225dfe18852fb31a4a1b3f5211a00153739e96a7821d0f8354/1786210927/starz.m3u8
 #EXTINF:-1 tvg-id="starz-cinema" tvg-name="STARZ Cinema" tvg-logo="https://careers.starz.com/wp-content/uploads/2025/01/STARZ-LOGO-IMAGE.png" group-title="TimStreams Sports",STARZ Cinema
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/027c4d3a2280ddc59a95eaa921850b5fed61f89034a66d0cb115eca5ee469d86/1786207598/starzcinema-usa.m3u8
+https://hiveatick.casadenoval.uk/main/secure/27af3cf4cb453c7f3d153d72d0acfce4e92e9c77a87b041f0943607611266e6b/1786210927/starz-cinema.m3u8
 #EXTINF:-1 tvg-id="starz-comedy" tvg-name="STARZ Comedy" tvg-logo="https://careers.starz.com/wp-content/uploads/2025/01/STARZ-LOGO-IMAGE.png" group-title="TimStreams Sports",STARZ Comedy
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/a8785f8ac4a4a34bb19d4d15761051f52082e323313e39c432d774ddc947aa58/1786207598/starzcomedy-usa.m3u8
+https://hiveatick.casadenoval.uk/main/secure/eaa39a41fa180f1c5ac9f0cce20a21d8652c994672eaec2a5f4db873d4c0bd09/1786210927/starz-comedy.m3u8
 #EXTINF:-1 tvg-id="starz-kids-and-family" tvg-name="STARZ Kids and Family" tvg-logo="https://careers.starz.com/wp-content/uploads/2025/01/STARZ-LOGO-IMAGE.png" group-title="TimStreams Sports",STARZ Kids and Family
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/5181e6971808528ef98f42952a9994ad2880607f54bdfd6fa77fa3b76ae5d908/1786207598/starzkidsfamily-usa.m3u8
-#EXTINF:-1 tvg-id="syfy" tvg-name="SYFY" tvg-logo="https://assets.goal.com/images/v3/blt1be56273baf0440d/syfy%20logo.jpg?auto=webp&amp;amp;amp;amp;format=pjpg&amp;amp;amp;amp;width=3840&amp;amp;amp;amp;quality=60" group-title="TimStreams Sports",SYFY
+https://hiveatick.casadenoval.uk/main/secure/67a2253a1bdc3a3e57362bc4c4104d2f100d5e2f424c1d89de2fda4313b724af/1786210927/starz-kids-and-family.m3u8
+#EXTINF:-1 tvg-id="syfy" tvg-name="SYFY" tvg-logo="https://assets.goal.com/images/v3/blt1be56273baf0440d/syfy%20logo.jpg?auto=webp&amp;amp;amp;format=pjpg&amp;amp;amp;width=3840&amp;amp;amp;quality=60" group-title="TimStreams Sports",SYFY
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/7e2d30b3a27de48faa1c3788364be801fa4a860372e910307b80457276237924/1786207598/syfy-usa.m3u8
+https://hiveatick.casadenoval.uk/main/secure/38c207f53d4783b05bbbe3da2a3b4cc493d5ec83ce2599b471f74ce696c319e2/1786210928/syfy.m3u8
 #EXTINF:-1 tvg-id="tbs" tvg-name="TBS" tvg-logo="https://cdn.sanity.io/images/1pn9obcz/production/a6971fbe09c85f2deeb480fc494a39219d039135-1920x1080.jpg" group-title="TimStreams Sports",TBS
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/85597a950d60d6e5a7889a4c0f00aa933a324edd578fd26abed68ef18c237b50/1786207598/tbs-usa.m3u8
+https://hiveatick.casadenoval.uk/main/secure/6cff2a8e67c844ce8708c6f6c86d1faff9e52e29ac9a8d8fd76c811e00282ed7/1786210928/tbs.m3u8
 #EXTINF:-1 tvg-id="teenick" tvg-name="Teenick" tvg-logo="https://i.ibb.co/3yCJDVrW/Teen-Nick-2023.webp" group-title="TimStreams Sports",Teenick
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/35e53cf13aff021cb2a6ab3a86d5c83dc3b9a6965b786cfaa0e3c0dbe027dbfd/1786207598/teenick-usa.m3u8
+https://hiveatick.casadenoval.uk/main/secure/0397e50d2a97269f28f9d1034d7b09769a7e2eb9b99c0afe5a2733faf7b78a9d/1786210928/teenick.m3u8
 #EXTINF:-1 tvg-id="telemundo" tvg-name="Telemundo" tvg-logo="https://media-cldnry.s-nbcnews.com/image/upload/newscms/2020_20/3352176/telemundo-social-default.png" group-title="TimStreams Sports",Telemundo
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/4ffa17bbcbdb579d592b60e6f9d29310ef98a1bf5283b04d8e1d8fc95ecfee7b/1786207598/telemundo-usa.m3u8
+https://hiveatick.casadenoval.uk/main/secure/c00d059381470cdbce6560a3eb9f4f6ae9f974152dfc9c1b85bb58885a005e60/1786210928/telemundo.m3u8
 #EXTINF:-1 tvg-id="tennis-channel" tvg-name="Tennis Channel" tvg-logo="https://s10019.cdn.ncms.io/wp-content/uploads/2026/05/tenn2.jpg.jpeg" group-title="TimStreams Sports",Tennis Channel
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/7d2d066277f01428fa2c75beb2d3c16d51e5e0727b1235e13ff8e252e0082b92/1786207598/tennischannel-usa.m3u8
+https://hiveatick.casadenoval.uk/main/secure/77b9e3dca06d78c15956af0d7800cf81ef004fed4d3560c5b3cef4178fcb8378/1786210928/tennis-channel.m3u8
 #EXTINF:-1 tvg-id="the-weather-channel" tvg-name="The Weather Channel" tvg-logo="https://i.ibb.co/bRJqL6WK/LWRBPBUMCVFA3-G5-Q4-ZH3-XJYDNY.avif" group-title="TimStreams Sports",The Weather Channel
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/3794c90ff44dacad933b2e9ceed6c7cc920ab1e2052d727866007ced96ba946d/1786207598/twc-usa.m3u8
+https://hiveatick.casadenoval.uk/main/secure/549f9ccaa1834643af751a72bb23e4ca7e3908dc1a11cbe919f08987234c2084/1786210928/the-weather-channel.m3u8
 #EXTINF:-1 tvg-id="tnt" tvg-name="TNT" tvg-logo="https://i.ytimg.com/vi/F-AHKcxi3pY/maxresdefault.jpg" group-title="TimStreams Sports",TNT
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/58d06604407f54a593390ca3f85b068a2a6d5449a1f2f08092d28a45fb707253/1786207598/tnt-usa.m3u8
+https://hiveatick.casadenoval.uk/main/secure/d28abbda8496db474d94f42e12c8654254401057fb482fa0bab5021107207b99/1786210928/tnt.m3u8
 #EXTINF:-1 tvg-id="tnt-sports-1" tvg-name="TNT Sports 1" tvg-logo="https://cdn.mos.cms.futurecdn.net/y3oPitXYAwGJnyTHFYo5qB.jpeg" group-title="TimStreams Sports",TNT Sports 1
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/6a3bdbc25e026303604240e812d257d7de56657be1f213e52128d6e31f0c50d1/1786207598/tntsports1-uk.m3u8
+https://hiveatick.casadenoval.uk/main/secure/4fcbc2a1e5fe07404de64f9a16bb44654eaf3003e9d7e932b2d3c55c4e260b01/1786210928/tnt-sports-1.m3u8
 #EXTINF:-1 tvg-id="tnt-sports-2" tvg-name="TNT Sports 2" tvg-logo="https://cdn.mos.cms.futurecdn.net/y3oPitXYAwGJnyTHFYo5qB.jpeg" group-title="TimStreams Sports",TNT Sports 2
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/4beef1b7f9de847da40520c20af229f36b4e8964c2b9986d6e9110e54a19116d/1786207598/tntsports2-uk.m3u8
+https://hiveatick.casadenoval.uk/main/secure/a44e6a551722a2995af9ad7cefac716c031ec98c6e210bdd3424c923a1ff405d/1786210928/tnt-sports-2.m3u8
 #EXTINF:-1 tvg-id="tnt-sports-3" tvg-name="TNT Sports 3" tvg-logo="https://cdn.mos.cms.futurecdn.net/y3oPitXYAwGJnyTHFYo5qB.jpeg" group-title="TimStreams Sports",TNT Sports 3
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/0834ed0b696f4c0d09bdde0322335b12a4837aa8a22cec9cd360f21bae6a633a/1786207598/tntsports3-uk.m3u8
+https://hiveatick.casadenoval.uk/main/secure/98f89c61629bec2c94c6870073bbfd89385adf27d84daad5e9bb8eb543b15641/1786210928/tnt-sports-3.m3u8
 #EXTINF:-1 tvg-id="tnt-sports-4" tvg-name="TNT Sports 4" tvg-logo="https://cdn.mos.cms.futurecdn.net/y3oPitXYAwGJnyTHFYo5qB.jpeg" group-title="TimStreams Sports",TNT Sports 4
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/3d47fe92e2173cc4660e12e83d97d80136f96a536860ea91d4bfb6a3eda3f0de/1786207598/tntsports4-uk.m3u8
+https://hiveatick.casadenoval.uk/main/secure/5232431878ea765063e7d2fd773c8f16927c5a353e771ba419a332125fd98a34/1786210928/tnt-sports-4.m3u8
 #EXTINF:-1 tvg-id="trutv" tvg-name="TruTV" tvg-logo="https://i.ibb.co/DfGcnjXY/Header-tru-TV.webp" group-title="TimStreams Sports",TruTV
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/123b147cd6f4dcd5caa59a164f9d4250bc5861f571c12ce3163d6ceca4739b55/1786207598/trutv-usa.m3u8
+https://hiveatick.casadenoval.uk/main/secure/662a062d5b2d7287f7cca4535edf5168baa9018ce95d0b512a7c9d6e2befc95c/1786210928/trutv.m3u8
 #EXTINF:-1 tvg-id="tudn" tvg-name="TUDN" tvg-logo="https://cdn.aptoide.com/imgs/e/e/6/ee65573e3ed2c5fcafa0191860afdf51_fgraphic.png" group-title="TimStreams Sports",TUDN
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/28e66d352fc1007cff068930844524c74362be058d7bd996e0e412ac5b617e5d/1786207598/tudn-usa.m3u8
+https://hiveatick.casadenoval.uk/main/secure/979394702f2b623d9eae59b116e680937c084dc97220ed363c59014208b38524/1786210928/tudn.m3u8
 #EXTINF:-1 tvg-id="tyc-sports-internacional" tvg-name="TYC Sports Internacional" tvg-logo="https://assets.goal.com/images/v3/blta396e76391fffdfa/TyC_Sports_logo.jpg" group-title="TimStreams Sports",TYC Sports Internacional
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/54ca7539763171ddf253c0298d8f633920a31de194465a55d516aae6aa817164/1786207598/tycsports-usa.m3u8
+https://hiveatick.casadenoval.uk/main/secure/cecaad3b794fc1ca7e0eaeda7d3b7e3c6b0fe18b989f663d9d519a4414a3b002/1786210928/tyc-sports-internacional.m3u8
 #EXTINF:-1 tvg-id="ufc-fight-pass-24-7" tvg-name="UFC Fight Pass 24/7" tvg-logo="https://fightrecord.co.uk/wp-content/uploads/2020/12/ufc-fight-pass-lion-fight-muay-thai.jpg" group-title="TimStreams Sports",UFC Fight Pass 24/7
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/da4daef870b2240696d1665e144a079acdb00d6dfc4eda54c4fe1ab797b21e04/1786207598/ufc-fight-pass.m3u8
+https://hiveatick.casadenoval.uk/main/secure/59b532a9b62f6adbfd349734050892338944e52df3f5d982b9d1101838188231/1786210928/ufc-fight-pass-24-7.m3u8
 #EXTINF:-1 tvg-id="usa-network" tvg-name="USA Network" tvg-logo="https://variety.com/wp-content/uploads/2013/10/usa-network-logo1.jpg" group-title="TimStreams Sports",USA Network
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/ffd2c00d8a71542982efcde76563bed74100012c9f6790770ada382166c2c103/1786207598/usanetwork-usa.m3u8
+https://hiveatick.casadenoval.uk/main/secure/01bbf3187c2ba071760132f56e869dbef29ba303124a8ff0e0a4e64a34a4fcf3/1786210928/usa-network.m3u8
 #EXTINF:-1 tvg-id="wapa-america" tvg-name="WAPA America" tvg-logo="https://m.media-amazon.com/images/I/81AEkpHaIPL._SL1920_.png" group-title="TimStreams Sports",WAPA America
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/e919117ac1e530e0265b405a1de7ed3fed4b20d743ee614fc5847fb15a7b62a5/1786207598/wapaamerica-usa.m3u8
+https://hiveatick.casadenoval.uk/main/secure/3f2ba8944b6a5ed2d731e210953b9628098c70807419ac877dd5791344b5bc38/1786210928/wapa-america.m3u8
 #EXTINF:-1 tvg-id="wapa-deportes" tvg-name="WAPA Deportes" tvg-logo="https://i.ibb.co/pBzhsJ17/WAPA-Deportes.jpg" group-title="TimStreams Sports",WAPA Deportes
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/f35679f83d9ea104a60a66da2daf929fb1dd07e748a21125c7b40982f836eb06/1786207598/wapadeportes-usa.m3u8
+https://hiveatick.casadenoval.uk/main/secure/c065de324f3626415589287a4499117230aa1259af2742abc2fae86f77ce688b/1786210928/wapa-deportes.m3u8
 #EXTINF:-1 tvg-id="willow-cricket" tvg-name="Willow Cricket" tvg-logo="https://mgpindia.com/wp-content/uploads/2021/10/willow-logo.jpg" group-title="TimStreams Sports",Willow Cricket
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/14c60d6a90c4f1f3cc92cc33b9177e6c75c924c7539cce4526af4832eebccc77/1786207598/willow-usa.m3u8
+https://hiveatick.casadenoval.uk/main/secure/9fe3cd4df3c7f96688de9d896f6ff4c12c9f7071d8a9daf439aae8ebf03e67d0/1786210928/willow-cricket.m3u8
 #EXTINF:-1 tvg-id="willow-cricket-2" tvg-name="Willow Cricket 2" tvg-logo="https://d229kpbsb5jevy.cloudfront.net/tv/1920/1080/languages/WILLOW-2.jpg" group-title="TimStreams Sports",Willow Cricket 2
 #EXTVLCOPT:http-referrer=https://timstreams.st/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-https://hiveatick.casadenoval.uk/main/secure/7eb786f57fdeb909b4cbe46852c30c76690db9fd14eac3730819e97615b3dc91/1786207598/willow2-usa.m3u8
+https://hiveatick.casadenoval.uk/main/secure/931009eb75f57aeace6ca8f18822f98f36f3391949659d25f9fddb0e7abb4401/1786210928/willow-cricket-2.m3u8
