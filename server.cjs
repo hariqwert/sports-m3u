@@ -21,10 +21,10 @@ initEngine();
 
 // Active Torrent State Tracker
 let activeTorrentStats = {
-    name: 'Sintel 1080p Open Movie Torrent',
+    name: 'Demon Slayer Season 1 Episode 1',
     magnet: 'magnet:?xt=urn:btih:08ada5a7a6183aae1e09d831df6748d566095a10',
     progress: 0,
-    downloadSpeed: 0,
+    downloadSpeed: '0.00',
     numPeers: 0,
     length: 0,
     ready: false
@@ -45,7 +45,7 @@ const server = http.createServer((req, res) => {
         return res.end();
     }
 
-    // Serve Static Assets
+    // Serve Static Web Assets
     if (pathname === '/' || pathname === '/index.html') {
         if (fs.existsSync('index.html')) {
             res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
@@ -75,22 +75,22 @@ const server = http.createServer((req, res) => {
         
         if (torrentClient && magnet) {
             try {
-                let existing = torrentClient.get(magnet);
-                if (!existing) {
-                    existing = torrentClient.add(magnet, { deselect: true });
+                let torrent = torrentClient.get(magnet);
+                if (!torrent) {
+                    torrent = torrentClient.add(magnet);
                 }
 
-                existing.on('download', () => {
-                    activeTorrentStats.name = existing.name || activeTorrentStats.name;
-                    activeTorrentStats.progress = Math.round(existing.progress * 100);
-                    activeTorrentStats.downloadSpeed = (existing.downloadSpeed / 1024 / 1024).toFixed(2);
-                    activeTorrentStats.numPeers = existing.numPeers;
-                    activeTorrentStats.length = existing.length;
-                    activeTorrentStats.ready = true;
-                });
+                if (torrent && typeof torrent.on === 'function') {
+                    torrent.on('download', () => {
+                        activeTorrentStats.name = torrent.name || activeTorrentStats.name;
+                        activeTorrentStats.progress = Math.round(torrent.progress * 100);
+                        activeTorrentStats.downloadSpeed = (torrent.downloadSpeed / 1024 / 1024).toFixed(2);
+                        activeTorrentStats.numPeers = torrent.numPeers;
+                        activeTorrentStats.length = torrent.length;
+                        activeTorrentStats.ready = true;
+                    });
 
-                existing.on('ready', () => {
-                    const file = existing.files.find(f => f.name.endsWith('.mp4') || f.name.endsWith('.mkv') || f.name.endsWith('.webm'));
+                    const file = torrent.files && torrent.files.find(f => f.name.endsWith('.mp4') || f.name.endsWith('.mkv') || f.name.endsWith('.webm'));
                     if (file) {
                         file.select(); // Enable linear sequential piece downloading
                         
@@ -117,8 +117,7 @@ const server = http.createServer((req, res) => {
 
                         return file.createReadStream({ start, end }).pipe(res);
                     }
-                });
-                return;
+                }
             } catch(e) {
                 console.error("Torrent stream error:", e.message);
             }
@@ -134,5 +133,5 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(PORT, () => {
-    console.log(`[✓] WebTorrent P2P Sequential Player Server running on http://localhost:${PORT}`);
+    console.log(`[✓] AnimeTorrent P2P Portal Server running on http://localhost:${PORT}`);
 });

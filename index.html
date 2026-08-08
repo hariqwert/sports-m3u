@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebTorrent P2P Sequential Video Player Engine</title>
+    <title>AnimeTorrent — P2P Anime Streaming Engine</title>
     <!-- Google Fonts & CDN dependencies -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
@@ -12,32 +12,41 @@
 </head>
 <body>
 
-    <!-- Header Navbar -->
+    <!-- Header Navigation -->
     <header>
-        <div class="logo">
-            <span class="logo-accent">WebTorrent</span> P2P Sequential Player
+        <a href="/" class="logo" onclick="resetHome(event)">
+            <span>Anime</span>Torrent P2P
+        </a>
+        <div class="search-bar-container">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search anime title... (e.g. Demon Slayer, Solo Leveling)" autocomplete="off">
+            <div id="searchResults" class="search-results-dropdown"></div>
         </div>
-        <div style="font-size: 13px; color: var(--text-secondary);">Node.js Range HTTP Bridge</div>
     </header>
 
     <main>
-        <!-- Magnet Input Card -->
-        <section class="magnet-input-card">
-            <form class="magnet-form" onsubmit="loadMagnetStream(event)">
-                <input type="text" id="magnetInput" class="magnet-input" placeholder="Paste Magnet URI or Torrent InfoHash (e.g. magnet:?xt=urn:btih:...)" autocomplete="off">
-                <button type="submit" class="btn-stream">▶ Play Torrent Stream</button>
-            </form>
-            <div class="preset-pills">
-                <span class="preset-label">Preset Demos:</span>
-                <button class="pill-btn" onclick="usePreset('sintel')">Sintel 1080p Torrent</button>
-                <button class="pill-btn" onclick="usePreset('tears')">Tears of Steel 4K Torrent</button>
+        <!-- Featured Hero Banner -->
+        <div class="hero-banner" id="heroBanner">
+            <img class="hero-bg" id="heroBg" src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101922-WBsBl0ClmgYL.jpg" alt="Demon Slayer Hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 class="hero-title" id="heroTitle">Demon Slayer: Kimetsu no Yaiba</h1>
+                <p class="hero-desc" id="heroDesc">A high-stakes battle for survival where destiny, power, and courage collide.</p>
+                <button class="btn-primary" onclick="watchAnime('101922')">▶ Watch Season 1 P2P Stream</button>
             </div>
-        </section>
+        </div>
 
-        <!-- Video Player Card -->
-        <section class="player-card">
-            <h2 id="nowPlayingTitle" style="font-size: 18px; font-weight: 700;">Sintel 1080p Open Movie Stream</h2>
-            <div id="artplayer" class="artplayer-box"></div>
+        <!-- Video Player & Episode Selector Section -->
+        <section id="playerSection" class="player-section">
+            <div class="player-header">
+                <div>
+                    <h2 id="nowPlayingTitle" class="player-title">Demon Slayer — Episode 1</h2>
+                    <p id="nowPlayingSub" style="font-size:13px; color:var(--text-secondary);">Sequential P2P Stream Bridge</p>
+                </div>
+                <button class="btn-primary" style="padding: 8px 16px; font-size: 13px;" onclick="closePlayer()">✕ Close Player</button>
+            </div>
+            
+            <!-- Custom Artplayer / Video Box -->
+            <div id="artplayer" class="player-box"></div>
 
             <!-- P2P Telemetry Dashboard -->
             <div class="p2p-dashboard">
@@ -46,7 +55,7 @@
                     <span id="numPeers" class="stat-value">0 Seeders / Leechers</span>
                 </div>
                 <div class="stat-box">
-                    <span class="stat-label">Download Bandwidth</span>
+                    <span class="stat-label">Download Speed</span>
                     <span id="downloadSpeed" class="stat-value">0.00 MB/s</span>
                 </div>
                 <div class="stat-box">
@@ -57,11 +66,25 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Episode Selector Grid -->
+            <div class="episodes-box" style="margin-top: 24px;">
+                <h3 class="episodes-title">Episode Select</h3>
+                <div id="episodesGrid" class="episodes-grid"></div>
+            </div>
+        </section>
+
+        <!-- Trending Anime Grid -->
+        <section>
+            <h2 class="section-title">Trending & Popular Anime</h2>
+            <div id="animeGrid" class="anime-grid">
+                <!-- Dynamic cards populated via JavaScript -->
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>© 2026 WebTorrent P2P Player. Powered by Node.js Sequential Streaming Engine, ArtPlayer.js, & HLS.js.</p>
+        <p>© 2026 AnimeTorrent. Open P2P Anime Streaming Engine powered by WebTorrent Sequential Engine & AniList API.</p>
     </footer>
 
     <script src="app.js"></script>
