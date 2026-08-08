@@ -30,7 +30,7 @@ let activeTorrentStats = {
     ready: false
 };
 
-const server = http.createServer((req, res) => {
+const server = http.createServer(async (req, res) => {
     const parsedUrl = urlModule.parse(req.url, true);
     const pathname = parsedUrl.pathname;
     const query = parsedUrl.query;
@@ -72,66 +72,77 @@ const server = http.createServer((req, res) => {
     // API 2: P2P Sequential Stream Endpoint (/stream/play?magnet=...)
     if (pathname === '/stream/play') {
         const magnet = query.magnet || activeTorrentStats.magnet;
+        console.log(`[*] Request received for stream magnet: ${magnet.slice(0, 60)}...`);
         
         if (torrentClient && magnet) {
             try {
                 let torrent = torrentClient.get(magnet);
                 if (!torrent) {
-                    torrent = torrentClient.add(magnet);
+                    console.log('[*] Resolving magnet via WebTorrent Client (async)...');
+                    torrent = await torrentClient.add(magnet);
                 }
 
                 activeTorrentStats.magnet = magnet;
 
-                torrent.on('download', () => {
-                    activeTorrentStats.name = torrent.name || activeTorrentStats.name;
-                    activeTorrentStats.progress = Math.round(torrent.progress * 100);
-                    activeTorrentStats.downloadSpeed = (torrent.downloadSpeed / 1024 / 1024).toFixed(2);
-                    activeTorrentStats.numPeers = torrent.numPeers;
-                    activeTorrentStats.length = torrent.length;
-                    activeTorrentStats.ready = true;
-                });
+                if (torrent && typeof torrent.on === 'function') {
+                    torrent.on('download', () => {
+                        activeTorrentStats.name = torrent.name || activeTorrentStats.name;
+                        activeTorrentStats.progress = Math.round(torrent.progress * 100);
+                        activeTorrentStats.downloadSpeed = (torrent.downloadSpeed / 1024 / 1024).toFixed(2);
+                        activeTorrentStats.numPeers = torrent.numPeers;
+                        activeTorrentStats.length = torrent.length;
+                        activeTorrentStats.ready = true;
+                    });
 
-                const serveTorrentFile = (torrentObj) => {
-                    const file = torrentObj.files && torrentObj.files.find(f => f.name.endsWith('.mp4') || f.name.endsWith('.mkv') || f.name.endsWith('.webm') || f.name.endsWith('.avi'));
-                    if (file) {
-                        file.select(); // Enable linear sequential piece downloading
+                    torrent.on('wire', (wire, addr) => {
+                        console.log(`[+] Connected to BitTorrent peer: ${addr || 'unknown'}`);
+                        activeTorrentStats.numPeers = torrent.numPeers;
+                    });
+
+                    const serveTorrentFile = (torrentObj) => {
+                        console.log(`[✓] Torrent metadata ready! Title: ${torrentObj.name}, Files: ${torrentObj.files.length}`);
+                        const file = torrentObj.files && torrentObj.files.find(f => f.name.endsWith('.mp4') || f.name.endsWith('.mkv') || f.name.endsWith('.webm') || f.name.endsWith('.avi'));
                         
-                        const range = req.headers.range;
-                        if (!range) {
-                            res.writeHead(200, {
-                                'Content-Length': file.length,
+                        if (file) {
+                            console.log(`[✓] Serving video file: ${file.name} (${(file.length / 1024 / 1024).toFixed(2)} MB)`);
+                            file.select(); // Enable linear sequential piece downloading
+                            
+                            const range = req.headers.range;
+                            if (!range) {
+                                res.writeHead(200, {
+                                    'Content-Length': file.length,
+                                    'Content-Type': file.name.endsWith('.mkv') ? 'video/x-matroska' : 'video/mp4'
+                                });
+                                return file.createReadStream().pipe(res);
+                            }
+
+                            const parts = range.replace(/bytes=/, "").split("-");
+                            const start = parseInt(parts[0], 10);
+                            const end = parts[1] ? parseInt(parts[1], 10) : file.length - 1;
+                            const chunksize = (end - start) + 1;
+
+                            res.writeHead(206, {
+                                'Content-Range': `bytes ${start}-${end}/${file.length}`,
+                                'Accept-Ranges': 'bytes',
+                                'Content-Length': chunksize,
                                 'Content-Type': file.name.endsWith('.mkv') ? 'video/x-matroska' : 'video/mp4'
                             });
-                            return file.createReadStream().pipe(res);
+
+                            return file.createReadStream({ start, end }).pipe(res);
+                        } else {
+                            console.warn('[!] No supported video file (.mp4, .mkv, .webm) found in torrent.');
+                            res.writeHead(302, { 'Location': 'https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8' });
+                            return res.end();
                         }
+                    };
 
-                        const parts = range.replace(/bytes=/, "").split("-");
-                        const start = parseInt(parts[0], 10);
-                        const end = parts[1] ? parseInt(parts[1], 10) : file.length - 1;
-                        const chunksize = (end - start) + 1;
-
-                        res.writeHead(206, {
-                            'Content-Range': `bytes ${start}-${end}/${file.length}`,
-                            'Accept-Ranges': 'bytes',
-                            'Content-Length': chunksize,
-                            'Content-Type': file.name.endsWith('.mkv') ? 'video/x-matroska' : 'video/mp4'
-                        });
-
-                        return file.createReadStream({ start, end }).pipe(res);
+                    if (torrent.files && torrent.files.length > 0) {
+                        return serveTorrentFile(torrent);
                     } else {
-                        res.writeHead(302, { 'Location': 'https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8' });
-                        return res.end();
+                        console.log('[*] Waiting for metadata from BitTorrent swarm...');
+                        torrent.once('ready', () => serveTorrentFile(torrent));
+                        return;
                     }
-                };
-
-                if (torrent.files && torrent.files.length > 0) {
-                    return serveTorrentFile(torrent);
-                } else {
-                    // Wait for metadata ready event before streaming
-                    torrent.once('ready', () => {
-                        serveTorrentFile(torrent);
-                    });
-                    return;
                 }
             } catch(e) {
                 console.error("Torrent stream error:", e.message);
